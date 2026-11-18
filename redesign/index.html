@@ -168,6 +168,51 @@
 .talk .btn-primary{background:var(--star);color:var(--navy)}
 .talk .btn-primary:hover{background:#B5E3F8;color:var(--navy)}
 .talk a.link-arrow{color:#fff}
+
+/* ---------- hero: practice buttons, mobile shortlist peek ---------- */
+.m-seats{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:12px;font-size:13px;color:var(--muted)}
+.m-seats span{margin-right:4px;font-weight:600;color:var(--ink)}
+.m-seats button{min-height:36px;padding:0 12px;border:1px solid var(--field);border-radius:999px;background:#fff;font:500 13.5px/1 var(--sans);color:var(--ink);cursor:pointer}
+.m-seats button:hover{border-color:var(--navy)}
+.m-seats button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.peek{display:none}
+@media (max-width:767px){
+  .hero{padding-top:24px}
+  .hero .lead{font-size:17px;margin-top:16px}
+  .hero .actions{margin-top:20px}
+  .peek{display:block;margin-top:22px;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:14px}
+  .peek .m-status{font-size:10.5px;letter-spacing:.04em}
+  .peek ol{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+  .peek li{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:13px;padding:7px 9px;border-radius:8px;background:#F3F6FC}
+  .peek li b{font:600 12px/1 var(--sans);color:var(--cobalt)}.peek li .ck{color:var(--ok);font-weight:700}.peek li .pay{color:var(--muted)}
+  .peek a{display:inline-block;margin-top:10px;font-size:14px;font-weight:600;text-decoration:none}
+  .hero .rate{margin-top:16px}
+}
+
+/* ---------- process: one working document per step ---------- */
+.pic .slot{position:absolute;inset:0;opacity:0;transition:opacity .6s}
+.pic .slot.on{opacity:1}
+.pic .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
+.pic .slot.plain{background:var(--band)}
+.pic .slot .doc{position:absolute;right:18px;top:18px;width:min(300px,78%)}
+.pic .slot.plain .doc{left:50%;top:50%;right:auto;transform:translate(-50%,-50%)}
+.doc{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:14px 16px;box-shadow:0 20px 40px -24px rgba(10,26,68,.45);font-size:13px;line-height:1.45;color:var(--text)}
+.doc .h{display:flex;justify-content:space-between;gap:8px;font:600 11px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--rule)}
+.doc .t{font-weight:600;color:var(--ink);margin-bottom:4px}
+.doc dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px}
+.doc dt{color:var(--muted)}.doc dd{margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+.doc .r{display:flex;align-items:center;gap:8px;padding:3px 0}
+.doc .r i{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--ok);background:#E7F2EC;color:var(--ok);display:grid;place-items:center;font:700 9px/1 var(--sans);font-style:normal;flex-shrink:0}
+.doc .r b{font:600 11.5px/1 var(--sans);color:var(--cobalt)}
+.doc .tot{display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-weight:600;color:var(--ink)}
+.doc .sig{margin-top:8px;font:400 italic 17px/1 var(--display);color:var(--navy)}
+@media (max-width:560px){.pic{aspect-ratio:4/5}.pic .slot .doc{right:12px;top:12px;width:calc(100% - 24px)}}
+
+/* ---------- founders + reviews, seats line ---------- */
+.f-rev{margin-top:40px}
+.seat-line{margin-top:22px;font-size:15px;color:var(--muted);line-height:1.9}
+.seat-line a{color:var(--ink);font-weight:500;white-space:nowrap}
+.seat-line .sep{margin:0 8px;color:var(--muted)}
 </style>
 </head>
 <body class="home">
@@ -200,14 +245,28 @@
         <a class="btn btn-primary" href="find-candidates/">See candidates for my seat</a>
         <a class="link-arrow" href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book 15 minutes with Justin →</a>
       </div>
+      <div class="peek" aria-label="Example shortlist">
+        <p class="m-status"><span id="mPeekSeat">Estate planning associate</span><span>Screened by Jon</span></p>
+        <ol id="mPeek"></ol>
+        <a href="#match">Watch how Jon picked them ↓</a>
+      </div>
       <p class="rate"><span class="stars" aria-hidden="true">★★★★★</span><b>5.0 on Google</b><span>60 reviews from law firms and attorneys</span></p>
     </div>
 
+    <div>
+    <div class="m-seats" id="mSeats" role="group" aria-label="Pick your practice area to replay the match">
+      <span>Hiring for:</span>
+      <button type="button" data-seat="estate" aria-pressed="true">Estate planning</button>
+      <button type="button" data-seat="lit" aria-pressed="false">Litigation</button>
+      <button type="button" data-seat="re" aria-pressed="false">Real estate</button>
+      <button type="button" data-seat="corp" aria-pressed="false">Corporate</button>
+      <button type="button" data-seat="para" aria-pressed="false">Paralegal</button>
+    </div>
     <figure class="match" id="match" aria-label="Example: how Orion screens candidates against one open seat">
       <div class="m-seat">
         <p class="m-k">Your open seat</p>
-        <h3>Estate planning associate</h3>
-        <p class="m-tags"><span>4–7 years</span><span>$125k–$145k</span><span>Trusts and probate</span><span>On-site or hybrid</span></p>
+        <h3 id="mTitle">Estate planning associate</h3>
+        <p class="m-tags" id="mTags"><span>4–7 years</span><span>$125k–$145k</span><span>Trusts and probate</span><span>On-site or hybrid</span></p>
       </div>
       <div class="m-body">
         <p class="m-status"><span>Jon is screening</span><span><b id="mRev">0</b> reviewed · <b id="mHit">0</b> matched</span></p>
@@ -215,11 +274,12 @@
         <div class="m-short">
           <p class="m-status"><span>Your shortlist</span><span>Names hidden until you ask</span></p>
           <ol id="mList"></ol>
-          <div class="m-done" id="mDone"><p>3 matches, screened by Jon</p><span style="display:flex;gap:16px;align-items:center"><button class="m-replay" id="mReplay" type="button">Replay ↻</button><a href="find-candidates/">See candidates like these →</a></span></div>
+          <div class="m-done" id="mDone"><p id="mDoneText">3 matches, screened by Jon</p><span style="display:flex;gap:16px;align-items:center"><button class="m-replay" id="mReplay" type="button">Replay ↻</button><a href="find-candidates/">See candidates like these →</a></span></div>
         </div>
       </div>
-      <figcaption class="sr-only">An example open seat for an estate planning associate. Five sample candidates are checked against practice area, experience and pay. Three match and go on the shortlist with their names hidden.</figcaption>
+      <figcaption class="sr-only">An example open seat. Four candidates are checked against practice area, experience and pay. Three match and go on the shortlist with their names hidden. Pick another practice area above to replay it for that seat.</figcaption>
     </figure>
+    </div>
   </div>
 </section>
 
@@ -236,7 +296,7 @@
 <!-- 3. CANDIDATES -->
 <section class="section" aria-labelledby="c-title">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
+    <div class="sec-head">
       <div>
         <p class="label">Screened this month</p>
         <h2 id="c-title">Candidates open to a move.</h2>
@@ -253,16 +313,18 @@
       <button type="button" aria-pressed="false" data-f="para">Paralegals</button>
     </div>
     <div class="cgrid" id="cgrid" aria-live="polite"></div>
-    <p class="small muted" style="margin-top:16px">Sample profiles. Live candidates change every week.</p>
+    <p class="small muted" style="margin-top:16px">Profiles like the ones Jon screens every week. <a href="submit-job/">Ask for this week's list for your seat →</a></p>
+    <p class="seat-line">Seats we fill across the US:
+      <a href="roles/estate-planning-attorney/">Estate planning</a><span class="sep">·</span><a href="find-candidates/">Commercial litigation</a><span class="sep">·</span><a href="find-candidates/">Civil litigation</a><span class="sep">·</span><a href="find-candidates/">Real estate</a><span class="sep">·</span><a href="find-candidates/">Corporate and M&amp;A</a><span class="sep">·</span><a href="find-candidates/">Labor and employment</a><span class="sep">·</span><a href="find-candidates/">Family law</a><span class="sep">·</span><a href="find-candidates/">Paralegals and legal assistants</a></p>
   </div>
 </section>
 
 <!-- 4. PROCESS -->
 <section class="section band" aria-labelledby="p-title">
   <div class="wrap">
-    <div style="max-width:40em;margin-bottom:36px" data-reveal>
+    <div style="max-width:40em;margin-bottom:36px">
       <p class="label">How a search runs</p>
-      <h2 id="p-title">From one call to a <em>new hire.</em></h2>
+      <h2 id="p-title">From one call to a new hire.</h2>
     </div>
     <div class="process">
       <div class="steps2" id="steps2"><span class="fill" id="fill"></span>
@@ -273,14 +335,41 @@
       </div>
       <div class="pics"><div class="sticky">
         <div class="pic" id="pics">
-          <img class="on" src="assets/img/brief-call.jpg" alt="A managing partner taking notes on a call about the role he needs to fill" loading="lazy">
-          <div class="stagecard"><div class="mini" aria-hidden="true">
-            <p style="font-weight:600;color:var(--ink);margin-bottom:6px">Screening notes · Jon</p>
-            <p class="r"><i>✓</i>Bar admission active</p><p class="r"><i>✓</i>Runs trust administrations solo</p><p class="r"><i>✓</i>Comfortable with 1,800 billables</p><p class="r"><i>✓</i>Pay expectation $130k confirmed</p>
-          </div></div>
-          <img src="assets/img/interview.jpg" alt="A partner interviewing a candidate in a small conference room" loading="lazy">
-          <img src="assets/img/first-day.jpg" alt="A new associate being welcomed on her first day at a law firm" loading="lazy">
-          <p class="cap" id="cap">Day 0: Justin takes the brief</p>
+          <div class="slot on">
+            <img src="assets/img/brief-call.jpg" alt="A managing partner on a call describing the role he needs to fill" loading="lazy">
+            <div class="doc" aria-hidden="true">
+              <p class="h"><span>Seat brief</span><span>Day 0</span></p>
+              <p class="t">Estate planning associate</p>
+              <dl><dt>Experience</dt><dd>4–7 years</dd><dt>Pay</dt><dd>$125k–$145k</dd><dt>Bar</dt><dd>In-state, active</dd><dt>Billables</dt><dd>1,800 a year</dd><dt>Must have</dt><dd>Runs trust admin solo</dd></dl>
+            </div>
+          </div>
+          <div class="slot plain">
+            <div class="doc" aria-hidden="true">
+              <p class="h"><span>Screening notes · Jon</span><span>Day 3</span></p>
+              <p class="t">EP-0412 · 5 years</p>
+              <p class="r"><i>✓</i>Bar admission active</p><p class="r"><i>✓</i>Runs trust administrations solo</p><p class="r"><i>✓</i>Comfortable with 1,800 billables</p><p class="r"><i>✓</i>Pay expectation $130k confirmed</p>
+              <p class="sig">— Jon</p>
+            </div>
+          </div>
+          <div class="slot">
+            <img src="assets/img/interview.jpg" alt="A partner interviewing a candidate in a small conference room" loading="lazy">
+            <div class="doc" aria-hidden="true">
+              <p class="h"><span>Your shortlist</span><span>Day 6</span></p>
+              <p class="r"><i>✓</i><b>EP-0412</b>&nbsp;5 yrs · $125k–$140k</p>
+              <p class="r"><i>✓</i><b>EP-0377</b>&nbsp;6 yrs · $130k–$145k</p>
+              <p class="r"><i>✓</i><b>EP-0455</b>&nbsp;4 yrs · $120k–$135k</p>
+              <p style="margin-top:6px;color:var(--muted)">Names shared once both sides agree to meet.</p>
+            </div>
+          </div>
+          <div class="slot">
+            <img src="assets/img/first-day.jpg" alt="A new associate being welcomed on her first day at a law firm" loading="lazy">
+            <div class="doc" aria-hidden="true">
+              <p class="h"><span>Invoice</span><span>Start date</span></p>
+              <dl><dt>First-year base</dt><dd>$135,000</dd><dt>Fee</dt><dd>23%</dd><dt>Due</dt><dd>Net 15</dd><dt>Guarantee</dt><dd>90 days</dd></dl>
+              <p class="tot"><span>Total</span><span>$31,050</span></p>
+            </div>
+          </div>
+          <p class="cap" id="cap">Day 0: the brief call</p>
         </div>
       </div></div>
     </div>
@@ -290,10 +379,10 @@
 <!-- 5. COST -->
 <section class="section" aria-labelledby="cost-title">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
+    <div class="sec-head">
       <div>
         <p class="label">What it costs</p>
-        <h2 id="cost-title">Nothing until <em>you hire.</em></h2>
+        <h2 id="cost-title">Nothing until you hire.</h2>
         <p>One flat fee, no retainer and no exclusivity. Drag to see the fee for your seat.</p>
       </div>
       <a class="link-arrow" href="fees/">Full fee terms →</a>
@@ -330,16 +419,16 @@
 <!-- 6. FOUNDERS -->
 <section class="section band" aria-labelledby="f-title">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
+    <div class="sec-head">
       <div>
         <p class="label">Who you work with</p>
-        <h2 id="f-title">Two founders. <em>No handoffs.</em></h2>
+        <h2 id="f-title">Two founders, no handoffs.</h2>
         <p>Justin works with firms, Jon works with attorneys. You hear from the same two people from the first call to the signed offer.</p>
       </div>
       <a class="link-arrow" href="about/">About Orion →</a>
     </div>
     <div class="fgrid">
-      <article class="fc" data-reveal>
+      <article class="fc">
         <div class="ph"><img src="../assets/images/founders/justin-sofman.png" alt="Justin Sofman" loading="lazy"></div>
         <div class="tx">
           <p class="k">Works with law firms</p>
@@ -349,7 +438,7 @@
           <p style="margin-top:14px"><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></p>
         </div>
       </article>
-      <article class="fc" data-reveal>
+      <article class="fc">
         <div class="ph"><img src="../assets/images/founders/jon-missirlian.jpg" alt="Jon Missirlian" loading="lazy"></div>
         <div class="tx">
           <p class="k">Works with attorneys</p>
@@ -360,24 +449,13 @@
         </div>
       </article>
     </div>
-    <blockquote class="note-quote" data-reveal>
+    <blockquote class="note-quote">
       <p>“I co-founded Orion Placement alongside Jon Missirlian to solve the biggest frustration law firms face: paying huge upfront retainers for resume spammers who have never even spoken to the attorney they're submitting. … I only get paid when you find the right attorney, so I'm 100% invested in sending people actually worth your time.”</p>
       <footer>Justin Sofman, co-founder</footer>
     </blockquote>
-  </div>
-</section>
-
-<!-- 7. REVIEWS -->
-<section class="section" aria-labelledby="r-title">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div>
-        <p class="label">Reviews</p>
-        <h2 id="r-title">What firms and attorneys say.</h2>
-      </div>
-    </div>
-    <p class="g-line"><b>5.0</b><span class="stars" aria-hidden="true">★★★★★</span><span>60 Google reviews from law firms and attorneys</span></p>
-    <div class="rev-grid" data-stagger>
+    <div class="f-rev">
+    <p class="g-line" id="r-title"><b>5.0</b><span class="stars" aria-hidden="true">★★★★★</span><span>60 Google reviews from law firms and attorneys</span></p>
+    <div class="rev-grid">
       <article class="review">
         <p>“Justin Sofman and Jon Missirlian have been <mark>relentless in helping us with the staffing needs</mark> of our Firm. They have successfully placed 2 new team members with us and <mark>we will use them for all of our future staffing needs.</mark>”</p>
         <p class="who"><span class="av" aria-hidden="true">TB</span><span><b>Travis Bowen <span class="t">Law firm</span></b><span>Managing Partner, Bowen Law Group</span></span></p>
@@ -395,30 +473,11 @@
         <p class="who"><span class="av" aria-hidden="true">DL</span><span><b>Derek Letellier <span class="t">Attorney</span></b><span>Placed candidate</span></span></p>
       </article>
     </div>
+    </div>
   </div>
 </section>
 
-<!-- 8. SEATS -->
-<section class="section-tight" aria-labelledby="s-title">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <div>
-        <p class="label">Seats we fill, nationwide</p>
-        <h2 id="s-title">Attorneys and the team around them.</h2>
-      </div>
-    </div>
-    <div class="seats" data-stagger>
-      <a href="roles/estate-planning-attorney/">Estate planning <span>→</span></a>
-      <a href="find-candidates/">Commercial litigation <span>→</span></a>
-      <a href="find-candidates/">Civil litigation <span>→</span></a>
-      <a href="find-candidates/">Real estate <span>→</span></a>
-      <a href="find-candidates/">Corporate and M&amp;A <span>→</span></a>
-      <a href="find-candidates/">Labor and employment <span>→</span></a>
-      <a href="find-candidates/">Family law <span>→</span></a>
-      <a href="find-candidates/">Paralegals and legal assistants <span>→</span></a>
-    </div>
-  </div>
-</section>
+
 
 <!-- 9. ATTORNEYS -->
 <section class="section-tight" aria-labelledby="a-title">
@@ -427,7 +486,7 @@
       <div class="ph" role="img" aria-label="An attorney walking down courthouse steps"></div>
       <div class="tx">
         <p class="label">For attorneys</p>
-        <h2 id="a-title">Thinking about a move? <em>Keep it quiet.</em></h2>
+        <h2 id="a-title">Thinking about a move? Keep it quiet.</h2>
         <ul><li>Free for candidates, always</li><li>No firm sees your name until you say yes</li><li>Pay shown on every role</li></ul>
         <div class="actions"><a class="btn btn-primary" href="jobs/">See open roles</a><a class="link-arrow" href="upload-resume/">Send your résumé confidentially →</a></div>
       </div>
@@ -438,11 +497,12 @@
 <!-- 10. FAQ + CLOSE -->
 <section class="section" aria-labelledby="faq-title">
   <div class="wrap split">
-    <div data-reveal>
+    <div>
       <p class="label">Questions</p>
       <h2 id="faq-title">What firms ask first.</h2>
     </div>
-    <div class="faq" data-reveal>
+    <div class="faq">
+      <details><summary>Why did you email me?</summary><p>We write to small and mid-size firms whose practice areas match attorneys Jon is screening right now. If the timing is wrong, reply "no thanks" and we won't email you again. Orion emails only ever come from @orionplacement.com.</p></details>
       <details><summary>What does it cost?</summary><p>23% of the hire's first-year base salary, and only if you hire someone we introduced. Nothing upfront. The invoice is sent on the start date and due in 15 days. Terms can be customized for multi-seat searches.</p></details>
       <details><summary>What if the hire leaves early?</summary><p>If they leave within 90 days, we run a replacement search at no extra charge.</p></details>
       <details><summary>Do we have to work only with you?</summary><p>No. The agreement is non-exclusive, so you can keep your other recruiters and your own job posts.</p></details>
@@ -454,7 +514,7 @@
 
 <section class="section-tight" style="padding-bottom:var(--section)" aria-labelledby="t-title">
   <div class="wrap">
-    <div class="talk" data-reveal>
+    <div class="talk">
       <div class="ph"><img src="../assets/images/founders/justin-sofman.png" alt="Justin Sofman" width="150" height="150"></div>
       <div class="tx">
         <h2 id="t-title">Talk to Justin, <em>not a call center.</em></h2>
@@ -534,8 +594,8 @@
     [].slice.call(document.querySelectorAll("#filters button")).forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw(b.getAttribute("data-f"));});});
 
   /* ---- 4. process: progress line and matching picture ---- */
-  var sts=[].slice.call(document.querySelectorAll(".st")),pics=[].slice.call(document.querySelectorAll("#pics img,#pics .stagecard")),fill=$("fill"),wrap=$("steps2"),cap=$("cap");
-  var caps=["Day 0: Justin takes the brief","Days 1 to 5: Jon's screening notes","About a week: you interview the short list","Start date: your new attorney starts"];
+  var sts=[].slice.call(document.querySelectorAll(".st")),pics=[].slice.call(document.querySelectorAll("#pics .slot")),fill=$("fill"),wrap=$("steps2"),cap=$("cap");
+  var caps=["Day 0: the brief call","Days 1 to 5: Jon's screening notes","About a week: your shortlist arrives","Start date: the only invoice"];
   function setStep(i){sts.forEach(function(s,k){s.classList.toggle("on",k<=i)});pics.forEach(function(p,k){p.classList.toggle("on",k===i)});cap.textContent=caps[i];}
   function onScroll(){var r=wrap.getBoundingClientRect(),mid=innerHeight*.55,h=Math.max(0,Math.min(r.height-12,mid-r.top));fill.style.height=h+"px";
     var cur=0;sts.forEach(function(s,k){if(s.getBoundingClientRect().top<mid)cur=k});setStep(cur);}
