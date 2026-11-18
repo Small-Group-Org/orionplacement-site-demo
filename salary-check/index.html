@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../" data-page="salaryCheck" data-door-default="candidate">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attorney and paralegal salary check | Orion Placement</title>
+<meta name="description" content="Enter your role, city, years and base. See where your pay sits in the local band, in plain English, and which confidential roles pay more.">
+<link rel="canonical" href="https://www.orionplacement.com/salary-check/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/v2.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.orionplacement.com/"},
+ {"@type":"ListItem","position":2,"name":"Candidates","item":"https://www.orionplacement.com/candidates/"},
+ {"@type":"ListItem","position":3,"name":"Salary check","item":"https://www.orionplacement.com/salary-check/"}]}
+</script>
+<style>
+/* page: the pay form as the hero visual */
+.sc-hero .tool-form{position:static;box-shadow:var(--shadow-card)}
+.sc-hero .tool-form h2{font-size:1.2rem}
+.sc-hero .tool-form .btn{width:100%}
+.sc-hero .tool-form .trust-line{margin:-4px 0 0}
+.res-card .verdict{margin-top:18px}
+@media (max-width:640px){.sc-hero .tool-form h2{display:none}.sc-hero .tool-form{gap:12px;padding:16px}}
+#more .results-head .more{font-weight:600;text-decoration:none}
+@media (max-width:640px){#more .cards>.job:nth-child(n+3){display:none}}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../candidates/index.html">Candidates</a></li><li aria-current="page">Salary check</li></ol></nav>
+
+<!-- 1. Compact hero with the pay form in it -->
+<section class="phero sc-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Salary check · private, nothing is saved</span>
+      <h1>Is your salary in line with the market?</h1>
+      <p class="lede" id="lede-band">Compare your base with what small and mid-size firms in your city pay at your level. Then see the roles that pay more.</p>
+      <ul class="ticks hide-sm" style="margin-top:22px">
+        <li>Runs in your browser. Your firm never hears about it</li>
+        <li>Bands from real offers and roles, refreshed each quarter</li>
+        <li>Roles that pay more, with the base on every one</li>
+      </ul>
+    </div>
+    <form class="tool-form" id="sc" aria-label="Your pay">
+      <h2>Your pay</h2>
+      <div class="field"><label for="s-role">Role</label><select id="s-role"></select></div>
+      <div class="pair"><div class="field"><label for="s-city">City</label><select id="s-city"></select></div>
+      <div class="field"><label for="s-years">Years of practice</label><input id="s-years" type="number" inputmode="numeric" min="0" max="45" value="5"></div></div>
+      <div class="pair"><div class="field"><label for="s-base">Current base <span class="hint">($/yr)</span></label><div class="money"><input id="s-base" type="number" inputmode="numeric" min="20000" step="1000" placeholder="118000"></div></div>
+      <div class="field"><label for="s-bonus">Bonus <span class="hint">(optional)</span></label><div class="money"><input id="s-bonus" type="number" inputmode="numeric" min="0" step="500" placeholder="8000"></div></div></div>
+      <button class="btn btn-primary btn-lg" type="submit">Check my pay</button>
+      <div data-mount="trust-line" data-kind="candidate"></div>
+    </form>
+  </div>
+</section>
+
+<!-- 2. Result on the band bar, in plain words -->
+<section class="block alt" id="result">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Your result</span><h2 id="r-title">Where your pay sits</h2><p id="r-sub">The bar shows base salaries by years of practice.</p></div>
+    <div class="band-card res-card">
+      <div id="band"></div>
+      <p class="source">Source: <span data-mount="value" data-path="source"></span>. Updated <span data-mount="value" data-path="asOf"></span>. Base salary only. <span id="bonus-norm"></span></p>
+      <div id="verdict" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Roles paying more -->
+<section class="block" id="more-block">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Roles that pay more</span><h2>Confidential roles above your number</h2><p>Employers stay confidential until your first call with Jon.</p></div>
+    <div id="more"></div>
+  </div>
+</section>
+
+<!-- 4. Email offer and a confidential call -->
+<section class="block alt">
+  <div class="wrap split">
+    <div>
+      <div class="sec-head"><span class="eyebrow">By email</span><h2>Get your result and the city guide</h2><p>Keep it for your next review, or talk it through with Jon after work.</p></div>
+      <ul class="ticks"><li>Your result and the full band for your city</li><li>The city legal salary guide (PDF), updated each quarter</li><li>Add a phone number after and Jon calls you, confidentially</li></ul>
+    </div>
+    <div id="talk"></div>
+  </div>
+</section>
+
+<!-- 5. FAQ -->
+<section class="block">
+  <div class="wrap split">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>About the salary check</h2><p>Full figures for one role: <a href="../salaries/estate-planning-attorney/houston-tx/index.html">estate planning attorney pay in Houston</a>.</p></div>
+    <div class="faq" data-mount="faq-ld">
+      <details><summary>Is what I enter saved or shared?</summary><p>No. The check runs in your browser. Nothing is stored unless you ask us to contact you, and even then no employer sees your pay or name without your yes.</p></details>
+      <details><summary>Where do the bands come from?</summary><p>Base salaries in offers made and roles posted through Orion, grouped by city, role and years since bar admission, refreshed every quarter.</p></details>
+      <details><summary>How do I read the bar?</summary><p>The green bar is the middle half of base salaries for your level: a quarter of people earn less than its left edge and a quarter earn more than its right edge. The black line is the median across all levels. The brass line is you.</p></details>
+      <details><summary>My base is below the band. What should I do?</summary><p>Look at the roles that pay more, then talk to Jon. He can tell you what firms near you would offer for your experience, without your firm knowing you asked.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA band -->
+<div data-mount="cta-band" data-kind="candidate" data-title="See the roles that pay more than you earn now" data-button="Upload your resume" data-href="../upload-resume/index.html"></div>
+</main>
+<div id="site-footer"></div>
+<div class="mbar"><a class="btn btn-primary" href="#sc" id="mbar-cta">Check my pay</a></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  var O = Orion, D = O.data, $ = O.$, h = O.hash.get(), ctx = O.ctx();
+  /* roles and cities that have a published band */
+  var roles = D.roles.filter(function (r) { return D.cities.some(function (c) { return O.band(c.slug, r.slug); }); });
+  var st = { role: h.role || ctx.role || "estate-planning-attorney", city: h.city || ctx.city || "houston-tx", years: h.years ? +h.years : 5, base: OC.toK(h.base), bonus: OC.toK(h.bonus) || null };
+  if (!roles.some(function (r) { return r.slug === st.role; })) st.role = "estate-planning-attorney";
+  var band = null, talked = false;
+  /* job cards: outlined actions, so each screen keeps one filled button */
+  function jc(j, o) { return OC.jobCard(j, o).replace(/btn btn-primary btn-sm/g, "btn btn-line btn-sm"); }
+  /* one-field gate for the result by email; its steps follow the latest check */
+  var gateOpts = { eyebrow: "Free by email", title: "Email me my result and the city guide", audience: "candidate", button: "Email me my result", review: "vera-massey",
+    fine: "Use a personal email, not your work one. Your pay figures stay with Jon, and no firm sees your name until you say yes.", onDone: function () { talked = true; } };
+  function talkSteps(role, city, eb) { return [
+    ["Now", "Your result and the " + city.name + " salary guide are on their way. Your pay figures stay with Jon.", true],
+    ["Within one business day", "Jon emails what firms near you pay for " + eb.label + " and which roles fit. Add a phone number below for a call after work."],
+    ["On a call, if you want one", "What a move would look like, without your firm knowing you asked. No yes needed."],
+    ["Each quarter", "The updated guide for " + role.short + "s in " + city.name + ". Unsubscribe in one click."]
+  ]; }
+
+  function cityList() { return D.cities.filter(function (c) { return O.band(c.slug, st.role); }); }
+  function fillCities() {
+    var list = cityList(); if (!list.some(function (c) { return c.slug === st.city; })) st.city = list[0].slug;
+    $("#s-city").innerHTML = O.options(list, st.city);
+  }
+  $("#s-role").innerHTML = O.options(roles, st.role, "plain");
+  fillCities();
+  $("#s-years").value = st.years;
+  if (st.base) $("#s-base").value = Math.round(st.base * 1000);
+  if (st.bonus) $("#s-bonus").value = Math.round(st.bonus * 1000);
+
+  function drawBand() {
+    band = O.ui.bandBar($("#band"), { city: st.city, role: st.role, highlight: OC.expKey(st.years) });
+    var r = O.role(st.role);
+    $("#bonus-norm").innerHTML = O.m(D.bonusNorms[r.kind] || D.bonusNorms.attorney);
+  }
+
+  function run() {
+    var role = O.role(st.role), city = O.city(st.city), key = OC.expKey(st.years), eb = D.expBands.filter(function (e) { return e.key === key; })[0];
+    $("#r-title").textContent = role.name + " pay in " + city.name;
+    $("#r-sub").textContent = "Base salary by years of practice. " + eb.label + " is highlighted.";
+    gateOpts.steps = talkSteps(role, city, eb);
+    if (!talked && !$("#talk form")) O.ui.gate($("#talk"), gateOpts);
+    $("#lede-band").innerHTML = O.esc(role.name) + "s in " + O.esc(city.name) + " with " + O.esc(eb.label) + " earn " + O.m(O.fmt.range(O.band(st.city, st.role)[key])) + " base. Where do you sit?";
+    band.setHighlight(key);
+    if (!st.base) {
+      band.setMarker(null);
+      $("#verdict").innerHTML = '<div class="verdict">Enter your current base to place yourself on the bar. The usual range for ' + O.esc(eb.label) + " is " + O.m(O.fmt.range(O.band(st.city, st.role)[key])) + ".</div>";
+      var open = D.jobs.filter(function (j) { return j.city === st.city && j.role === st.role; }).sort(function (a, b) { return b.band[1] - a.band[1]; });
+      $("#more").innerHTML = open.length ? '<div class="results-head"><b>' + O.count(open.length, "open role") + " in " + O.esc(city.name) + '</b><span class="small muted">Enter your base above to see which pay more.</span></div><div class="cards">' + open.slice(0, 3).map(function (j) { return jc(j); }).join("") + "</div>"
+        : '<div class="empty-state"><p><b>Enter your base above.</b> We show the ' + O.esc(city.name) + " roles that pay more, with the base on each.</p></div>";
+      $("#mbar-cta").textContent = "Check my pay"; $("#mbar-cta").href = "#sc";
+      O.hash.set({ role: st.role, city: st.city, years: st.years });
+      return;
+    }
+    band.setMarker(st.base);
+    var p = O.position(st.city, st.role, key, st.base), r = p.range, who = role.short + "s with " + eb.label + " in " + city.name;
+    var head, body;
+    if (p.where === "below") { head = "Your base of " + O.fmt.k(st.base) + " is below the usual range."; body = "Most " + who + " earn " + O.fmt.range(r) + ". About " + (100 - p.pct) + " in 100 earn more than you. The gap to the middle of the range is " + O.fmt.k((r[0] + r[1]) / 2 - st.base) + "."; }
+    else if (p.where === "above") { head = "Your base of " + O.fmt.k(st.base) + " is above the usual range."; body = "You earn more than about " + p.pct + " in 100 " + who + " (usual range " + O.fmt.range(r) + "). A move up is most likely with a portable book or a senior title."; }
+    else { head = "Your base of " + O.fmt.k(st.base) + " is inside the usual range."; body = "You earn more than about " + p.pct + " in 100 " + who + ". The usual range is " + O.fmt.range(r) + "; the top of it is " + O.fmt.k(r[1] - st.base) + " above you."; }
+    var total = st.bonus ? '<p class="total-line">With your bonus of ' + O.m(O.fmt.k(st.bonus)) + ", total cash is " + O.m(O.fmt.k(st.base + st.bonus)) + ". " + O.m(D.bonusNorms[role.kind] || "") + "</p>" : "";
+    $("#verdict").innerHTML = '<div class="verdict"><b>' + O.esc(head) + "</b><br>" + O.esc(body) + total + "</div>";
+
+    /* roles paying more: same role in the city first, then same kind of role in the city */
+    var same = D.jobs.filter(function (j) { return j.city === st.city && j.role === st.role && j.band[1] > st.base; });
+    var near = same.length ? [] : D.jobs.filter(function (j) { return j.city === st.city && O.role(j.role).kind === role.kind && j.role !== st.role && j.band[1] > st.base; });
+    var list = (same.length ? same : near).sort(function (a, b) { return b.band[1] - a.band[1]; });
+    var jobsLink = O.link(O.url.jobs(st.role, st.city), "All " + O.esc(role.short) + " roles in " + O.esc(city.name), 'class="more link-arrow"');
+    if (list.length) {
+      $("#more").innerHTML = '<div class="results-head"><b>' + O.m(String(list.length)) + " " + (list.length === 1 ? "role" : "roles") + " in " + O.esc(city.name) + " paying more than you earn</b>" + jobsLink + "</div>" +
+        '<div class="cards">' + list.slice(0, 3).map(function (j) { return jc(j, { why: "Up to " + O.m(O.fmt.k(j.band[1])) + ", " + O.m(O.fmt.k(j.band[1] - st.base)) + " more than your base." }); }).join("") + "</div>";
+    } else {
+      $("#more").innerHTML = '<div class="empty-state"><p><b>Your base already tops the listed ' + O.esc(city.name) + " roles.</b> Senior seats are often filled before they are posted. Jon can tell you which firms would pay more for your experience.</p></div>";
+    }
+    $("#mbar-cta").textContent = list.length ? "See roles that pay more" : "Talk confidentially"; $("#mbar-cta").href = list.length ? "#more" : "#talk";
+    O.hash.set({ role: st.role, city: st.city, years: st.years, base: Math.round(st.base * 1000), bonus: st.bonus ? Math.round(st.bonus * 1000) : "" });
+  }
+
+  $("#sc").addEventListener("submit", function (e) { e.preventDefault(); st.base = OC.toK($("#s-base").value); st.bonus = OC.toK($("#s-bonus").value); run(); if (st.base) $("#result").scrollIntoView({ behavior: "smooth", block: "start" }); });
+  $("#sc").addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.id === "s-role") { st.role = t.value; fillCities(); drawBand(); }
+    if (t.id === "s-city") { st.city = t.value; drawBand(); }
+    if (t.id === "s-role" || t.id === "s-city") run();
+  });
+  $("#sc").addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.id === "s-years") { st.years = +t.value || 0; run(); }
+    if (t.id === "s-base") { var k = OC.toK(t.value); if (k && k >= 20) { st.base = k; run(); } }
+    if (t.id === "s-bonus") { st.bonus = OC.toK(t.value); if (st.base) run(); }
+  });
+  drawBand(); run();
+  /* shared gate's optional step names Justin for candidates too; Jon handles candidates */
+  document.addEventListener("submit", function () { setTimeout(function () { O.$$(".gate-thanks").forEach(function (p) { p.textContent = p.textContent.replace("Justin may call", "Jon may call"); }); }, 0); });
+})();
+</script>
+<script src="../assets/v2.js"></script>
+</body>
+</html>

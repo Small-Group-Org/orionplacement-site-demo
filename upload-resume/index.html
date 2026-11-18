@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../" data-page="uploadResume" data-door-default="candidate">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upload your resume, see matching legal jobs | Orion</title>
+<meta name="description" content="Upload your resume and see confidential attorney and paralegal roles that fit, with base pay on each. No firm sees your name without your yes.">
+<link rel="canonical" href="https://www.orionplacement.com/upload-resume/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/v2.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.orionplacement.com/"},
+ {"@type":"ListItem","position":2,"name":"Candidates","item":"https://www.orionplacement.com/candidates/"},
+ {"@type":"ListItem","position":3,"name":"Upload resume","item":"https://www.orionplacement.com/upload-resume/"}]}
+</script>
+<style>
+/* page: drop zone as the hero visual */
+.up-hero .dropzone{padding:28px 28px 22px;border-color:var(--ink-3);grid-row:span 2}
+.up-hero>.wrap{align-items:start;row-gap:24px}
+.up-hero .hero-review{max-width:52ch}
+.up-hero .dropzone .hero-act{margin-top:4px}
+.up-hero .dropzone .trust-line{margin-top:-4px}
+.up-hero .dropzone .trust-line b{font-family:var(--sans);font-size:inherit;font-weight:600}
+#r-more .mini-h{margin-top:28px}
+.up-hero .dz-ico{width:40px;height:40px;color:var(--green)}
+.up-hero .file-name:empty{display:none}
+.up-hero button.text-link{background:none;border:0;padding:0;font:600 1rem var(--sans);color:var(--green);cursor:pointer}
+#open .sec-foot .small{max-width:46ch}
+@media (max-width:860px){.up-hero .dropzone{grid-row:auto}}
+@media (max-width:640px){.up-hero .dropzone{padding:18px}.up-hero .dz-ico{display:none}#open .cards>.job:nth-child(n+3){display:none}}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../candidates/index.html">Candidates</a></li><li aria-current="page">Upload resume</li></ol></nav>
+
+<!-- 1. Compact hero with the drop zone in it -->
+<section class="phero up-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Free · confidential</span>
+      <h1>Upload your resume, see the roles that fit</h1>
+      <p class="lede">We read it into a short profile you can correct, then match it to open roles with their base pay.</p>
+      <ul class="ticks hide-sm" style="margin-top:22px">
+        <li>No firm sees your name until you say yes</li>
+        <li>We never contact your current firm</li>
+        <li>Free for candidates. The hiring firm pays</li>
+      </ul>
+    </div>
+    <div class="dropzone" id="upload">
+      <svg class="dz-ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M7.5 9.5L12 5l4.5 4.5"/><path d="M5 15v4h14v-4"/></svg>
+      <b>Drop your resume here</b>
+      <span class="small muted">PDF, Word or text. It stays with Orion. No firm sees your name until you say yes.</span>
+      <input type="file" id="file" accept=".pdf,.doc,.docx,.txt,.rtf">
+      <div class="hero-act"><label class="btn btn-primary btn-lg" for="file" id="choose">Upload your resume</label><button type="button" class="text-link" id="use-sample">Use a sample resume</button></div>
+      <div data-mount="trust-line" data-kind="candidate"></div>
+      <span class="file-name" id="file-name" aria-live="polite"></span>
+      <details id="paste-box"><summary>Or paste the text</summary><textarea id="paste" aria-label="Resume text" placeholder="Paste your resume text here"></textarea><button type="button" class="btn btn-ghost btn-sm" id="read-paste" style="margin-top:8px">Read this text</button></details>
+    </div>
+    <div class="hero-review" data-mount="review" data-id="n-brown" data-compact="1"></div>
+  </div>
+</section>
+
+<!-- 2. Before upload: roles open now -->
+<section class="block alt" id="open">
+  <div class="wrap">
+    <div class="sec-head row"><div><span class="eyebrow">Open now</span><h2 id="open-title">Open now in Houston</h2><p>Employers stay confidential. Upload to see how you fit each one.</p></div></div>
+    <div id="open-list"></div>
+  </div>
+</section>
+
+<!-- 3. After upload: parsed profile, matching roles, one-field form beside a review -->
+<section class="block alt hidden" id="profile">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Your matches</span><h2>Your profile and the roles that fit</h2><p>Fix anything we read wrong. The list updates as you go.</p></div>
+    <div class="tool">
+      <form class="tool-form" id="pf" aria-label="Your profile" style="position:static">
+        <h2 style="font-size:1.2rem">Your profile, as we read it</h2>
+        <p class="small muted" id="pf-src" style="margin-top:-8px"></p>
+        <div class="field"><label for="p-role">Role</label><select id="p-role"></select></div>
+        <div class="field"><label for="p-city">City</label><select id="p-city"></select></div>
+        <div class="field"><label for="p-years">Years of practice</label><input id="p-years" type="number" inputmode="numeric" min="0" max="45"></div>
+        <div class="field"><label for="p-mode">Work arrangement</label><select id="p-mode"><option value="any">On-site or hybrid</option><option value="on-site">On-site</option><option value="hybrid">Hybrid</option></select></div>
+        <div class="field"><label for="p-min">Lowest base you would move for <span class="hint">($ per year)</span></label><div class="money"><input id="p-min" type="number" inputmode="numeric" min="30000" step="5000" placeholder="120000"></div></div>
+        <fieldset class="field" style="border:0"><legend class="label" style="margin-bottom:6px">Skills we found <span class="hint">(tap to fix)</span></legend><div class="chips" id="p-tags"></div></fieldset>
+        <button type="button" class="btn btn-ghost btn-sm" id="restart">Start over</button>
+      </form>
+      <div class="tool-results">
+        <div class="results-head" aria-live="polite"><b id="r-count"></b><span class="small muted" id="r-sub"></span></div>
+        <div id="r-list"></div>
+        <div id="alerts" style="margin-top:24px"></div>
+        <div id="r-more"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. What happens to your resume -->
+<section class="block">
+  <div class="wrap split">
+    <div>
+      <div class="sec-head"><span class="eyebrow">Your resume</span><h2>What happens to your resume</h2><p>It is read by one person, Jon, and kept under an ID.</p></div>
+      <ul class="ticks">
+        <li>It is kept under an ID, not your name, and read only by Jon.</li>
+        <li>It goes to no employer without your yes for that specific role.</li>
+        <li>We never contact your current firm or ask for references there.</li>
+        <li>Ask us to delete it at any time and we do it the same day.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="mini-h">What a firm sees before your yes</p>
+      <div data-mount="resume-sheet" data-id="EP-TX-0412" id="sheet"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Light: check your pay first -->
+<section class="block flush">
+  <div class="wrap">
+    <div class="cand-band">
+      <div><span class="eyebrow">Not ready to send it?</span><h2>Check your pay first</h2><ul class="ticks"><li>Your base against your city's band</li><li>Roles that pay more</li><li>Nothing is saved</li></ul></div>
+      <a class="btn btn-ghost" href="../salary-check/index.html">Check my pay</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section class="block alt">
+  <div class="wrap split">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>Before you upload</h2><p>Rather talk first? <a href="../about/index.html#contact">Reach Jon directly</a>.</p></div>
+    <div class="faq" data-mount="faq-ld">
+      <details><summary>Who reads my resume?</summary><p>Jon, who screens every candidate. It is stored under an ID, not your name, and is never posted anywhere.</p></details>
+      <details><summary>Will a firm see it if I apply?</summary><p>Not until you say yes to that firm. Applying sends your resume to Jon only. He tells you who the firm is first.</p></details>
+      <details><summary>Which file types work?</summary><p>PDF, Word and plain text. You can also paste the text. Anything we read wrong can be fixed before you send it.</p></details>
+      <details><summary>Does it cost me anything?</summary><p>No. The hiring firm pays Orion's fee when you start, and your offer is not reduced to cover it.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CTA band -->
+<div data-mount="cta-band" data-kind="candidate" data-title="See the roles that fit you, with the pay" data-button="Upload your resume" data-href="#upload"></div>
+</main>
+<div id="site-footer"></div>
+<div class="mbar"><a class="btn btn-primary" href="#upload" id="mbar-cta">Upload your resume</a></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  var O = Orion, D = O.data, $ = O.$, h = O.hash.get(), ctx = O.ctx();
+  var st = null, applyTo = h.job || null, srcLabel = "", sent = false;
+  var SRC = { sample: "Read from the sample resume.", text: "Read from the text you pasted.", file: "Read from your file." };
+
+  /* value before the form: roles open now for the visitor's context */
+  /* job cards: outlined actions, so the page keeps one filled button per screen */
+  function jc(j, o) { return OC.jobCard(j, o).replace(/btn btn-primary btn-sm/g, "btn btn-line btn-sm"); }
+  /* value before the form: roles open now for the visitor's context */
+  function openNow() {
+    var role = h.role || ctx.role || "estate-planning-attorney", city = h.city || ctx.city || "houston-tx";
+    var list = D.jobs.filter(function (j) { return j.city === city && j.role === role; });
+    if (!list.length) list = D.jobs.filter(function (j) { return j.city === "houston-tx"; }), city = "houston-tx";
+    $("#open-title").innerHTML = O.count(list.length, O.role(role) && list[0].role === role ? O.role(role).short + " role" : "role") + " open in " + O.esc(O.city(city).name);
+    $("#open-list").innerHTML = '<div class="cards">' + list.slice(0, 3).map(function (j) { return jc(j); }).join("") + "</div>";
+  }
+
+  function startFrom(text, src, fileName) {
+    var p = OC.parseResume(text);
+    p.role = p.role || h.role || ctx.role || "estate-planning-attorney";
+    p.city = p.city || h.city || ctx.city || "houston-tx";
+    if (p.years == null) p.years = 3;
+    st = p; srcLabel = SRC[src] + (fileName ? " (" + fileName + ")" : "");
+    showProfile(true);
+  }
+
+  function fillForm() {
+    $("#p-role").innerHTML = O.options(D.roles, st.role, "plain");
+    $("#p-city").innerHTML = O.options(D.cities, st.city);
+    $("#p-years").value = st.years; $("#p-mode").value = st.mode || "any";
+    $("#p-min").value = st.min ? Math.round(st.min * 1000) : "";
+    $("#pf-src").textContent = srcLabel;
+    renderTags();
+  }
+  function renderTags() {
+    var list = OC.tagsFor(st.role);
+    st.tags.forEach(function (t) { if (list.indexOf(t) < 0) list.push(t); });
+    $("#p-tags").innerHTML = list.map(function (t) { return '<button type="button" class="chip" aria-pressed="' + (st.tags.indexOf(t) > -1) + '" data-tag="' + O.esc(t) + '">' + O.esc(t) + "</button>"; }).join("");
+  }
+
+  function render() {
+    var res = OC.matchJobs(st), city = O.city(st.city), role = O.role(st.role);
+    $("#r-count").innerHTML = res.length ? O.m(String(res.length)) + " " + (res.length === 1 ? "role fits" : "roles fit") + " your profile" : "No listed " + O.esc(role.short) + " roles in " + O.esc(city.stateName) + " today";
+    $("#r-sub").textContent = res.length ? "Best fit first. Change anything on the left and the list updates." : "";
+    /* best two matches, then the form, then the rest */
+    $("#r-more").innerHTML = res.length > 2 ? '<h3 class="mini-h">More roles that fit</h3><div class="cards">' + res.slice(2).map(function (r) { return jc(r.j, { result: r, apply: true }); }).join("") + "</div>" : "";
+    $("#r-list").innerHTML = res.length ? '<div class="cards">' + res.slice(0, 2).map(function (r) { return jc(r.j, { result: r, apply: true }); }).join("") + "</div>"
+      : '<div class="empty-state"><p><b>Many roles are filled before they are posted.</b> Send your profile and Jon matches you to new ' + O.esc(role.short) + " roles in " + O.esc(city.name) + " as they open.</p></div>";
+    O.hash.set({ src: st.src || "sample", role: st.role, city: st.city, years: st.years, mode: st.mode === "any" ? "" : st.mode, min: st.min ? Math.round(st.min * 1000) : "", tags: st.tags.join(","), job: applyTo || "" });
+    renderAlerts(res);
+  }
+
+  function renderAlerts(res) {
+    if (sent) return;
+    var role = O.role(st.role), city = O.city(st.city), n = res.length;
+    var title = applyTo ? "Apply confidentially to " + applyTo : n === 1 ? "Email me this role and new matches" : n ? "Email me these " + n + " roles and new matches" : "Email me new matches";
+    $("#mbar-cta").textContent = applyTo ? "Apply confidentially" : "Email me these roles"; $("#mbar-cta").href = "#alerts";
+    var cid = "C-" + city.state + "-" + (1000 + Math.floor(Math.random() * 9000));
+    var steps = [["Now", "Your profile is saved as " + cid + ". No employer has seen it.", true]];
+    if (applyTo) steps.push(["Within one business day", "Jon tells you which firm is behind " + applyTo + ", who you would work for and the full pay, then asks if you want an introduction."]);
+    else steps.push(["Within one business day", "Jon replies with " + (n === 1 ? "whether this role is worth a call, and its full pay and bonus." : "which of these roles are worth a call, and the full pay and bonus for each.")]);
+    steps.push(["Before any introduction", "You say yes to one firm. Only that firm sees your name and resume."]);
+    steps.push(["Each week", "New " + role.short + " roles in " + city.name + " that fit your profile. Unsubscribe in one click."]);
+    O.ui.gate($("#alerts"), {
+      eyebrow: applyTo ? "Apply confidentially" : "Matches by email", title: title, audience: "candidate",
+      intro: applyTo ? "Jon tells you who the firm is and asks before your name goes anywhere." : "Each role with its full pay and bonus, and new ones as they open.",
+      button: applyTo ? "Apply confidentially" : "Email me these roles", review: "n-brown", steps: steps, doneEyebrow: applyTo ? "Application received" : "Matches saved",
+      fine: "Use a personal email, not your work one. No firm sees your name until you say yes.",
+      onDone: function (info) { sent = true; O.set("candidateAlert", info); $("#mbar-cta").textContent = "Saved. See what happens next"; }
+    });
+  }
+
+  function showProfile(scroll) {
+    $("#profile").classList.remove("hidden"); $("#open").classList.add("hidden");
+    fillForm(); render();
+    if (scroll) $("#profile").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  /* intake */
+  $("#use-sample").addEventListener("click", function (e) { e.preventDefault(); $("#file-name").textContent = "Sample resume loaded."; startFrom(D.sampleResume, "sample"); st.src = "sample"; render(); });
+  $("#read-paste").addEventListener("click", function (e) { e.preventDefault(); var t = $("#paste").value.trim(); if (!t) { $("#paste").focus(); return; } startFrom(t, "text"); st.src = "text"; render(); });
+  function readFile(f) {
+    if (!f) return;
+    $("#file-name").textContent = "Reading " + f.name + "…";
+    if (/\.txt$/i.test(f.name) || f.type === "text/plain") {
+      var r = new FileReader(); r.onload = function () { $("#file-name").textContent = f.name + " read."; startFrom(String(r.result), "file", f.name); st.src = "file"; render(); }; r.readAsText(f);
+    } else {
+      O.toast("Prototype: the profile below is filled from the sample resume. The live site reads it from your file.");
+      $("#file-name").textContent = f.name + " received.";
+      startFrom(D.sampleResume, "file", f.name); st.src = "file"; render();
+    }
+  }
+  $("#file").addEventListener("change", function () { readFile(this.files[0]); });
+  var dz = $("#upload");
+  ["dragenter", "dragover"].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add("over"); }); });
+  ["dragleave", "drop"].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove("over"); }); });
+  dz.addEventListener("drop", function (e) { readFile(e.dataTransfer.files[0]); });
+
+  /* profile edits re-match */
+  $("#pf").addEventListener("submit", function (e) { e.preventDefault(); });
+  $("#pf").addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.id === "p-role") { st.role = t.value; renderTags(); }
+    if (t.id === "p-city") st.city = t.value;
+    if (t.id === "p-mode") st.mode = t.value;
+    if (t.id === "p-years" || t.id === "p-min") return;
+    render();
+  });
+  $("#pf").addEventListener("input", function (e) {
+    if (e.target.id === "p-years") { st.years = e.target.value === "" ? null : +e.target.value; render(); }
+    if (e.target.id === "p-min") { st.min = OC.toK(e.target.value); render(); }
+  });
+  $("#p-tags").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return;
+    var t = b.getAttribute("data-tag"), i = st.tags.indexOf(t);
+    if (i > -1) st.tags.splice(i, 1); else st.tags.push(t);
+    b.setAttribute("aria-pressed", String(i < 0)); render();
+  });
+  $("#restart").addEventListener("click", function () { st = null; sent = false; applyTo = null; $("#profile").classList.add("hidden"); $("#open").classList.remove("hidden"); $("#file-name").textContent = ""; O.hash.set({}); $("#mbar-cta").textContent = "Upload your resume"; $("#mbar-cta").href = "#upload"; $("#upload").scrollIntoView({ block: "start" }); });
+  var foot = $("#sheet .sheet-foot"); if (foot) foot.textContent = "Your name, schools and firms stay hidden until you say yes";
+  $("#r-more").addEventListener("click", function (e) { var b = e.target.closest("[data-apply]"); if (!b) return; applyTo = b.getAttribute("data-apply"); sent = false; render(); $("#alerts").scrollIntoView({ behavior: "smooth", block: "center" }); });
+  $("#r-list").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-apply]"); if (!b) return;
+    applyTo = b.getAttribute("data-apply"); sent = false; render();
+    var a = $("#alerts"); a.scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(function () { var i = $("input", a); if (i) i.focus({ preventScroll: true }); }, 350);
+  });
+  /* shared gate's optional step names Justin for candidates too; Jon handles candidates */
+  document.addEventListener("submit", function () { setTimeout(function () { O.$$(".gate-thanks").forEach(function (p) { p.textContent = p.textContent.replace("Justin may call", "Jon may call"); }); }, 0); });
+
+  /* restore from hash (Back button, shared link) */
+  openNow();
+  if (h.src) {
+    st = { src: h.src, role: h.role || "estate-planning-attorney", city: h.city || "houston-tx", years: h.years ? +h.years : 3, mode: h.mode || "any", min: OC.toK(h.min), tags: h.tags ? h.tags.split(",") : [] };
+    srcLabel = SRC[h.src] || SRC.sample;
+    showProfile(false);
+  }
+})();
+</script>
+<script src="../assets/v2.js"></script>
+</body>
+</html>

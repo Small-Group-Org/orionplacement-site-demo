@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../" data-page="submitJob" data-door-default="employer">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post a legal job and see matching candidates | Orion</title>
+<meta name="description" content="Paste your attorney or paralegal job posting. We read the role, city, years and pay, check the pay against the market and show who fits.">
+<link rel="canonical" href="https://www.orionplacement.com/submit-job/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/v2.css">
+<style>
+/* page: paste box in the hero, results beside the gate */
+.sj-hero>.wrap{align-items:start}
+.sj-hero h1{font-size:clamp(2rem,4vw,3rem);max-width:16ch}
+.sj-hero .tool-form{position:static}
+.sj-hero textarea{min-height:150px}
+.sj-hero .hero-act{margin-top:4px}
+.sj-res .mini-h,#paycheck .mini-h{display:block}
+.mbar.hero-on{display:none}
+#r-list p .only-sm{display:none}
+.linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--green);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.linkbtn:hover{text-decoration:underline}
+.sj-read{display:grid;gap:18px}
+.sj-read fieldset{border:0}
+.sj-read legend{font-size:.9rem;font-weight:600;margin-bottom:8px}
+.sj-res{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.sj-res #gate{position:sticky;top:90px}
+.sj-res #gate .gate-row{grid-template-columns:1fr}
+.pay-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 28px;margin-bottom:32px}
+.sj-res .cards{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+@media (max-width:1000px){.sj-res{grid-template-columns:1fr}.sj-res #gate{position:static}}
+@media (max-width:640px){
+  .sj-hero h1{font-size:1.85rem}
+  .sj-hero textarea{min-height:110px}
+  .pchips{grid-template-columns:1fr 1fr}
+  .pchip[data-f=pay]{grid-column:1/-1!important}
+  .pay-card{padding:14px}
+  #r-list.pre .cards>:nth-child(n+3){display:none}
+  #r-list p .only-sm{display:inline}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.orionplacement.com/"},
+ {"@type":"ListItem","position":2,"name":"Employers","item":"https://www.orionplacement.com/employers/"},
+ {"@type":"ListItem","position":3,"name":"Submit a job","item":"https://www.orionplacement.com/submit-job/"}]}
+</script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../employers/index.html">Employers</a></li><li aria-current="page">Submit a job</li></ol></nav>
+
+<!-- 1. Compact hero with the paste box in it -->
+<section class="phero sj-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Submit a job · for firms hiring</span>
+      <h1>Paste your job posting, see who fits</h1>
+      <p class="lede">We read the role, city, years and pay, check the pay against the market and show matching candidates. Your posting is not published anywhere.</p>
+      <div data-mount="trust-line"></div>
+    </div>
+    <form class="tool-form" id="post-form" aria-label="Your job posting">
+      <div class="field"><label for="p-text">Your job posting <span class="hint">(paste the text)</span></label><textarea id="p-text" rows="6" placeholder="Paste the posting from your site, LinkedIn or a job board."></textarea></div>
+      <div class="hero-act"><button class="btn btn-primary" type="submit">Read my posting</button><button class="linkbtn" type="button" id="p-sample">Use a sample posting</button></div>
+      <p class="small muted" id="p-note" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- 2. What we read -->
+<section class="block alt" id="read">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">What we read</span><h2>Check what we read</h2><p>Green fields came from your posting. Change any of them and the pay check and matches update.</p></div>
+    <div class="sj-read">
+      <div class="pchips" id="chips">
+        <label class="pchip" data-f="role"><span>Role</span><select id="c-role"></select></label>
+        <label class="pchip" data-f="city"><span>City</span><select id="c-city"></select></label>
+        <label class="pchip" data-f="years"><span>Years</span><select id="c-years"><option value="any">Any</option></select></label>
+        <div class="pchip" data-f="pay" style="grid-column:span 2"><span id="c-pay-l">Posted base ($ thousands)</span><div class="pair"><input id="c-lo" type="number" inputmode="numeric" aria-label="Posted base from, $ thousands" placeholder="from"><span aria-hidden="true">–</span><input id="c-hi" type="number" inputmode="numeric" aria-label="Posted base to, $ thousands" placeholder="to"></div></div>
+        <label class="pchip" data-f="mode"><span>Works</span><select id="c-mode"><option value="any">Either</option><option value="on-site">On-site</option><option value="hybrid">Hybrid</option></select></label>
+      </div>
+      <fieldset><legend>Must-haves we found <span class="muted" style="font-weight:400">(tap to add or remove)</span></legend><div class="chips" id="c-must"></div></fieldset>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Pay check and matched candidates, gate beside them -->
+<section class="block" id="results">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Your result</span><h2>Pay check and who fits</h2></div>
+    <div class="sj-res">
+      <div>
+        <div class="pay-card" id="paycheck" aria-live="polite"></div>
+        <div class="results-head" aria-live="polite"><b id="r-count"></b><span class="small muted" id="r-sub"></span></div>
+        <div id="r-list"></div>
+      </div>
+      <div id="gate"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. What happens next -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">What happens next</span><h2>From your posting to a first interview</h2></div>
+    <ol class="steps-line">
+      <li><span class="when">You send</span><h3>One email address</h3><p>No agreement and no fee to send a job. Nothing is published.</p></li>
+      <li><span class="when"><span class="mark">Within one business hour</span></span><h3>Full profiles arrive</h3><p>Redacted resumes for the matches, and our one-page terms.</p></li>
+      <li><span class="when"><span class="mark">Within five business days</span></span><h3>A wider shortlist</h3><p>More people from our network if you want more to meet.</p></li>
+      <li><span class="when">When they start</span><h3>You pay the fee</h3><p>One invoice on the start date. Replacement at no charge if they leave early.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5. FAQ -->
+<section class="block">
+  <div class="wrap split">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>About submitting a job</h2><p>No posting yet? Start from our <a href="../hiring-kit/estate-planning-attorney/index.html">posting template</a>, or <a href="../find-candidates/index.html">describe the seat</a> instead.</p></div>
+    <div class="faq" data-mount="faq-ld">
+      <details><summary>Is my posting published anywhere?</summary><p>No. We use it to match candidates and brief Justin. Candidates see a description of the seat, never your firm's name, until you agree to meet.</p></details>
+      <details><summary>Can I keep the job on other boards?</summary><p>Yes. We ask for no exclusivity. Keep it on your site, LinkedIn or the bar association boards.</p></details>
+      <details><summary>What if the pay check says my range is low?</summary><p>You can still send it. Justin will tell you which candidates would talk at your range and what a small change at the top would add.</p></details>
+      <details><summary>What does it cost to send a job?</summary><p>Nothing. The fee is due only if you hire someone we introduced, on their start date.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA band -->
+<div data-mount="cta-band" data-title="Send this job and meet the matches" data-text="Full profiles within the hour. No retainer, and no fee unless you hire." data-button="Send this job" data-href="#gate"></div>
+</main>
+<div id="site-footer"></div>
+<div class="mbar"><a class="btn btn-primary" href="#gate" id="mbar-cta">Send this job</a></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  var O = Orion, D = O.data, $ = O.$, ctx = O.ctx(), h = O.hash.get();
+  var st = { role: h.role || ctx.role || "estate-planning-attorney", city: h.city || ctx.city || "houston-tx", years: h.years || "any", mode: h.mode || "any",
+    lo: h.lo ? +h.lo : null, hi: h.hi ? +h.hi : null, must: h.must ? h.must.split(",") : [], ids: [], found: {} };
+  $("#c-role").innerHTML = O.options(D.roles, st.role, "plain");
+  $("#c-city").innerHTML = O.options(D.cities, st.city);
+  $("#c-years").innerHTML += D.expBands.map(function (e) { return '<option value="' + e.key + '">' + e.label + "</option>"; }).join("");
+
+  function mustList() { var r = O.role(st.role); return D.mustHaves[st.role] || D.mustHaves[r.kind] || []; }
+  function syncFields() {
+    $("#c-role").value = st.role; $("#c-city").value = st.city; $("#c-years").value = st.years; $("#c-mode").value = st.mode;
+    $("#c-lo").value = st.lo || ""; $("#c-hi").value = st.hi || "";
+    O.$$(".pchip").forEach(function (p) { p.classList.toggle("found", !!st.found[p.getAttribute("data-f")]); });
+    var list = mustList(); st.must = st.must.filter(function (t) { return list.indexOf(t) > -1; });
+    $("#c-must").innerHTML = list.map(function (t) { return '<button type="button" class="chip" aria-pressed="' + (st.must.indexOf(t) > -1) + '" data-tag="' + O.esc(t) + '">' + O.esc(t) + "</button>"; }).join("");
+  }
+
+  function payCheck() {
+    var el = $("#paycheck"), b = O.band(st.city, st.role), role = O.role(st.role), city = O.city(st.city);
+    if (!st.hi && !st.lo) { el.innerHTML = '<span class="mini-h">Pay check</span><div class="empty-state small">Add the posted pay above and we check it against what ' + O.esc(city.name) + " firms pay.</div>"; return; }
+    if (!b) { el.innerHTML = '<div class="verdict"><b>Pay check for ' + O.esc(role.short) + " in " + O.esc(city.name) + "</b><br>Justin sends the band for this role and city with your matches.</div>"; return; }
+    var lo = st.lo || st.hi, hi = st.hi || st.lo; if (lo > hi) { var t = lo; lo = hi; hi = t; }
+    var exp = st.years === "any" ? "b2" : st.years, r = b[exp], eb = D.expBands.filter(function (e) { return e.key === exp; })[0];
+    var where = hi < r[0] ? "below" : lo > r[1] ? "above" : "in";
+    var advice = where === "below" ? "Expect fewer strong candidates to reply. A top of " + O.fmt.k(r[0]) + " or more puts the posting in range."
+      : where === "above" ? "Strong candidates will take the call. You may be able to ask for more experience at this pay."
+      : "Most candidates at this level will take the call.";
+    el.innerHTML = '<span class="mini-h">Pay check</span><p class="small muted">' + O.esc(role.name) + ", " + O.esc(city.name) + ", base salary by experience.</p>" +
+      '<div id="band"></div><div class="verdict"><b>Your posted range ' + O.m(O.fmt.range([lo, hi])) + " is " + (where === "in" ? "in line with" : where) + " the market.</b><br>" +
+      "The usual range for " + O.esc(eb.label) + " in " + O.esc(city.name) + " is " + O.m(O.fmt.range(r)) + ". " + O.esc(advice) + "</div>";
+    O.ui.bandBar($("#band"), { city: st.city, role: st.role, highlight: exp, marker: (lo + hi) / 2 });
+  }
+
+  function brief() { return { role: st.role, city: st.city, years: st.years, mode: st.mode, pay: st.hi || st.lo || null, must: st.must }; }
+  function render() {
+    payCheck();
+    var res = O.match(brief()), unlocked = !!O.unlocked(), role = O.role(st.role), city = O.city(st.city);
+    $("#r-count").innerHTML = res.length ? O.m(String(res.length)) + " " + (res.length === 1 ? "candidate matches" : "candidates match") + " this posting" : "No exact matches in our current list";
+    $("#r-sub").textContent = res.length ? (unlocked ? "All open" : "Top 3 open, " + Math.max(0, res.length - 3) + " more when you send the job") : "";
+    if (!res.length) {
+      $("#r-list").innerHTML = '<div class="empty-state"><p><b>We search our wider network for seats like this.</b> Send the job and Justin replies within <span class="mark">one business day</span>.</p></div>';
+    } else {
+      /* before the job is sent: the top three open plus one locked card standing for the rest */
+      var shown = unlocked ? res : res.slice(0, 4);
+      $("#r-list").classList.toggle("pre", !unlocked);  /* phones: two cards, then the gate */
+      $("#r-list").innerHTML = '<div class="cards">' + shown.map(function (r, i) { return O.ui.candidateCard(r.c, { result: r, locked: !unlocked && i >= 3 }); }).join("") + "</div>" +
+        (!unlocked && res.length > 2 ? '<p class="small muted" style="margin-top:12px">' + '<span class="hide-sm">' + O.count(res.length - 3, "more match", "more matches") + '</span><span class="only-sm">' + O.count(res.length - 2, "more match", "more matches") + "</span> come with the full profiles.</p>" : "");
+    }
+    renderGate(res);
+    O.hash.set({ role: st.role, city: st.city, years: st.years === "any" ? "" : st.years, mode: st.mode === "any" ? "" : st.mode, lo: st.lo || "", hi: st.hi || "", must: st.must.join(",") });
+    O.setCtx(st.city, st.role);
+  }
+  function renderGate(res) {
+    var g = $("#gate"), ids = st.ids.length ? st.ids : res.map(function (r) { return r.c.id; }), key = (st.ids.length ? "r:" : "") + ids.join(",");
+    if (g.querySelector(".confirm") && !st.ids.length) return;
+    if (key === st.gateKey && g.querySelector("form.gate")) return;
+    st.gateKey = key;
+    O.ui.gate(g, { eyebrow: res.length > 3 ? "Get all " + res.length + " matches" : "Send this job", title: st.ids.length ? "Send the job and request an intro to " + st.ids.join(", ") : "Send this job to Justin",
+      bullets: ["Full redacted profiles for " + (res.length ? "every match" : "the people we find"), "A pay check on your range from Justin", "Our one-page terms, within one business hour"],
+      button: "Send this job", ids: ids, role: st.role, city: st.city, review: "daffner-law",
+      fine: "Your posting is not published anywhere. No agreement and no fee to send a job.",
+      onDone: function () { st.ids = []; var res2 = O.match(brief());
+        $("#r-list").innerHTML = '<div class="cards">' + res2.map(function (r) { return O.ui.candidateCard(r.c, { result: r }); }).join("") + "</div>"; $("#r-sub").textContent = "All open"; } });
+  }
+
+  function read(text, auto) {
+    var p = O.b.parsePosting(text);
+    st.found = p.found;
+    if (p.role) st.role = p.role; if (p.city) st.city = p.city; if (p.years) st.years = p.years; if (p.mode) st.mode = p.mode;
+    if (p.found.pay) { st.lo = p.lo; st.hi = p.hi; }
+    st.must = p.must;
+    var n = Object.keys(p.found).length + (p.must.length ? 1 : 0);
+    $("#p-note").textContent = auto ? "Showing a sample posting. Paste yours to replace it." : "Read " + n + " of 6 fields. Green fields came from your posting; check the rest.";
+    syncFields(); render();
+  }
+
+  $("#post-form").addEventListener("submit", function (e) { e.preventDefault(); var t = $("#p-text").value.trim(); if (!t) { $("#p-note").textContent = "Paste a posting first, or use the sample."; $("#p-text").focus(); return; } read(t); });
+  $("#p-sample").addEventListener("click", function () { $("#p-text").value = D.samplePosting; read(D.samplePosting); });
+  $("#chips").addEventListener("change", function (e) {
+    var t = e.target, f = t.closest(".pchip").getAttribute("data-f");
+    if (t.id === "c-role") st.role = t.value; if (t.id === "c-city") st.city = t.value; if (t.id === "c-years") st.years = t.value; if (t.id === "c-mode") st.mode = t.value;
+    if (t.id === "c-lo" || t.id === "c-hi") { var v = +t.value; v = v > 1000 ? Math.round(v / 1000) : v; t.value = v || ""; st[t.id === "c-lo" ? "lo" : "hi"] = v || null; }
+    st.found[f] = false; syncFields(); render();
+  });
+  $("#c-must").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return;
+    var t = b.getAttribute("data-tag"), i = st.must.indexOf(t);
+    if (i > -1) st.must.splice(i, 1); else st.must.push(t);
+    b.setAttribute("aria-pressed", String(i < 0)); render();
+  });
+  document.addEventListener("orion:request", function (e) { st.ids = [e.detail]; renderGate(O.match(brief())); });
+
+  /* phones: the hero's "Read my posting" is the one primary on the first screen; the sticky bar waits until the hero scrolls away */
+  if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { $(".mbar").classList.toggle("hero-on", es[0].isIntersecting); }).observe($("#post-form"));
+  if (h.role || h.lo || h.hi) { syncFields(); render(); $("#p-note").textContent = "Fields restored. Paste a posting to read a new one."; }
+  else { $("#p-text").value = D.samplePosting; read(D.samplePosting, true); }
+})();
+</script>
+<script src="../assets/v2.js"></script>
+</body>
+</html>

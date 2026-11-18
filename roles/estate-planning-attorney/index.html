@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../../" data-page="roleHub" data-role="estate-planning-attorney" data-door-default="employer">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estate planning attorney salary and hiring guide | Orion</title>
+<meta name="description" content="Estate planning attorney base salary by experience and by city, pay models for small firms, a hiring kit, candidates available now and open roles.">
+<link rel="canonical" href="https://www.orionplacement.com/roles/estate-planning-attorney/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/v2.css">
+<style>
+/* page: document fan, the four parts of the hiring kit as overlapping sheets (also on the hiring kit page) */
+.kitfan{position:relative;height:350px;max-width:460px;width:100%}
+.kf{position:absolute;width:74%;background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:14px 18px 18px;box-shadow:0 12px 30px rgba(27,58,107,.07);display:grid;gap:7px;font-size:.76rem;color:var(--ink)}
+.kf-k{display:flex;align-items:center;gap:6px;font:500 .64rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.kf-k .ico{width:14px;height:14px;color:var(--green)}
+.kf b{font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--head);line-height:1.2}
+.kf i{display:block;height:6px;border-radius:3px;background:var(--rule-2)}
+.kf i.on{background:var(--green-soft);box-shadow:inset 3px 0 0 var(--green)}
+.kf .kf-row{display:grid;grid-template-columns:1fr 28px;gap:8px;align-items:center}
+.kf .kf-row span{font-weight:500;color:var(--accent);text-align:right}
+.kf-0{left:0;top:0;transform:rotate(-2.5deg);z-index:1}
+.kf-1{left:6%;top:64px;transform:rotate(-1deg);z-index:2}
+.kf-2{left:12%;top:128px;transform:rotate(1deg);z-index:3}
+.kf-3{left:18%;top:192px;transform:rotate(2.5deg);z-index:4}
+@media (max-width:640px){
+  .kitfan{height:300px}
+  .kf{width:78%;padding:10px 12px 12px;gap:5px;font-size:.7rem}
+  .kf b{font-size:.92rem}
+  .kf-1{top:56px}.kf-2{top:112px}.kf-3{top:168px}
+}
+/* page: hero with the national median and band */
+.rh-hero>.wrap{align-items:start}
+.rh-hero h1{font-size:clamp(2rem,4vw,3rem);max-width:17ch}
+.rh-hero .big-num{margin-top:6px}
+.rh-hero .hero-act{margin-top:20px}
+.kit-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.kit-split .ticks{margin:8px 0 24px}
+.lever .lv-t{font-size:.9rem;margin-top:6px;padding-top:12px;border-top:1px solid var(--rule-2);color:var(--ink)}
+.lever .lv-t b{font:500 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;line-height:1.4}
+@media (max-width:860px){.kit-split{grid-template-columns:1fr;gap:28px}}
+@media (max-width:640px){.rh-hero h1{font-size:1.8rem}.rh-hero .big-num{font-size:2.8rem}.rh-hero .band-card{padding:14px 14px 10px}}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.orionplacement.com/"},
+ {"@type":"ListItem","position":2,"name":"Salaries","item":"https://www.orionplacement.com/salaries/"},
+ {"@type":"ListItem","position":3,"name":"Estate planning attorney","item":"https://www.orionplacement.com/roles/estate-planning-attorney/"}]}
+</script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="../../index.html">Home</a></li><li><a href="#" data-unbuilt="Prototype: the salaries index is not built yet. Try the Houston salary guide.">Salaries</a></li><li aria-current="page">Estate planning attorney</li></ol></nav>
+
+<!-- 1. Hero: national median as a large numeral, band bar, button, trust line -->
+<section class="phero rh-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Role guide · United States</span>
+      <h1>Estate planning attorney: salary, hiring and jobs</h1>
+      <div class="big-num" id="nat-median"></div>
+      <p class="big-num-l">median base salary across <span id="ncities"></span> US cities, all levels</p>
+      <div class="hero-act">
+        <a class="btn btn-primary btn-lg" href="../../find-candidates/index.html#role=estate-planning-attorney">See estate planning candidates</a>
+        <a class="text-link" href="#kit">Email me the hiring kit</a>
+      </div>
+      <div data-mount="trust-line"></div>
+    </div>
+    <div class="band-card">
+      <h2 class="mini-h">National base salary by years of practice</h2>
+      <div id="nat-band"></div>
+      <p class="source">Median of the city bands below. Source: <span data-mount="value" data-path="source"></span>. Updated <span data-mount="value" data-path="asOf"></span>. Base only, before bonus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Pay by city -->
+<section class="block alt" id="pay">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Pay by city</span><h2>What firms pay, city by city</h2><p>Base salary by years of practice. Pick a city for its full guide, what moves pay and an offer check.</p></div>
+    <div data-mount="role-pay-table" data-role="estate-planning-attorney" data-here="houston-tx"></div>
+    <p class="source">Source: <span data-mount="value" data-path="source"></span>, <span data-mount="value" data-path="asOf"></span>. Each range is the middle half of base salaries for that level.</p>
+  </div>
+</section>
+
+<!-- 3. Candidates -->
+<section class="block" id="candidates">
+  <div class="wrap">
+    <div class="sec-head row"><div><span class="eyebrow">Available now</span><h2>Estate planning attorneys open to a move</h2><p>Screened by Jon. Names and firms stay hidden until you ask for the profile.</p></div><a class="more link-arrow hide-sm" href="../../find-candidates/index.html#role=estate-planning-attorney">Match them to your seat</a></div>
+    <div data-mount="candidates" data-role="estate-planning-attorney" data-ids="EP-TX-0412,EP-TX-0451,EP-TX-0503" data-limit="3"></div>
+  </div>
+</section>
+
+<!-- 4. Hiring kit teaser + email gate -->
+<section class="block alt" id="kit">
+  <div class="wrap kit-split">
+    <div>
+      <div class="sec-head"><span class="eyebrow">Free hiring kit</span><h2>Run the hire with a ready kit</h2><p>Everything to hire an estate planning attorney yourself, written for small and mid-size firms.</p></div>
+      <div class="kitfan" role="img" aria-label="The hiring kit: posting template, interview questions, scorecard and offer-letter outline">
+  <div class="kf kf-0"><span class="kf-k" data-ico="doc">Part 4</span><b>Offer-letter outline</b><i style="width:88%"></i><i style="width:70%"></i><i class="on" style="width:80%"></i><i class="kf-extra" style="width:60%"></i></div>
+  <div class="kf kf-1"><span class="kf-k" data-ico="check">Part 3</span><b>Scorecard</b><div class="kf-row"><i style="width:90%"></i><span>4</span></div><div class="kf-row"><i style="width:76%"></i><span>5</span></div><div class="kf-row kf-extra"><i style="width:84%"></i><span>3</span></div></div>
+  <div class="kf kf-2"><span class="kf-k" data-ico="list">Part 2</span><b>Interview questions</b><i style="width:92%"></i><i class="on" style="width:66%"></i><i style="width:84%"></i><i class="kf-extra" style="width:72%"></i></div>
+  <div class="kf kf-3"><span class="kf-k" data-ico="brief">Part 1</span><b>Job posting</b><i style="width:80%"></i><i class="on" style="width:94%"></i><i style="width:86%"></i><i class="on" style="width:62%"></i><i class="kf-extra" style="width:78%"></i><i class="kf-extra" style="width:58%"></i></div>
+</div>
+
+      <p class="sec-foot"><a class="link-arrow" href="../../hiring-kit/estate-planning-attorney/index.html#tab=posting">Copy the posting now</a><a class="link-arrow" href="../../hiring-kit/estate-planning-attorney/index.html#tab=questions">See the interview questions</a></p>
+    </div>
+    <div id="kit-gate"></div>
+  </div>
+</section>
+
+<!-- 5. How firms pay this role -->
+<section class="block" id="models">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Pay models</span><h2>How firms pay this role</h2><p>The three models we see most at small and mid-size firms. Each one can be combined with the others.</p></div>
+    <div class="levers" id="models-cards"></div>
+  </div>
+</section>
+
+<!-- 6. For candidates -->
+<section class="block flush">
+  <div class="wrap">
+    <div class="cand-band">
+      <div><span class="eyebrow">Estate planning attorney yourself?</span><h2>Confidential roles with the pay shown</h2>
+        <ul class="ticks"><li><span data-mount="count" data-what="jobs" data-role="estate-planning-attorney" data-city="houston-tx" data-unit="open Houston role"></span></li><li><a href="../../salary-check/index.html">Check your salary</a></li><li><a href="../../upload-resume/index.html">Upload your resume</a></li></ul></div>
+      <a class="btn btn-ghost" href="../../jobs/estate-planning-attorney/houston-tx/index.html">See open roles</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="block alt">
+  <div class="wrap split">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>Estate planning attorney pay</h2><p>City detail is in each <a href="../../salaries/estate-planning-attorney/houston-tx/index.html">salary guide</a>.</p></div>
+    <div class="faq" data-mount="faq-ld">
+      <details><summary>How much does an estate planning attorney make?</summary><p>Across the cities we track, the median base is about <span class="mark">$134k</span>. It ranges from about <span class="mark">$114k</span> in San Antonio to <span class="mark">$172k</span> in New York.</p></details>
+      <details><summary>What does an estate planning attorney do at a small firm?</summary><p>Meets clients, designs the plan, drafts wills, trusts and powers of attorney, and usually runs trust administrations and probate matters too, often with one paralegal.</p></details>
+      <details><summary>What raises an estate planning attorney's pay most?</summary><p>A portable book of existing clients, often worth <span class="mark">$15k to $30k</span> on base. Estate tax returns and running administrations end to end come next.</p></details>
+      <details><summary>Do estate planning attorneys get a bonus?</summary><p>Often. Small firms pay a bonus on collections above a threshold, or a share of fees on clients the attorney brings in.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CTA band -->
+<div data-mount="cta-band" data-title="See estate planning candidates for your seat" data-button="See estate planning candidates" data-href="../../find-candidates/index.html#role=estate-planning-attorney"></div>
+</main>
+<div id="site-footer"></div>
+<div class="mbar"><a class="btn btn-primary" href="../../find-candidates/index.html#role=estate-planning-attorney">See estate planning candidates</a></div>
+<script src="../../assets/data.js"></script>
+<script src="../../assets/site.js"></script>
+<script>
+(function () {
+  var O = Orion, D = O.data, ROLE = "estate-planning-attorney", $ = O.$, m = O.m, esc = O.esc;
+  function med(a) { a = a.slice().sort(function (x, y) { return x - y; }); var n = a.length; return n % 2 ? a[(n - 1) / 2] : (a[n / 2 - 1] + a[n / 2]) / 2; }
+  var bs = D.cities.map(function (c) { return O.band(c.slug, ROLE); }).filter(Boolean);
+  var nat = { median: Math.round(med(bs.map(function (b) { return b.median; }))) };
+  D.expBands.forEach(function (e) { nat[e.key] = [Math.round(med(bs.map(function (b) { return b[e.key][0]; }))), Math.round(med(bs.map(function (b) { return b[e.key][1]; })))]; });
+  $("#ncities").innerHTML = m(String(bs.length));
+  $("#nat-median").innerHTML = m(O.fmt.k(nat.median));
+
+  /* national band: the shared band-bar markup (ui.bandBar reads one city's band, so the national median of bands is drawn here) */
+  (function () {
+    var lo = Math.floor((nat.b1[0] * 0.88) / 10) * 10, hi = Math.ceil((nat.b3[1] * 1.05) / 10) * 10, span = hi - lo;
+    function x(v) { return Math.max(0, Math.min(100, ((v - lo) / span) * 100)); }
+    var gl = [0, 25, 50, 75, 100].map(function (p) { return '<i class="gl" style="left:' + p + '%"></i>'; }).join("");
+    var rows = D.expBands.map(function (e) { var r = nat[e.key];
+      return '<div class="band-row' + (e.key === "b2" ? " active" : "") + '" data-key="' + e.key + '"><span class="lab">' + e.label.replace(" years", '<span class="lab-long"> years</span><span class="lab-short"> yrs</span>') + '</span><div class="track">' + gl + '<span class="range" style="left:' + x(r[0]) + "%;width:" + (x(r[1]) - x(r[0])) + '%"></span></div><span class="val">' + m(O.fmt.range(r)) + "</span></div>"; }).join("");
+    var ticks = [0, 25, 50, 75, 100].map(function (p) { return '<span class="t' + p + '" style="left:' + p + '%">' + O.fmt.k(lo + (span * p) / 100) + "</span>"; }).join("");
+    var el = $("#nat-band"); el.classList.add("band-wrap");
+    el.innerHTML = '<div class="band" role="img" aria-label="' + esc("Estate planning attorney national base salary by experience: " + D.expBands.map(function (e) { return e.label + " " + O.fmt.range(nat[e.key]); }).join("; ") + "; median " + O.fmt.k(nat.median)) + '">' + rows +
+      '<div class="band-axis"><span></span><div class="ticks">' + ticks + '</div><span></span></div><div class="lane"><span class="med" style="left:' + x(nat.median) + '%"></span></div></div>' +
+      '<div class="band-key"><span class="k-range">Middle half of base salaries</span><span class="k-med">Median ' + m(O.fmt.k(nat.median)) + "</span></div>";
+  })();
+
+  $("#models-cards").innerHTML = D.payModels[ROLE].map(function (p, i) {
+    return '<div class="lever"><span class="tt-k">Model ' + (i + 1) + "</span><b>" + esc(p.name) + "</b><p>" + esc(p.how) + '</p><p class="lv-t"><b>Fits</b>' + esc(p.fits) + '</p><p class="lv-t"><b>Typical terms</b>' + m(p.typical) + "</p></div>";
+  }).join("");
+  O.$$("[data-ico]").forEach(function (e) { e.insertAdjacentHTML("afterbegin", O.ui.icon(e.getAttribute("data-ico"))); });
+
+  O.ui.gate($("#kit-gate"), { eyebrow: "Free PDF and Word", title: "Email me the hiring kit", bullets: ["Job posting template you can edit", "Interview questions with good answers", "Weighted scorecard and offer-letter outline"],
+    button: "Email me the kit", preset: "kit", role: ROLE, city: "houston-tx", review: "daffner-law", fine: "One email with the kit. No list, and no call unless you ask for one." });
+
+  O.jsonld({ "@context": "https://schema.org", "@type": "Occupation", name: "Estate planning attorney",
+    description: "Estate planning attorney base salary across " + bs.length + " US cities (sample data).",
+    occupationLocation: D.cities.filter(function (c) { return O.band(c.slug, ROLE); }).map(function (c) { return { "@type": "City", name: c.name + ", " + c.stateName }; }),
+    estimatedSalary: [{ "@type": "MonetaryAmountDistribution", name: "base", currency: "USD", duration: "P1Y", minValue: nat.b1[0] * 1000, percentile25: nat.b1[1] * 1000, median: nat.median * 1000, percentile75: nat.b3[0] * 1000, maxValue: nat.b3[1] * 1000 }] });
+})();
+</script>
+<script src="../../assets/v2.js"></script>
+</body>
+</html>
