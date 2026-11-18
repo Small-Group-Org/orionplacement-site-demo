@@ -220,6 +220,36 @@
 .vd video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
 .vd .x{position:absolute;right:10px;top:10px;z-index:2;min-height:40px;padding:0 14px;border:0;border-radius:8px;background:rgba(255,255,255,.92);font:600 14px/1 var(--sans);color:var(--ink);cursor:pointer}
 
+/* ---------- redacted resume dialog ---------- */
+.cvbtn{background:none;border:0;padding:8px 0;min-height:40px;font:600 15px/1 var(--sans);color:var(--navy);cursor:pointer}
+.cvbtn:hover{text-decoration:underline}
+dialog.cv{max-width:760px;width:calc(100% - 24px);max-height:calc(100dvh - 24px);border-radius:14px;overflow:auto}
+.cv .cv-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;background:#fff;border-bottom:1px solid var(--rule)}
+.cv .cv-top b{font:600 12px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cv .cv-top button{min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:8px;background:#fff;font:600 14px/1 var(--sans);cursor:pointer}
+.cv .cv-body{padding:22px clamp(18px,4vw,36px) 28px}
+.cv h2{font:400 clamp(28px,3.4vw,38px)/1.08 var(--display);color:var(--ink);margin:6px 0 10px}
+.cv .id{font:600 12px/1.2 var(--sans);letter-spacing:.05em;color:var(--cobalt)}
+.cv .lead-s{color:var(--text);margin-bottom:18px}
+.cv form .note-s{font-size:13.5px;color:var(--muted);margin-top:10px}
+.cv .err{display:none;color:#B3261E;font-size:14px;margin-top:6px}
+.cv .has-error .err{display:block}.cv .has-error input{border-color:#B3261E}
+.rx{display:inline-block;background:var(--ink);border-radius:2px;height:.95em;vertical-align:-.12em}
+.cv .who-l{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;color:var(--muted);font-size:14.5px;margin-bottom:6px}
+.cv h4{font:600 12px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.cv .job{margin-bottom:16px}
+.cv .job .jh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:600;color:var(--ink)}
+.cv .job .jh span{font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.cv .job .jf{font-size:14.5px;color:var(--muted);margin:2px 0 6px}
+.cv ul{margin:0;padding-left:18px;display:grid;gap:4px;color:var(--text)}
+.cv .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0}
+.cv .kv dt{color:var(--muted)}.cv .kv dd{margin:0;color:var(--ink)}
+.cv .jn{margin-top:22px;padding:14px 16px;border-left:3px solid var(--navy);background:#F3F6FC;border-radius:0 10px 10px 0}
+.cv .jn p{font:400 italic 19px/1.4 var(--display);color:var(--ink);margin-top:4px}
+.cv .acts{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.cv .jn p.jk{margin:0;font:600 11.5px/1.2 var(--sans);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.cv .fine{margin-top:14px;font-size:13px;color:var(--muted)}
+
 /* ---------- founders: checks; reviews: featured ---------- */
 .fc .yrs{display:inline-block;margin-bottom:12px;font:600 11.5px/1 var(--sans);letter-spacing:.04em;color:var(--muted);border:1px solid var(--rule);border-radius:999px;padding:6px 9px}
 .fc ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px;font-size:14.5px}
@@ -588,6 +618,10 @@
   </div>
 </section>
 </main>
+<dialog class="cv" id="cv" aria-labelledby="cvTitle">
+  <div class="cv-top"><b id="cvBar">Confidential résumé</b><button type="button" id="cvClose">Close</button></div>
+  <div class="cv-body" id="cvBody"></div>
+</dialog>
 <dialog class="vd" id="vd" aria-label="How a search works, 40-second video">
   <button class="x" type="button" id="vdClose">Close</button>
   <video id="vdVideo" controls playsinline preload="none" poster="assets/video/justin-guide-poster.jpg">
@@ -655,10 +689,79 @@
   var grid=$("cgrid");
   function draw(f){grid.innerHTML=C.filter(function(c){return f==="all"||c.f===f}).map(function(c){
     var href=c.href||("submit-job/?practice="+c.f);
-    return '<article class="ccard"><p class="top-l"><span class="cid">'+c.id+'</span><span>'+c.n+' notice</span></p><h3>'+c.role+'</h3><p class="nm"><i aria-hidden="true"></i><span>Name withheld</span></p><dl><dt>Experience</dt><dd>'+c.yrs+'</dd><dt>Bar</dt><dd>'+c.bar+'</dd><dt>Target base</dt><dd>'+c.pay+'</dd></dl><p class="note">'+c.note+'</p><p class="go"><span>Screened by Jon</span><a href="'+href+'">Request intro →</a></p></article>';}).join("");}
+    return '<article class="ccard"><p class="top-l"><span class="cid">'+c.id+'</span><span>'+c.n+' notice</span></p><h3>'+c.role+'</h3><p class="nm"><i aria-hidden="true"></i><span>Name withheld</span></p><dl><dt>Experience</dt><dd>'+c.yrs+'</dd><dt>Bar</dt><dd>'+c.bar+'</dd><dt>Target base</dt><dd>'+c.pay+'</dd></dl><p class="note">'+c.note+'</p><p class="go"><span>Screened by Jon</span><button type="button" class="cvbtn" data-cv="'+c.id+'" aria-haspopup="dialog">See résumé →</button></p></article>';}).join("");
+    [].slice.call(grid.querySelectorAll(".cvbtn")).forEach(function(b){b.addEventListener("click",function(){openCv(b.getAttribute("data-cv"),b);});});}
   draw("all");
   [].slice.call(document.querySelectorAll("#filters button")).forEach(function(b){b.addEventListener("click",function(){
     [].slice.call(document.querySelectorAll("#filters button")).forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw(b.getAttribute("data-f"));});});
+
+  /* ---- 3b. "See résumé": work email once, then the redacted résumé ---- */
+  var CV={
+    "EP-TX-0412":{city:"Houston area",sum:"Estate planning associate who drafts and runs trust administrations without partner oversight. Comfortable owning a client list at a small firm.",
+      jobs:[["Associate attorney","2022 – now","Estate planning boutique, 6 attorneys",["Drafts wills, revocable trusts and powers of attorney for about 60 clients a year","Runs trust administrations from funding to final distribution","Handles uncontested probate filings and court appearances"]],
+            ["Associate attorney","2020 – 2022","General practice firm, 12 attorneys",["Estate planning and probate matters under a supervising partner","Client intake and drafting for elder law matters"]]],
+      edu:[["J.D.","Texas law school, top third","2020"],["B.A., Finance","State university","2017"]],bar:"Texas, active, 2020. No discipline.",
+      jon:"Five years at firms your size. Runs administrations without a partner in the room. Wants a firm with a steady estate planning book."},
+    "LIT-TX-0390":{city:"Dallas area",sum:"Civil litigation associate from insurance defense. Takes depositions alone and carries a full caseload.",
+      jobs:[["Associate attorney","2021 – now","Insurance defense firm, 25 attorneys",["Manages about 45 active files from pleadings to mediation","Takes and defends depositions; first-chaired two bench trials","Drafts dispositive motions and discovery"]],
+            ["Law clerk","2020 – 2021","Civil litigation firm",["Research and drafting for commercial disputes"]]],
+      edu:[["J.D.","Texas law school","2021"],["B.A., Political science","State university","2018"]],bar:"Texas, active, 2021. No discipline.",
+      jon:"Takes depositions on her own and carries a full caseload. Wants more plaintiff-side or commercial work."},
+    "LIT-TX-0422":{city:"Houston area",sum:"Commercial litigator with seven years of contract disputes and business torts, trial second chair at a 20-attorney firm.",
+      jobs:[["Senior associate","2019 – now","Business litigation firm, 20 attorneys",["Leads depositions and expert discovery in contract and partnership disputes","Second chair on three jury trials","Supervises two junior associates"]],
+            ["Associate attorney","2017 – 2019","Regional litigation firm",["Commercial collections and business tort defense"]]],
+      edu:[["J.D.","Texas law school, law review","2017"],["B.B.A.","State university","2014"]],bar:"Texas, active, 2017. No discipline.",
+      jon:"Seven years of business disputes at a firm your size. Ready to run matters."},
+    "RE-TX-0274":{city:"Austin area",sum:"Commercial real estate associate handling closings, leasing and title review for regional developers.",
+      jobs:[["Associate attorney","2020 – now","Real estate firm, 9 attorneys",["Runs commercial closings from contract to funding","Drafts and negotiates retail and office leases","Reviews title commitments and surveys"]],
+            ["Associate attorney","2019 – 2020","Title company legal team",["Residential and commercial title curative work"]]],
+      edu:[["J.D.","Texas law school","2019"],["B.A., Economics","State university","2016"]],bar:"Texas, active, 2019. No discipline.",
+      jon:"Closes commercial deals without supervision."},
+    "CORP-0518":{city:"Remote, open to relocation",sum:"Corporate associate doing entity formation, financing and small M&A for owner-run businesses.",
+      jobs:[["Associate attorney","2022 – now","Corporate boutique, 5 attorneys",["Forms and restructures LLCs and corporations","Drafts loan documents and purchase agreements","Runs closings on deals up to $15M"]]],
+      edu:[["J.D.","Law school, business law certificate","2022"],["B.S., Accounting","State university","2019"]],bar:"Active, 2022. No discipline.",
+      jon:"Runs closings for a five-attorney corporate group."},
+    "PL-0231":{city:"Houston area",sum:"Senior litigation paralegal for trial preparation and e-discovery on a busy litigation team.",
+      jobs:[["Senior litigation paralegal","2019 – now","Litigation firm, 20 attorneys",["Builds trial binders and exhibit lists for 6 to 8 trials a year","Runs e-discovery review platforms and productions","Calendars deadlines for four attorneys"]],
+            ["Litigation paralegal","2016 – 2019","Insurance defense firm",["Medical records, subpoenas and discovery responses"]]],
+      edu:[["Paralegal certificate","ABA-approved program","2016"],["B.A., English","State university","2015"]],bar:"Certified paralegal (NALA).",
+      jon:"Builds trial binders partners don't have to check."}
+  };
+  var cv=$("cv"),cvBody=$("cvBody"),lastBtn=null,known=null;
+  try{known=sessionStorage.getItem("orionWorkEmail");}catch(e){}
+  var free=/@(gmail|yahoo|hotmail|outlook|aol|icloud|proton(mail)?)\./i;
+  function byId(id){return C.filter(function(c){return c.id===id})[0];}
+  function resume(c){var r=CV[c.id];
+    $("cvBar").textContent="Confidential résumé · "+c.id;
+    cvBody.innerHTML='<p class="id">'+c.id+' · '+c.n+' notice</p><h2 id="cvTitle">'+c.role+'</h2>'+
+      '<p class="who-l"><span class="rx" style="width:9em" aria-label="Name hidden"></span><span>'+r.city+'</span><span>'+c.yrs+'</span><span>Target '+c.pay+'</span></p>'+
+      '<p class="lead-s" style="margin-top:12px">'+r.sum+'</p>'+
+      '<h4>Experience</h4>'+r.jobs.map(function(j){return '<div class="job"><p class="jh">'+j[0]+'<span>'+j[1]+'</span></p><p class="jf"><span class="rx" style="width:7em" aria-label="Firm name hidden"></span> '+j[2]+'</p><ul>'+j[3].map(function(b){return '<li>'+b+'</li>'}).join("")+'</ul></div>';}).join("")+
+      '<h4>Education and bar</h4><dl class="kv">'+r.edu.map(function(e){return '<dt>'+e[0]+'</dt><dd>'+e[1]+', '+e[2]+'</dd>'}).join("")+'<dt>Bar</dt><dd>'+r.bar+'</dd></dl>'+
+      '<div class="jn"><p class="jk">Jon\'s notes</p><p>“'+r.jon+'”</p></div>'+
+      '<div class="acts"><a class="btn btn-primary" href="submit-job/?practice='+c.f+'&amp;candidate='+c.id+'">Request an intro</a><a class="link-arrow" href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book 15 minutes with Justin →</a></div>'+
+      '<p class="fine">Name, firms and schools are shared once the candidate agrees to meet you. Nothing to sign to read this. A copy goes to '+known+'.</p>';
+    cv.scrollTop=0;var h=$("cvTitle");if(h){h.setAttribute("tabindex","-1");h.focus();}
+  }
+  function gate(c){
+    $("cvBar").textContent="Confidential résumé · "+c.id;
+    cvBody.innerHTML='<p class="id">'+c.id+'</p><h2 id="cvTitle">See the full résumé</h2><p class="lead-s">'+c.role+', '+c.yrs+'. Every role in detail, education, bar status and Jon\'s notes. The name stays hidden.</p>'+
+      '<form id="cvForm" novalidate><div class="field" id="cvF"><label for="cvEmail">Work email</label><input id="cvEmail" type="email" autocomplete="email" inputmode="email" required aria-describedby="cvErr"><p class="err" id="cvErr">Enter your work email, for example name@yourfirm.com.</p></div>'+
+      '<button class="btn btn-primary" type="submit">Show the résumé</button><p class="note-s">One email unlocks every profile. Nothing to sign, no call needed.</p></form>';
+    $("cvForm").addEventListener("submit",function(e){e.preventDefault();var v=$("cvEmail").value.trim(),f=$("cvF");
+      var ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)&&!free.test(v);
+      $("cvErr").textContent=free.test(v)?"Please use your firm email, not a personal one.":"Enter your work email, for example name@yourfirm.com.";
+      f.classList.toggle("has-error",!ok);$("cvEmail").setAttribute("aria-invalid",ok?"false":"true");
+      if(!ok){$("cvEmail").focus();return;}
+      known=v;try{sessionStorage.setItem("orionWorkEmail",v);}catch(e){}
+      resume(c);});
+    setTimeout(function(){$("cvEmail").focus();},30);
+  }
+  function openCv(id,btn){var c=byId(id);if(!c||!cv.showModal)return;lastBtn=btn;known?resume(c):gate(c);cv.showModal();}
+  function closeCv(){cv.close();}
+  $("cvClose").addEventListener("click",closeCv);
+  cv.addEventListener("click",function(e){if(e.target===cv)closeCv();});
+  cv.addEventListener("close",function(){if(lastBtn)lastBtn.focus();});
 
   /* ---- 4. process: progress line and matching picture ---- */
   var sts=[].slice.call(document.querySelectorAll(".st")),pics=[].slice.call(document.querySelectorAll("#pics .slot")),fill=$("fill"),wrap=$("steps2"),cap=$("cap");
