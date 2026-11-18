@@ -1,0 +1,49 @@
+/* "The match": one open seat, candidates screened against it. Used on / and /hire-attorneys/. Needs orion.css. */
+:root{--display:"Instrument Serif",Georgia,serif}
+@keyframes pop{from{transform:translateY(-8px);opacity:0}}
+/* the match */
+.match{margin:0;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 30px 70px -36px rgba(10,26,68,.45);overflow:hidden}
+.m-seat{background:var(--navy);color:#fff;padding:20px 22px}
+.m-k{font:600 11.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--star)}
+.m-seat h3{color:#fff;font:400 28px/1.1 var(--display);margin:10px 0 12px}
+.m-tags{display:flex;flex-wrap:wrap;gap:6px}
+.m-tags span{font:500 13px/1 var(--sans);padding:7px 10px;border-radius:5px;background:#1C2C5A;color:#E5ECF7}
+.m-body{padding:18px 22px 20px}
+.m-status{display:flex;justify-content:space-between;align-items:center;font:600 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.m-status b{color:var(--ink)}
+.m-stage{position:relative;height:150px;margin:14px 0 16px}
+.m-cand{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:14px;border:1px solid var(--rule);border-radius:10px;padding:14px;background:var(--paper);transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .45s}
+.m-cand.in{animation:slideIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes slideIn{from{transform:translateX(30px);opacity:0}}
+.m-cand.out-ok{transform:translateY(40px) scale(.96);opacity:0}
+.m-cand.out-no{transform:translateX(-30px);opacity:0}
+.m-id{font:600 12px/1 var(--sans);letter-spacing:.05em;color:var(--cobalt)}
+.m-name{display:inline-block;width:110px;height:14px;background:var(--ink);border-radius:2px;margin:10px 0 8px}
+.m-line{font-size:14px;color:var(--text);line-height:1.5}
+.m-crit{list-style:none;margin:0;padding:0;display:grid;gap:8px;align-content:center}
+.m-crit li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted)}
+.m-crit i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--rule);display:grid;place-items:center;font:700 11px/1 var(--sans);font-style:normal;flex-shrink:0;color:transparent;transition:.25s}
+.m-crit li.ok{color:var(--ink)}.m-crit li.ok i{border-color:var(--ok);background:#E7F2EC;color:var(--ok)}
+.m-crit li.no{color:var(--ink)}.m-crit li.no i{border-color:#B3261E;background:#FBEAEA;color:#B3261E}
+.m-verdict{position:absolute;right:12px;top:12px;font:600 12px/1 var(--sans);padding:6px 9px;border-radius:999px;opacity:0;transform:scale(.8);transition:.25s}
+.m-verdict.ok{opacity:1;transform:none;background:var(--ok);color:#fff}
+.m-verdict.no{opacity:1;transform:none;background:#E9ECF1;color:var(--muted)}
+.m-short{border-top:1px solid var(--rule);padding-top:14px}
+.m-short ol{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;min-height:112px}
+.m-short li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:14px;padding:8px 10px;border-radius:8px;background:#F3F6FC;animation:pop .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes pop{from{transform:translateY(-8px);opacity:0}}
+.m-short li b{font:600 12px/1 var(--sans);color:var(--cobalt);letter-spacing:.04em}
+.m-short li .ck{color:var(--ok);font-weight:700}
+.m-short li .pay{color:var(--muted);font-variant-numeric:tabular-nums}
+.m-done{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;opacity:0;transition:opacity .4s}
+.m-done.on{opacity:1}
+.m-done p{font-size:14px;color:var(--ink);font-weight:600}
+.m-replay{background:none;border:0;color:var(--muted);font:500 13px/1 var(--sans);cursor:pointer;padding:8px 0;min-height:36px}
+.m-replay:hover{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.m-cand,.m-short li{animation:none!important;transition:none!important}}
+.m-short li span{white-space:nowrap}
+.m-done a{font-weight:600;font-size:14px;text-decoration:none}.m-done a:hover{text-decoration:underline}
+@media (max-width:560px){.m-seat{padding:18px}.m-body{padding:16px 16px 18px}.m-status{font-size:10.5px;letter-spacing:.04em}.m-stage{height:196px}
+.m-cand{grid-template-columns:1fr;gap:10px;padding:12px}.m-crit{grid-template-columns:repeat(3,auto);justify-content:start;gap:6px 12px}.m-crit li{font-size:12.5px;gap:6px}
+.m-short ol{min-height:126px}.m-short li{font-size:13px;gap:8px;padding:8px}}
+
