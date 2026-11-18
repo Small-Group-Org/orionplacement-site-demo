@@ -4,179 +4,68 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Hire Texas attorneys, pay only if you hire | Orion</title>
-<meta name="description" content="Screened attorney candidates for Texas law firms. 23% fee only if you hire, $0 upfront, 90-day replacement.">
+<title>Hire attorneys, pay only if you hire | Orion</title>
+<meta name="description" content="Founder-screened attorney candidates for your open seat. 23% only if you hire, $0 upfront, 90-day replacement. Law firms across the US.">
 <link rel="icon" href="../../favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/orion.css">
+<link rel="stylesheet" href="../assets/match.css">
 <style>
-:root{
-  --paper:#FAF8F3;--surface:#FFFFFF;--band:#F2EEE6;
-  --ink:#1A1A1A;--text:#3D3F44;--muted:#5B6472;--rule:#E4DFD5;--field:#B9B2A6;
-  --accent:#7A2E2E;--accent-ink:#5E2222;--accent-tint:#F4ECEA;
-  --brass:#7A5C17;--error:#A12A1F;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  --section:clamp(64px,9vw,112px);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--text);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:var(--accent);text-underline-offset:3px}
-a:hover{color:var(--accent-ink)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-h1,h2,h3{font-family:var(--serif);color:var(--ink);margin:0}
-h1{font-weight:400;font-size:clamp(38px,4.6vw,58px);line-height:1.06;letter-spacing:-.015em}
-h2{font-weight:400;font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.01em}
-h3{font-weight:600;font-size:21px;line-height:1.3}
-p{margin:0}
-.num{font-variant-numeric:tabular-nums}
-.wrap{max-width:1120px;margin-inline:auto;padding-inline:24px}
-@media (min-width:768px){.wrap{padding-inline:32px}}
-.section{padding-block:var(--section)}
-.band{background:var(--band);border-block:1px solid var(--rule)}
-.label{font:600 13px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.lead{font-size:19px;line-height:1.55;color:var(--text);max-width:34em}
-.muted{color:var(--muted)}
-.small{font-size:14px;line-height:1.5}
-.skip{position:absolute;left:-9999px;top:8px;background:var(--surface);padding:10px 14px;border:1px solid var(--ink);border-radius:6px;z-index:10}
-.skip:focus{left:8px}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 24px;border-radius:6px;font:600 16px/1 var(--sans);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background-color .15s,border-color .15s,color .15s}
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-ink);color:#fff}
-.btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
-.btn-secondary:hover{background:var(--ink);color:var(--paper)}
-.btn-block{width:100%}
-.link-arrow{font-weight:600;text-decoration:none}
-.link-arrow:hover{text-decoration:underline}
-
-/* header */
-.top{border-bottom:1px solid var(--rule);background:var(--paper)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:600 21px/1 var(--serif)}
-.brand img{width:28px;height:28px}
-.top nav{display:flex;align-items:center;gap:24px;font-size:15px}
+.lp h1,.lp h2{font-family:var(--display);font-weight:400;letter-spacing:-.01em}
+.lp h1{font-size:clamp(42px,5vw,70px);line-height:1}
+.lp h2{font-size:clamp(34px,3.8vw,52px);line-height:1.04}
+.lp h1 em,.lp h2 em{font-style:italic;color:var(--cobalt)}
+.top .wrap{min-height:64px}
+.top nav{display:flex;gap:22px;align-items:center;font-size:15px}
 .top nav a{color:var(--ink);text-decoration:none}
 .top nav a:hover{text-decoration:underline}
 @media (max-width:640px){.top nav .hide-sm{display:none}}
-
-/* hero */
-.hero{padding-block:clamp(40px,6vw,72px) var(--section)}
-.hero-grid{display:grid;gap:40px;grid-template-columns:1fr}
-.hero-grid{grid-template-areas:"intro" "form" "facts"}
-.hero-intro{grid-area:intro}.hero-facts{grid-area:facts}.form-card{grid-area:form}
-@media (min-width:960px){.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"intro form" "facts form";grid-template-rows:auto 1fr;gap:0 64px;align-items:start}}
-.hero h1{margin-bottom:20px}
-.terms{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:1px solid var(--rule)}
-.terms li{display:grid;grid-template-columns:100px 1fr;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule)}
-.terms b{font:400 26px/1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums}
-.terms span{font-size:16px;line-height:1.45}
-.rating{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:15px;color:var(--text)}
-.stars{color:var(--brass);letter-spacing:2px;font-size:15px}
-
-/* form */
-.form-card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:28px}
-@media (min-width:960px){.form-card{padding:32px;position:sticky;top:24px}.hero-intro{margin-bottom:28px}}
-.form-card h2{font-size:28px;margin-bottom:6px}
-.form-card .intro{font-size:15px;color:var(--muted);margin-bottom:22px}
-.field{margin-bottom:16px}
-.field label{display:block;font:600 14px/1.4 var(--sans);color:var(--ink);margin-bottom:6px}
-.field label .opt{font-weight:400;color:var(--muted)}
-.field input,.field select,.field textarea{width:100%;height:48px;padding:0 14px;font:400 16px/1.3 var(--sans);color:var(--ink);background:#fff;border:1px solid var(--field);border-radius:6px;appearance:none;-webkit-appearance:none}
-.field textarea{height:auto;min-height:84px;padding:12px 14px;resize:vertical}
-.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%231A1A1A' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;text-overflow:ellipsis}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-tint)}
-.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
-.field.has-error input{border-color:var(--error)}
-.err{display:none;font-size:14px;color:var(--error);margin-top:6px}
-.field.has-error .err{display:block}
-.row{display:grid;gap:0 14px;grid-template-columns:1fr}
-@media (min-width:520px){.row-2{grid-template-columns:1fr 1fr}}
-.next{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule);font-size:14px;line-height:1.55;color:var(--text)}
-.next b{color:var(--ink)}
+.hero{padding-block:clamp(32px,5vw,64px) clamp(56px,7vw,96px)}
+.hero-grid{display:grid;gap:36px;grid-template-columns:1fr;grid-template-areas:"intro" "form" "facts"}
+.h-intro{grid-area:intro}.h-facts{grid-area:facts}.form-card{grid-area:form}
+@media (min-width:980px){.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"intro form" "facts form";grid-template-rows:auto 1fr;gap:0 64px;align-items:start}.h-intro{margin-bottom:28px}.form-card{position:sticky;top:20px}}
+.h-intro .lead{margin-top:18px}
+.terms b{font:400 26px/1 var(--serif);color:var(--navy)}
+.rate{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:22px;font-size:15px}
+.rate .stars{color:#8E5B0C;letter-spacing:1px}.rate b{color:var(--ink)}
+.form-card h2{font:400 32px/1.05 var(--display);margin-bottom:6px}
+.form-card .btn{width:100%}
 .alt{margin-top:14px;font-size:15px;text-align:center}
-.done{display:none}
-.form-card.sent form{display:none}
-.form-card.sent .done{display:block}
-.done h2{margin-bottom:10px}
-.done p+p{margin-top:12px}
-
-/* candidates */
-.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 32px;margin-bottom:36px}
-.sec-head p{max-width:36em;margin-top:12px}
-.cards{display:grid;gap:20px;grid-template-columns:1fr}
-@media (min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:14px}
-.card .id{font:600 13px/1 var(--sans);letter-spacing:.04em;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
-.card h3{font-size:21px}
-.card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px}
-.card dt{color:var(--muted)}
-.card dd{margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
-.card .note{font:400 italic 17px/1.45 var(--serif);color:var(--ink);padding-top:14px;border-top:1px solid var(--rule);margin-top:auto}
-.card .by{font-size:14px;color:var(--muted);padding-top:14px;border-top:1px solid var(--rule);margin-top:auto}
-
-/* how it works */
-.steps{display:grid;gap:0;grid-template-columns:1fr;counter-reset:s;border-top:1px solid var(--ink)}
-@media (min-width:860px){.steps{grid-template-columns:repeat(3,1fr);gap:40px;border-top:0}}
-.step{padding:24px 0;border-bottom:1px solid var(--rule)}
-@media (min-width:860px){.step{border-top:1px solid var(--ink);border-bottom:0;padding:24px 0 0}}
-.step .k{font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.step .fig{font:400 40px/1 var(--serif);color:var(--ink);margin:16px 0 10px;font-variant-numeric:tabular-nums}
-.step h3{margin-bottom:8px}
-.step p{font-size:16px}
-.fee-note{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;font-size:15px}
-
-/* proof */
-.proof-grid{display:grid;gap:48px;grid-template-columns:1fr}
-@media (min-width:960px){.proof-grid{grid-template-columns:1.1fr .9fr;gap:72px}}
-blockquote{margin:0}
-.quote{padding:28px 0;border-top:1px solid var(--rule)}
-.quote:first-of-type{border-top:0;padding-top:0}
-.quote p{font:400 italic 22px/1.45 var(--serif);color:var(--ink)}
-.quote footer{margin-top:14px;font-size:14px;color:var(--muted)}
-.quote footer b{color:var(--ink);font-weight:600}
-.review-meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:15px;margin-top:8px}
-.people{display:grid;gap:20px}
-.person{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:20px}
-.person img{width:96px;height:96px;object-fit:cover;border-radius:6px;background:var(--band)}
-.person h3{font-size:20px}
-.person .role{font-size:14px;color:var(--muted);margin:2px 0 8px}
-.person p{font-size:15px;line-height:1.5}
-.person a{font-size:15px;display:inline-block;padding:8px 0;margin-bottom:-8px}
-
-/* final cta */
+.receive{display:grid;gap:40px;grid-template-columns:1fr;align-items:center}
+@media (min-width:980px){.receive{grid-template-columns:1fr 1fr;gap:72px}}
+.receive ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.receive li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.receive li i{width:24px;height:24px;border-radius:50%;background:#E7F2EC;color:var(--ok);display:grid;place-items:center;font:700 12px/1 var(--sans);font-style:normal;margin-top:2px}
+.steps .fig{font-family:var(--display);color:var(--navy)}
+.steps h3{font:400 28px/1.08 var(--display)}
+.rv{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:860px){.rv{grid-template-columns:1fr 1fr}}
+.review mark{background:linear-gradient(transparent 58%,#DCE6F8 58%)}
+.review .av{background:var(--accent-tint);color:var(--navy)}
+.ppl{display:grid;gap:16px;grid-template-columns:1fr;margin-top:28px}
+@media (min-width:860px){.ppl{grid-template-columns:1fr 1fr}}
+.person h3{font:400 26px/1.05 var(--display)}
 .final{text-align:center}
-.final h2{max-width:18em;margin:0 auto 14px}
-.final p{max-width:34em;margin:0 auto 28px}
-.final .actions{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;align-items:center}
-
-/* footer */
-.foot{border-top:1px solid var(--rule);padding-block:40px;font-size:14px;color:var(--muted)}
-.foot .wrap{display:grid;gap:20px;grid-template-columns:1fr}
-@media (min-width:860px){.foot .wrap{grid-template-columns:1.4fr 1fr 1fr}}
-.foot h4{font:600 14px/1.4 var(--sans);color:var(--ink);margin:0 0 8px}
-.foot a{color:var(--text)}
-.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.foot ul a{display:inline-block;padding:6px 0}
-.foot .legal{grid-column:1/-1;padding-top:20px;border-top:1px solid var(--rule)}
+.final h2{max-width:15em;margin:0 auto 14px}
+.final p{max-width:36em;margin:0 auto 28px}
+.final .actions{justify-content:center}
+.foot-slim{border-top:1px solid var(--rule);padding-block:32px;font-size:14px;color:var(--muted)}
+.foot-slim .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
+.foot-slim a{color:var(--text)}
+.foot-slim nav{display:flex;flex-wrap:wrap;gap:6px 20px}
 </style>
 </head>
-<body>
+<body class="lp">
 <a class="skip" href="#brief">Skip to the form</a>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="Orion Placement home">
-      <img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement
-    </a>
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="34" height="34" style="width:34px;height:34px">Orion Placement</a>
     <nav aria-label="Page">
+      <a class="hide-sm" href="#receive">What you receive</a>
       <a class="hide-sm" href="#how">How it works</a>
-      <a class="hide-sm" href="#people">Who you work with</a>
       <a href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book a call</a>
     </nav>
   </div>
@@ -185,75 +74,53 @@ blockquote{margin:0}
 <main>
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-intro">
-      <p class="label" id="hero-label">For Texas law firms</p>
-      <h1 id="hero-title">Screened attorney candidates for your open seat.</h1>
-      <p class="lead">Tell us the seat once. Jon screens for practice mix, Texas bar standing and pay band, and you see anonymized profiles before anything else. You pay only if you hire.</p>
+    <div class="h-intro">
+      <p class="label" id="hero-label">For law firms hiring attorneys · nationwide</p>
+      <h1 id="hero-title">Screened attorney candidates for <em>your open seat.</em></h1>
+      <p class="lead">Tell us the seat once. Jon interviews every candidate and checks practice mix, bar admission and pay before you see anyone. You get a short list of anonymized profiles, and pay only if you hire.</p>
     </div>
-    <div class="hero-facts">
+    <div class="h-facts">
       <ul class="terms" aria-label="Terms">
-        <li><b>23%</b><span>Flat fee of first-year base, due Net 15 after your hire starts</span></li>
         <li><b>$0</b><span>Upfront. No retainer and no exclusivity</span></li>
+        <li><b>23%</b><span>Of first-year base, only if you hire, due Net 15 after the start date</span></li>
         <li><b>90 days</b><span>Replacement search at no charge if the hire leaves</span></li>
         <li><b>~1 week</b><span>To your first screened profiles</span></li>
       </ul>
-      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 on Google from 60 reviews by firms and candidates</span></p>
+      <p class="rate"><span class="stars" aria-hidden="true">★★★★★</span><b>5.0 on Google</b><span>60 reviews from law firms and attorneys</span></p>
     </div>
 
-    <div class="form-card" id="brief">
-      <form novalidate aria-labelledby="form-title">
+    <div class="form-card" id="brief" data-sent-scope>
+      <form data-demo aria-labelledby="form-title">
         <h2 id="form-title">Tell us about the seat</h2>
         <p class="intro">Takes about a minute. Kept confidential.</p>
-
         <div class="field">
-            <label for="practice">Practice area</label>
-            <select id="practice" name="practice">
-              <option>Estate planning and probate</option>
-              <option>Commercial litigation</option>
-              <option>Civil litigation</option>
-              <option>Real estate</option>
-              <option>Corporate and M&amp;A</option>
-              <option>Labor and employment</option>
-              <option>Family law</option>
-              <option>Personal injury</option>
-              <option>Tax</option>
-              <option>Other</option>
-            </select>
+          <label for="practice">Practice area</label>
+          <select id="practice" name="practice">
+            <option>Estate planning and probate</option><option>Commercial litigation</option><option>Civil litigation</option><option>Real estate</option><option>Corporate and M&amp;A</option><option>Labor and employment</option><option>Family law</option><option>Personal injury</option><option>Insurance defense</option><option>Tax</option><option>Other</option>
+          </select>
         </div>
         <div class="row row-2">
           <div class="field">
             <label for="level">Experience</label>
-            <select id="level" name="level">
-              <option value="junior">1–3 years</option>
-              <option value="mid" selected>4–7 years</option>
-              <option value="senior">8+ years</option>
-              <option value="counsel">Counsel or partner track</option>
-            </select>
+            <select id="level" name="level"><option value="junior">1–3 years</option><option value="mid" selected>4–7 years</option><option value="senior">8+ years</option><option value="counsel">Counsel or partner track</option></select>
           </div>
           <div class="field">
-          <label for="city">Location</label>
-          <select id="city" name="city">
-            <option value="houston">Houston</option>
-            <option value="dallas">Dallas–Fort Worth</option>
-            <option value="austin">Austin</option>
-            <option value="san-antonio">San Antonio</option>
-            <option value="texas">Anywhere in Texas</option>
-            <option value="other">Another state</option>
-          </select>
+            <label for="city">City or state</label>
+            <input id="city" name="city" autocomplete="address-level2" placeholder="e.g. Houston, TX">
           </div>
         </div>
-        <div class="field" id="f-email">
+        <div class="field">
           <label for="email">Work email</label>
           <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@yourfirm.com" aria-describedby="email-err" required>
           <p class="err" id="email-err">Enter your work email so we can send the profiles.</p>
         </div>
         <div class="row row-2">
-          <div class="field" id="f-name">
+          <div class="field">
             <label for="name">Your name</label>
             <input id="name" name="name" autocomplete="name" aria-describedby="name-err" required>
             <p class="err" id="name-err">Enter your name.</p>
           </div>
-          <div class="field" id="f-firm">
+          <div class="field">
             <label for="firm">Firm</label>
             <input id="firm" name="firm" autocomplete="organization" aria-describedby="firm-err" required>
             <p class="err" id="firm-err">Enter your firm's name.</p>
@@ -263,13 +130,12 @@ blockquote{margin:0}
           <label for="phone">Phone <span class="opt">(optional)</span></label>
           <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
         </div>
-
-        <button class="btn btn-primary btn-block" type="submit">Send me matching candidates</button>
-        <p class="next"><b>What happens next:</b> Justin replies by email, usually within the hour on business days. Your first anonymized profiles follow within about a week. Names and firms stay hidden until you ask to interview.</p>
+        <button class="btn btn-primary" type="submit">Send me matching candidates</button>
+        <p class="next"><b>What happens next:</b> Justin replies within the hour on business days. Your first anonymized profiles follow in about a week. Names and firms stay hidden until you ask to interview.</p>
       </form>
-      <div class="done" role="status" aria-live="polite" tabindex="-1">
+      <div class="done" role="status" aria-live="polite">
         <h2>Thanks. Justin has your brief.</h2>
-        <p>He'll reply by email, usually within the hour on business days, with questions about the seat if he has any.</p>
+        <p>He'll reply within the hour on business days, with questions about the seat if he has any.</p>
         <p class="small muted">Demo page: nothing was sent.</p>
       </div>
       <p class="alt">Prefer to talk? <a href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book 15 minutes with Justin</a></p>
@@ -277,109 +143,81 @@ blockquote{margin:0}
   </div>
 </section>
 
-<section class="section band" aria-labelledby="cands-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <p class="label">Open to a move now</p>
-        <h2 id="cands-title">The kind of profile you'll receive.</h2>
-        <p>Screened by Jon. Names and current firms stay hidden until you ask to interview.</p>
-      </div>
-      <a class="link-arrow" href="#brief">Get profiles for your seat →</a>
+<section class="section band" id="receive" aria-labelledby="rec-title">
+  <div class="wrap receive">
+    <div data-reveal>
+      <p class="label">What you receive</p>
+      <h2 id="rec-title">A short list, <em>not a résumé pile.</em></h2>
+      <p style="margin-top:16px">Every candidate is checked against your seat before you hear about them. Here is an example search.</p>
+      <ul>
+        <li><i>✓</i><span>3 to 5 profiles that fit the practice, experience and pay you asked for</span></li>
+        <li><i>✓</i><span>Jon's notes from his interview with each candidate</span></li>
+        <li><i>✓</i><span>Names and current firms hidden until the candidate agrees to meet you</span></li>
+      </ul>
     </div>
-    <div class="cards">
-      <article class="card">
-        <p class="id"><span>EP-TX-0412</span><span>4 weeks' notice</span></p>
+    <figure class="match" id="match" aria-label="Example: how Orion screens candidates against one open seat">
+      <div class="m-seat">
+        <p class="m-k">Example seat</p>
         <h3>Estate planning associate</h3>
-        <dl><dt>Experience</dt><dd>5 years</dd><dt>Bar</dt><dd>Texas, active</dd><dt>Target base</dt><dd>$125k–$140k</dd></dl>
-        <p class="note">“Runs trust administrations without a partner in the room.”</p>
-      </article>
-      <article class="card">
-        <p class="id"><span>LIT-TX-0390</span><span>2 weeks' notice</span></p>
-        <h3>Civil litigation associate</h3>
-        <dl><dt>Experience</dt><dd>4 years</dd><dt>Bar</dt><dd>Texas, active</dd><dt>Target base</dt><dd>$115k–$130k</dd></dl>
-        <p class="by">Screened by Jon Missirlian</p>
-      </article>
-      <article class="card">
-        <p class="id"><span>RE-TX-0274</span><span>4 weeks' notice</span></p>
-        <h3>Commercial real estate associate</h3>
-        <dl><dt>Experience</dt><dd>5 years</dd><dt>Bar</dt><dd>Texas, active</dd><dt>Target base</dt><dd>$120k–$135k</dd></dl>
-        <p class="by">Screened by Jon Missirlian</p>
-      </article>
-    </div>
-    <p class="small muted" style="margin-top:20px">Sample profiles. Live candidates change weekly.</p>
+        <p class="m-tags"><span>4–7 years</span><span>$125k–$145k</span><span>Trusts and probate</span><span>On-site or hybrid</span></p>
+      </div>
+      <div class="m-body">
+        <p class="m-status"><span>Jon is screening</span><span><b id="mRev">0</b> reviewed · <b id="mHit">0</b> matched</span></p>
+        <div class="m-stage" id="mStage" aria-hidden="true"></div>
+        <div class="m-short">
+          <p class="m-status"><span>Your shortlist</span><span>Names hidden until you ask</span></p>
+          <ol id="mList"></ol>
+          <div class="m-done" id="mDone"><p>3 matches, screened by Jon</p><span style="display:flex;gap:16px;align-items:center"><button class="m-replay" id="mReplay" type="button">Replay ↻</button><a href="#brief">Get profiles for your seat →</a></span></div>
+        </div>
+      </div>
+      <figcaption class="sr-only">An example open seat for an estate planning associate. Five sample candidates are checked against practice area, experience and pay. Three match and go on the shortlist with their names hidden.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="section" id="how" aria-labelledby="how-title">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head" data-reveal>
       <div>
         <p class="label">How it works</p>
-        <h2 id="how-title">You only pay if you hire.</h2>
+        <h2 id="how-title">You only pay <em>if you hire.</em></h2>
       </div>
     </div>
-    <div class="steps">
-      <div class="step">
-        <p class="k">Step 1 · Brief</p>
-        <p class="fig">$0</p>
-        <h3>Tell us the seat</h3>
-        <p>A short form or a 15-minute call. Sign one non-exclusive agreement. Nothing to pay to start.</p>
-      </div>
-      <div class="step">
-        <p class="k">Step 2 · Shortlist</p>
-        <p class="fig">3–5</p>
-        <h3>Review screened finalists</h3>
-        <p>Matched on practice mix, Texas bar standing, court or deal experience, billable expectations and pay band. You choose who to interview.</p>
-      </div>
-      <div class="step">
-        <p class="k">Step 3 · Hire</p>
-        <p class="fig">23%</p>
-        <h3>Pay when they start</h3>
-        <p>The fee is due Net 15 after your hire starts. If they leave within 90 days, we run a replacement search at no charge.</p>
-      </div>
+    <div class="steps" data-stagger>
+      <div class="step"><p class="k">Day 0 · Brief</p><p class="fig">$0</p><h3>Tell us the seat</h3><p>The form above or a 15-minute call. One non-exclusive agreement and nothing to pay to start.</p></div>
+      <div class="step"><p class="k">About a week · Short list</p><p class="fig">3–5</p><h3>Interview who you want</h3><p>Screened, anonymized profiles with Jon's notes. We share names and set up interviews once candidates agree.</p></div>
+      <div class="step"><p class="k">Start date · Fee</p><p class="fig">23%</p><h3>Pay when they start</h3><p>Invoiced on the start date, due Net 15. If the hire leaves within 90 days, we replace them at no charge.</p></div>
     </div>
-    <p class="fee-note"><a class="link-arrow" href="../fees/">See the full fee terms →</a><span class="muted">Terms can be customized for multi-seat searches.</span></p>
+    <p style="margin-top:32px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center"><a class="link-arrow" href="../fees/">See the full fee terms →</a><span class="muted small">Terms can be customized for multi-seat searches.</span></p>
   </div>
 </section>
 
-<section class="section band" id="people" aria-labelledby="proof-title">
-  <div class="wrap proof-grid">
-    <div>
-      <p class="label">From law firm clients</p>
-      <h2 id="proof-title" style="margin-bottom:28px">What firms say after the hire.</h2>
-      <blockquote class="quote">
-        <p>“Justin Sofman and Jon Missirlian have been relentless in helping us with the staffing needs of our firm. They have successfully placed 2 new team members with us and we will use them for all of our future staffing needs.”</p>
-        <footer><b>Travis Bowen</b> · Managing Partner, Bowen Law Group · Google review</footer>
-      </blockquote>
-      <blockquote class="quote">
-        <p>“Jon Missirlian has been a trusted recruiter for MS&amp;A for quite some time, consistently delivering high-quality candidates.”</p>
-        <footer><b>Lainie James</b> · Law firm client · Google review</footer>
-      </blockquote>
-      <p class="review-meta"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 from 60 Google reviews by firms and candidates</span></p>
+<section class="section band" aria-labelledby="proof-title">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <p class="label">From law firm clients</p>
+        <h2 id="proof-title">Two founders. <em>Five-star reviews.</em></h2>
+      </div>
     </div>
-    <div>
-      <p class="label">Who you work with</p>
-      <h2 style="margin-bottom:28px">Two founders, no handoffs.</h2>
-      <div class="people">
-        <div class="person">
-          <img src="../../assets/images/founders/justin-sofman.png" alt="Justin Sofman" width="96" height="96" loading="lazy">
-          <div>
-            <h3>Justin Sofman</h3>
-            <p class="role">Co-founder · takes your brief</p>
-            <p>Scopes the seat with you, agrees terms and runs the search to a signed offer.</p>
-            <a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a>
-          </div>
-        </div>
-        <div class="person">
-          <img src="../../assets/images/founders/jon-missirlian.jpg" alt="Jon Missirlian" width="96" height="96" loading="lazy">
-          <div>
-            <h3>Jon Missirlian</h3>
-            <p class="role">Co-founder · screens every candidate</p>
-            <p>20 years in talent acquisition. Named in 47 of the 60 Google reviews.</p>
-            <a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a>
-          </div>
-        </div>
+    <div class="rv" data-stagger>
+      <article class="review">
+        <p>“Justin Sofman and Jon Missirlian have been <mark>relentless in helping us with the staffing needs</mark> of our Firm. They have successfully placed 2 new team members with us and <mark>we will use them for all of our future staffing needs.</mark>”</p>
+        <p class="who"><span class="av" aria-hidden="true">TB</span><span><b>Travis Bowen</b><span>Managing Partner, Bowen Law Group</span></span></p>
+      </article>
+      <article class="review">
+        <p>“Jon Missirlian has been a trusted recruiter for MS&amp;A for quite some time, <mark>consistently delivering high-quality candidates.</mark> Beyond his professional expertise, he is always respectful and kind.”</p>
+        <p class="who"><span class="av" aria-hidden="true">LJ</span><span><b>Lainie James</b><span>Law firm client</span></span></p>
+      </article>
+    </div>
+    <div class="ppl">
+      <div class="person">
+        <img src="../../assets/images/founders/justin-sofman.png" alt="Justin Sofman" width="96" height="96" loading="lazy">
+        <div><h3>Justin Sofman</h3><p class="role">Co-founder · takes your brief</p><p>Scopes the seat with you and runs the search to a signed offer.</p><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></div>
+      </div>
+      <div class="person">
+        <img src="../../assets/images/founders/jon-missirlian.jpg" alt="Jon Missirlian" width="96" height="96" loading="lazy">
+        <div><h3>Jon Missirlian</h3><p class="role">Co-founder · screens every candidate</p><p>20 years in talent acquisition. Named in 47 of the 60 Google reviews.</p><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></div>
       </div>
     </div>
   </div>
@@ -387,8 +225,8 @@ blockquote{margin:0}
 
 <section class="section final" aria-labelledby="final-title">
   <div class="wrap">
-    <h2 id="final-title">See who's available for your seat this week.</h2>
-    <p>23% only if you hire · $0 upfront · 90-day replacement</p>
+    <h2 id="final-title">See who's available for <em>your seat.</em></h2>
+    <p>$0 upfront · 23% only if you hire · 90-day replacement · first profiles in about a week</p>
     <div class="actions">
       <a class="btn btn-primary" href="#brief">Send me matching candidates</a>
       <a class="link-arrow" href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Or book 15 minutes with Justin →</a>
@@ -397,63 +235,23 @@ blockquote{margin:0}
 </section>
 </main>
 
-<footer class="foot">
+<footer class="foot-slim">
   <div class="wrap">
-    <div>
-      <p style="font:600 19px/1.2 var(--serif);color:var(--ink);margin-bottom:8px">Orion Placement</p>
-      <p>Legal recruiters for small and mid-size law firms. Attorneys and legal staff, direct hire, paid only on success.</p>
-    </div>
-    <div>
-      <h4>Talk to us</h4>
-      <ul>
-        <li><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></li>
-        <li><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></li>
-        <li><a href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book a call</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>More</h4>
-      <ul>
-        <li><a href="../fees/">Fee terms</a></li>
-        <li><a href="../">Main site</a></li>
-        <li><a href="../jobs/">For attorneys: open roles</a></li>
-      </ul>
-    </div>
-    <p class="legal">Orion emails only ever come from @orionplacement.com. © 2026 Orion Placement LLC.</p>
+    <p>Orion Placement · legal recruiters for small and mid-size law firms across the US. Orion emails only ever come from @orionplacement.com.</p>
+    <nav aria-label="Footer"><a href="../fees/">Fee terms</a><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../candidates/">For attorneys</a><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></nav>
   </div>
 </footer>
 
+<script src="../assets/orion.js"></script>
+<script src="../assets/match.js"></script>
 <script>
 (function(){
-  // Match the ad: ?practice=litigation&level=senior&city=dallas
-  var q=new URLSearchParams(location.search);
-  function pick(id,val){
-    if(!val)return null;var s=document.getElementById(id);val=val.toLowerCase();
-    for(var i=0;i<s.options.length;i++){var o=s.options[i];
-      if((o.value||"").toLowerCase()===val||o.text.toLowerCase().indexOf(val)!==-1){s.selectedIndex=i;return o.text;}}
-    return null;
-  }
-  var practice=pick("practice",q.get("practice"));
-  pick("level",q.get("level"));
-  var city=pick("city",q.get("city"));
-  if(practice){document.getElementById("hero-title").textContent="Screened "+practice.toLowerCase()+" attorneys for your open seat.";}
-  if(city&&["Anywhere in Texas","Another state"].indexOf(city)===-1){document.getElementById("hero-label").textContent="For "+city+" law firms";}
-
-  var card=document.getElementById("brief"),form=card.querySelector("form");
-  var rules=[["f-email","email",function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}],
-             ["f-name","name",function(v){return v.length>1;}],
-             ["f-firm","firm",function(v){return v.length>1;}]];
-  function check(r){var ok=r[2](document.getElementById(r[1]).value.trim());
-    document.getElementById(r[0]).classList.toggle("has-error",!ok);
-    document.getElementById(r[1]).setAttribute("aria-invalid",ok?"false":"true");return ok;}
-  rules.forEach(function(r){document.getElementById(r[1]).addEventListener("blur",function(){
-    if(document.getElementById(r[0]).classList.contains("has-error"))check(r);});});
-  form.addEventListener("submit",function(e){
-    e.preventDefault();var first=null;
-    rules.forEach(function(r){if(!check(r)&&!first)first=document.getElementById(r[1]);});
-    if(first){first.focus();return;}
-    card.classList.add("sent");card.querySelector(".done").focus();
-  });
+  // Match the ad: ?practice=litigation&level=senior&city=Dallas
+  var q=new URLSearchParams(location.search),s=document.getElementById("practice"),v=(q.get("practice")||"").toLowerCase(),txt=null;
+  if(v){for(var i=0;i<s.options.length;i++){if(s.options[i].text.toLowerCase().indexOf(v.replace(/-/g," "))!==-1){s.selectedIndex=i;txt=s.options[i].text;break;}}}
+  var lv=q.get("level");if(lv){var l=document.getElementById("level");for(var k=0;k<l.options.length;k++)if(l.options[k].value===lv)l.selectedIndex=k;}
+  var city=q.get("city");if(city){document.getElementById("city").value=city;}
+  if(txt){document.getElementById("hero-title").innerHTML="Screened "+txt.toLowerCase().replace(/&/g,"&amp;")+" attorneys for <em>your open seat.</em>";}
 })();
 </script>
 </body>
