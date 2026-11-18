@@ -43,7 +43,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="34" height="34" style="width:34px;height:34px">Orion Placement</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="../employers/">For law firms</a>
@@ -91,16 +91,16 @@
 
     <div class="result" id="result" aria-live="polite" tabindex="-1">
       <p class="r-label">Market band</p>
-      <p class="r-band" id="r-band">$115k–$150k</p>
-      <p class="r-for" id="r-for">Base pay for estate planning attorneys in Houston with 4–7 years in practice.</p>
+      <p class="r-band" id="r-band">$122k–$159k</p>
+      <p class="r-for" id="r-for">Base pay for estate planning attorneys in Chicago with 4–7 years in practice.</p>
       <div class="r-stats">
-        <div><b id="r-mid">$132k</b><span>Middle of the band</span></div>
-        <div><b id="r-top">$150k</b><span>Top of the band</span></div>
+        <div><b id="r-mid">$141k</b><span>Middle of the band</span></div>
+        <div><b id="r-top">$159k</b><span>Top of the band</span></div>
       </div>
       <ul class="levels" id="levels" aria-label="Bands by years in practice"></ul>
       <p class="verdict" id="verdict" hidden></p>
       <p class="source small muted">Sample bands for illustration: middle half of base salaries (25th to 75th percentile) at small and mid-size firms, November 2026. Bonus at small firms is usually 5% to 15% of base, often tied to collections or origination.</p>
-      <p class="r-next"><a class="link-arrow" id="r-jobs" href="../jobs/?practice=Estate%20planning&amp;city=Houston&amp;level=2">See open roles that match →</a></p>
+      <p class="r-next"><a class="link-arrow" id="r-jobs" href="../jobs/?practice=Estate%20planning&amp;level=2">See open roles that match →</a></p>
     </div>
   </div>
 </section>
@@ -145,8 +145,8 @@
 <footer class="foot">
   <div class="wrap">
     <div>
-      <p class="about-line">Orion Placement</p>
-      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+      <p class="about-line" style="display:flex;align-items:center;gap:10px"><img src="../../assets/images/orion-logo.png" alt="" width="30" height="30">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms across the US. Attorneys, paralegals and legal assistants, direct hire.</p>
     </div>
     <div>
       <h4>For law firms</h4>
@@ -185,15 +185,17 @@
 <script src="../assets/orion.js"></script>
 <script>
 (function(){
-  // Sample market bands in $k (Houston base), 25th to 75th percentile, by level. Same data as the jobs page.
+  // Sample market bands in $k (Houston = 1.0 index), 25th to 75th percentile, by level. Same data as the jobs page.
   var BANDS={"Estate planning":[[90,115],[115,150],[150,195]],"Litigation":[[95,120],[120,155],[155,200]],"Real estate":[[92,118],[118,152],[150,195]],"Corporate":[[105,135],[135,175],[170,220]],"Family law":[[80,105],[105,135],[130,170]],"Employment":[[95,120],[120,150],[150,190]],"Personal injury":[[85,110],[110,140],[140,190]],"Insurance defense":[[85,105],[105,130],[130,160]]};
-  var CITY={"Houston":1,"Dallas":1.03,"Austin":1.02,"San Antonio":.92};
+  var CITY={"Atlanta":.95,"Austin":1.02,"Boston":1.14,"Chicago":1.06,"Dallas":1.03,"Denver":.97,"Houston":1,"Los Angeles":1.21,"New York":1.3,"San Antonio":.92};
+  var ST={"Atlanta":"GA","Austin":"TX","Boston":"MA","Chicago":"IL","Dallas":"TX","Denver":"CO","Houston":"TX","Los Angeles":"CA","New York":"NY","San Antonio":"TX"};
+  var JOBCITY={"Austin":1,"Dallas":1,"Houston":1,"San Antonio":1};
   var LEVELS=["1–3 years","4–7 years","8+ years"];
   var f=document.getElementById("sc-form"),P=document.getElementById("sc-practice"),C=document.getElementById("sc-city"),Y=document.getElementById("sc-years"),B=document.getElementById("sc-base");
   Object.keys(BANDS).forEach(function(p){P.add(new Option(p,p));});
-  Object.keys(CITY).forEach(function(c){C.add(new Option(c+", TX",c));});
+  Object.keys(CITY).forEach(function(c){C.add(new Option(c+", "+ST[c],c));});
   LEVELS.forEach(function(l,i){Y.add(new Option(l,i+1));});
-  P.value="Estate planning";C.value="Houston";Y.value="2";
+  P.value="Estate planning";C.value="Chicago";Y.value="2";
   var q=new URLSearchParams(location.search);
   if(BANDS[q.get("practice")])P.value=q.get("practice");
   if(CITY[q.get("city")])C.value=q.get("city");
@@ -226,7 +228,7 @@
       else if(base>b[1])v.innerHTML="<b>Your base of "+k(base)+" is above the band.</b> You are paid at the top of the market for this level. Bonus and billable targets are worth comparing too.";
       else v.innerHTML="<b>Your base of "+k(base)+" is inside the band.</b> "+(b[1]>base?"The top of the band pays "+k(b[1]-base)+" more.":"You are at the top of the band.");
     }
-    document.getElementById("r-jobs").href="../jobs/?practice="+encodeURIComponent(p)+"&city="+encodeURIComponent(c)+"&level="+l;
+    document.getElementById("r-jobs").href="../jobs/?practice="+encodeURIComponent(p)+(JOBCITY[c]?"&city="+encodeURIComponent(c):"")+"&level="+l;
     if(focus)document.getElementById("result").focus({preventScroll:window.innerWidth>=960});
     if(focus&&window.innerWidth<960)document.getElementById("result").scrollIntoView({block:"start"});
   }

@@ -27,7 +27,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="34" height="34" style="width:34px;height:34px">Orion Placement</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="../employers/">For law firms</a>
@@ -55,7 +55,7 @@
         <li><b>90 days</b><span>Replacement search at no charge if the hire leaves</span></li>
         <li><b>~1 week</b><span>To your first screened profiles, 3–5 finalists</span></li>
       </ul>
-      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 on Google from 60 reviews by firms and candidates</span></p>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 on Google from 60 reviews by firms and attorneys</span></p>
       <p class="priv muted">Your seat stays confidential. We don't publish it, and candidates learn your firm's name only when you agree to interview them.</p>
     </div>
 
@@ -91,15 +91,8 @@
             </select>
           </div>
           <div class="field">
-            <label for="city">Location</label>
-            <select id="city" name="city">
-              <option value="houston">Houston</option>
-              <option value="dallas">Dallas–Fort Worth</option>
-              <option value="austin">Austin</option>
-              <option value="san-antonio">San Antonio</option>
-              <option value="texas">Anywhere in Texas</option>
-              <option value="other">Another state</option>
-            </select>
+            <label for="city">City and state</label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="Chicago, IL">
           </div>
         </div>
         <div class="field">
@@ -192,8 +185,8 @@
 <footer class="foot">
   <div class="wrap">
     <div>
-      <p class="about-line">Orion Placement</p>
-      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+      <p class="about-line" style="display:flex;align-items:center;gap:10px"><img src="../../assets/images/orion-logo.png" alt="" width="30" height="30">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms across the US. Attorneys, paralegals and legal assistants, direct hire.</p>
     </div>
     <div>
       <h4>For law firms</h4>
@@ -239,7 +232,9 @@
     for(var i=0;i<s.options.length;i++){var o=s.options[i];
       if((o.value||"").toLowerCase()===val||o.text.toLowerCase().indexOf(val)!==-1||val.indexOf(o.text.toLowerCase().split(" ")[0])===0){s.selectedIndex=i;return;}}
   }
-  pick("practice",q.get("practice"));pick("level",q.get("level"));pick("city",q.get("city"));
+  pick("practice",q.get("practice"));pick("level",q.get("level"));
+  var c=q.get("city");
+  if(c)document.getElementById("city").value=c.replace(/-/g," ").replace(/\b\w/g,function(x){return x.toUpperCase();});
 })();
 </script>
 </body>
