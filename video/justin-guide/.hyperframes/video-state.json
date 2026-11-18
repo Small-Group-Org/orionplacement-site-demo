@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "historyId": "4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4",
+  "currentRevision": "01929df6-a1de-4808-8ab5-1921559da50c",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/72/729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "BRIEF.md": {
+      "hash": "a69d74228de35043245290051e8683f6ec9cd69dc93fd7f450c0da098e526f69",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/a6/a69d74228de35043245290051e8683f6ec9cd69dc93fd7f450c0da098e526f69"
+    },
+    "CLAUDE.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/72/729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "assets/fonts/instrument-serif-latin-400-italic.woff2": {
+      "hash": "5a51946dfffa82972bc98745359c46761515641fda557c25116459a9f83da4a7",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/5a/5a51946dfffa82972bc98745359c46761515641fda557c25116459a9f83da4a7"
+    },
+    "assets/fonts/instrument-serif-latin-400-normal.woff2": {
+      "hash": "5eb09b5ac0e28b67c2f041c8ba6d244604ca0c0980d65912ab2d47fed84ddc31",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/5e/5eb09b5ac0e28b67c2f041c8ba6d244604ca0c0980d65912ab2d47fed84ddc31"
+    },
+    "assets/fonts/inter-latin-400-normal.woff2": {
+      "hash": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/89/8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    "assets/fonts/inter-latin-500-normal.woff2": {
+      "hash": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/f3/f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f"
+    },
+    "assets/fonts/inter-latin-600-normal.woff2": {
+      "hash": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/f9/f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+    },
+    "assets/justin-sofman.png": {
+      "hash": "a421179a810a1d1ace1501220c0dd84c26a43a6475807145049bd0d3a5031925",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/a4/a421179a810a1d1ace1501220c0dd84c26a43a6475807145049bd0d3a5031925"
+    },
+    "assets/orion-logo.png": {
+      "hash": "611e13660b4e060bd17f512a17a70b1c7c1333301611d9551c7c2cfc9d820be7",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/61/611e13660b4e060bd17f512a17a70b1c7c1333301611d9551c7c2cfc9d820be7"
+    },
+    "hyperframes.json": {
+      "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+    },
+    "index.html": {
+      "hash": "a6edadcf8fafd36e94eff1a3f7f529afbd2a3b512a18756aba7c6177ae477b6d",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/a6/a6edadcf8fafd36e94eff1a3f7f529afbd2a3b512a18756aba7c6177ae477b6d"
+    },
+    "meta.json": {
+      "hash": "707ffa0314c4b1dcee01122b35bc80eb9dd34d346a476a456a850779ef8af6d1",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/70/707ffa0314c4b1dcee01122b35bc80eb9dd34d346a476a456a850779ef8af6d1"
+    },
+    "package.json": {
+      "hash": "9141ec05f4602adf46e195adc83631f4df1f7b538c60e03b29685a18a3a54198",
+      "content": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/91/9141ec05f4602adf46e195adc83631f4df1f7b538c60e03b29685a18a3a54198"
+    }
+  },
+  "revisions": {
+    "01929df6-a1de-4808-8ab5-1921559da50c": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795017095522,
+      "endedAt": 1795017095523,
+      "files": {
+        "index.html": {
+          "before": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/7d/7da508769d49083c0b477174f6d40eae191c4fc7ddc5910971e673c1858be5ff",
+          "after": "/Users/chandan/.cache/hyperframes/history/4b9b86de-b1c9-4fd2-bd88-a5275b9e17d4/blobs/a6/a6edadcf8fafd36e94eff1a3f7f529afbd2a3b512a18756aba7c6177ae477b6d"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "47536190-c2f4-4552-8745-be262e0831cc"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "47536190-c2f4-4552-8745-be262e0831cc",
+        "scope": "project",
+        "report": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/checks/47536190-c2f4-4552-8745-be262e0831cc.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "safeZones": [
+              "tiktok",
+              "reels",
+              "shorts"
+            ],
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1795017060562,
+        "contentHash": "c5989f6e193332a3fcdac69f3f6f64e094189aaa630ec890ae1dddb3459f5420",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-8"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-0",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "bc455976c50485c60ab114f34fb2f5c35cfc67284a608acc4c9f3b8682f882c9",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-1",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-01-at-3s.png",
+        "time": 3,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "655207bc7a0099240e5a8b8f734dbaca91a297aad1b778e2670b328f6b65bcf0",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-2",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-02-at-8s.png",
+        "time": 8,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "23ba4b4a080b89a1254ec9c065fe46fb09a9367f7ed53286260bb344f9205b04",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-3",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-03-at-13s.png",
+        "time": 13,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "892d3dce2b410545d8bf450132bb27114436a2d32ff412b78cafffbfc3d4cc88",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-4",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-04-at-17s.png",
+        "time": 17,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "dad8feecde5829bb954bf60aee31abfbb00565dee83165c8418e97c57eebbaca",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-5",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-05-at-20s.png",
+        "time": 20,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "875caafdea3c00fb2ccc201fe60db03de303dd4a6e3691beda63520cf7c03dfb",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-6",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-06-at-27s.png",
+        "time": 27,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "e0e5532f913366bd05d508333e4b94d64bcabc35b550f2c590b7546e51806d37",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-7",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-07-at-37s.png",
+        "time": 37,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "40fac7a246ed6282407b64e0d96c47d6ce3f26cb9f0c19d3d36abb24f49f605e",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1f12954b-dd2e-4e13-8040-fa81835200b9-8",
+        "image": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/.hyperframes/artifacts/snapshots/2d61c513-4dd7-43f8-8d7b-52fff86447fa/frame-08-at-39.75s.png",
+        "time": 39.75,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1795017068280,
+        "contentHash": "746a3feb86c991e32aa8ce414424c9755ff056226848be5029eac7326882377d",
+        "revision": null,
+        "inputFingerprint": "ab3356156aa0a0f622fb806b1add643db5f5e2dc5fbde123a32a1a99d2d1a43a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "93abe65b-43b3-47ca-bf5e-1d0887452a00",
+      "completedAt": 1795017118257,
+      "output": "/Users/chandan/Desktop/workspace/Small-Group-Org/code/orionplacement-site-demo/video/justin-guide/renders/justin-guide-master.mp4",
+      "status": "completed",
+      "revision": "01929df6-a1de-4808-8ab5-1921559da50c"
+    },
+    "retainedRevisions": [
+      "01929df6-a1de-4808-8ab5-1921559da50c"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

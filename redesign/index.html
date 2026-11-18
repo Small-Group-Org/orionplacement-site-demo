@@ -211,10 +211,11 @@
 /* ---------- hero video ---------- */
 .watch{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:6px 16px 6px 6px;border:1px solid var(--rule);border-radius:999px;background:#fff;font:600 14.5px/1.2 var(--sans);color:var(--ink);cursor:pointer}
 .watch:hover{border-color:var(--navy)}
+.watch[hidden]{display:none}
 .watch img{width:40px;height:40px;border-radius:50%;object-fit:cover}
 .watch .pl{width:0;height:0;border-left:9px solid var(--navy);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:-2px}
 .watch small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
-.vd{padding:0;border:0;border-radius:14px;width:min(960px,94vw);background:#000;overflow:hidden}
+.vd{padding:0;border:0;border-radius:14px;width:min(960px,94vw);max-width:none;max-height:none;background:#000;overflow:hidden}
 .vd::backdrop{background:rgba(10,20,40,.72)}
 .vd video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
 .vd .x{position:absolute;right:10px;top:10px;z-index:2;min-height:40px;padding:0 14px;border:0;border-radius:8px;background:rgba(255,255,255,.92);font:600 14px/1 var(--sans);color:var(--ink);cursor:pointer}
@@ -315,7 +316,8 @@
         <a class="btn btn-primary" href="find-candidates/">See candidates for my seat</a>
         <a class="link-arrow" href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book 15 minutes with Justin →</a>
       </div>
-      <button class="watch" type="button" id="watchBtn" aria-haspopup="dialog"><img src="../assets/images/founders/justin-sofman.png" alt=""><span class="pl" aria-hidden="true"></span><span>Watch: how a search works<small>40 seconds, with Justin</small></span></button>
+      <!-- Hidden until Justin records the real clip; preview with ?video. justin-guide.mp4 is his recording guide. -->
+      <button class="watch" type="button" id="watchBtn" aria-haspopup="dialog" hidden><img src="../assets/images/founders/justin-sofman.png" alt=""><span class="pl" aria-hidden="true"></span><span>Watch: how a search works<small>40 seconds, with Justin</small></span></button>
       <div class="peek" aria-label="Example shortlist">
         <p class="m-status"><span id="mPeekSeat">Estate planning associate</span><span>Screened by Jon</span></p>
         <ol id="mPeek"></ol>
@@ -720,6 +722,7 @@
 
   /* ---- hero video: opens on click, never autoplays ---- */
   var vd=$("vd"),vv=$("vdVideo");
+  if(/[?&]video\b/.test(location.search))$("watchBtn").hidden=false;
   if(vd&&vd.showModal){
     $("watchBtn").addEventListener("click",function(){vd.showModal();vv.play().catch(function(){});});
     function shut(){vv.pause();vd.close();}

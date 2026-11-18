@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Justin guide animatic</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; src: url("assets/fonts/instrument-serif-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("assets/fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("assets/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 500; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      :root {
+        --paper: #f7f6f2; --surface: #ffffff; --ink: #0c1424; --text: #2f3747; --muted: #596273;
+        --rule: #dfe3ea; --navy: #0a1a44; --cobalt: #2b4c9b; --star: #8fd3f4; --ok: #2f6b55; --tint: #f3f6fc;
+        --serif: "Instrument Serif", Georgia, serif; --sans: "Inter", Arial, sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--paper); font-family: var(--sans); color: var(--text); }
+
+      /* left: Justin placeholder */
+      #panel { position: absolute; left: 72px; top: 72px; width: 1112px; height: 936px; background: #efece4; border: 1px solid #e2ddd1; border-radius: 24px; }
+      .tag { position: absolute; left: 56px; top: 48px; display: flex; align-items: center; gap: 12px; font: 600 20px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--cobalt); }
+      .tag i { display: block; width: 14px; height: 14px; border-radius: 50%; background: #c0392b; }
+      .who { position: absolute; left: 56px; top: 112px; display: flex; align-items: center; gap: 22px; }
+      .who img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; }
+      .who b { display: block; font: 400 40px/1.1 var(--serif); color: var(--ink); }
+      .who span { display: block; margin-top: 6px; font: 400 20px/1.2 var(--sans); color: var(--muted); }
+      .cap { position: absolute; left: 56px; top: 290px; width: 1000px; }
+      .cap .k { font: 600 18px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+      .cap p { margin-top: 22px; font: 400 58px/1.16 var(--serif); color: var(--ink); }
+      .bar { position: absolute; left: 56px; right: 56px; bottom: 52px; display: grid; grid-template-columns: 5fr 7fr 10fr 10fr 8fr; gap: 10px; }
+      .seg { font: 500 16px/1 var(--sans); color: var(--muted); }
+      .seg .t { display: block; height: 6px; border-radius: 3px; background: #dcd6c8; overflow: hidden; margin-bottom: 12px; }
+      .seg .f { display: block; width: 100%; height: 100%; background: var(--navy); transform-origin: left center; }
+
+      /* right: overlays */
+      .ov { position: absolute; left: 1232px; top: 72px; width: 616px; height: 936px; }
+      .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; box-shadow: 0 30px 60px -40px rgba(10,26,68,.45); }
+      .k2 { font: 600 17px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+      .navyk { color: var(--star); }
+
+      /* s1 lower third */
+      #s1 .lt { position: absolute; left: 0; right: 0; top: 470px; padding: 34px 36px; border-left: 6px solid var(--navy); }
+      #s1 .lt b { display: block; margin-top: 14px; font: 400 54px/1.05 var(--serif); color: var(--ink); }
+      #s1 .lt span { display: block; margin-top: 8px; font: 400 22px/1.3 var(--sans); color: var(--muted); }
+      #s1 .mail { position: absolute; left: 0; right: 0; top: 760px; padding: 22px 28px; font: 500 21px/1.4 var(--sans); color: var(--ink); background: var(--tint); border-radius: 14px; border: 1px solid var(--rule); }
+
+      /* s2 chips */
+      #s2 .head { position: absolute; left: 0; top: 150px; }
+      #s2 .head b { display: block; margin-top: 14px; font: 400 52px/1.05 var(--serif); color: var(--ink); }
+      #s2 .chips { position: absolute; left: 0; right: 0; top: 330px; display: flex; flex-direction: column; gap: 16px; }
+      .chip { display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 28px; border: 1px solid var(--rule); border-radius: 999px; background: #fff; font: 500 26px/1 var(--sans); color: var(--ink); }
+      .chip em { font-style: normal; color: var(--cobalt); font-weight: 600; font-size: 22px; }
+
+      /* s3 seat + shortlist */
+      #s3 .seat { position: absolute; left: 0; right: 0; top: 40px; overflow: hidden; }
+      #s3 .seat .top { background: var(--navy); padding: 28px 30px 26px; }
+      #s3 .seat .top b { display: block; margin-top: 12px; font: 400 42px/1.05 var(--serif); color: #fff; }
+      .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+      .tags span { font: 500 18px/1 var(--sans); padding: 9px 12px; border-radius: 6px; background: #1c2c5a; color: #e5ecf7; }
+      #s3 .body { padding: 24px 30px 28px; }
+      .status { display: flex; justify-content: space-between; font: 600 16px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+      .status b { color: var(--ink); }
+      .rows { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; height: 380px; }
+      .row { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; background: var(--tint); font: 500 20px/1.2 var(--sans); color: var(--ink); }
+      .row.no { background: #f1f1f1; color: var(--muted); }
+      .row .ck { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 700 16px/1 var(--sans); }
+      .row .ck.ok { background: #e7f2ec; color: var(--ok); border: 2px solid var(--ok); }
+      .row .ck.x { background: #fbeaea; color: #b3261e; border: 2px solid #b3261e; }
+      .row .id { font: 600 17px/1 var(--sans); letter-spacing: .04em; color: var(--cobalt); }
+      .row .red { display: block; width: 130px; height: 15px; background: var(--ink); border-radius: 2px; margin-top: 8px; }
+      .row .pay { color: var(--muted); font-size: 19px; }
+      .done { margin-top: 18px; font: 600 21px/1.3 var(--sans); color: var(--ink); }
+
+      /* s4 invoice */
+      #s4 .today { position: absolute; left: 0; right: 0; top: 60px; padding: 30px 34px; display: flex; justify-content: space-between; align-items: baseline; }
+      #s4 .today b { font: 400 88px/1 var(--serif); color: var(--navy); }
+      #s4 .inv { position: absolute; left: 0; right: 0; top: 260px; padding: 30px 34px 34px; }
+      .inv .h { display: flex; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+      .inv dl { display: grid; grid-template-columns: 1fr auto; gap: 18px 20px; margin-top: 22px; font: 400 24px/1.2 var(--sans); }
+      .inv dt { color: var(--muted); } .inv dd { color: var(--ink); font-weight: 500; text-align: right; }
+      .inv .tot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--rule); font: 600 24px/1 var(--sans); color: var(--ink); }
+      .inv .tot b { font: 400 64px/1 var(--serif); color: var(--navy); }
+      #s4 .note { position: absolute; left: 0; right: 0; top: 820px; font: 500 21px/1.4 var(--sans); color: var(--ok); }
+
+      /* s5 end card */
+      #s5 .end { position: absolute; left: 0; right: 0; top: 120px; padding: 48px 40px 44px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+      #s5 .end img.ph { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; border: 5px solid var(--tint); }
+      #s5 .end b { display: block; margin-top: 22px; font: 400 48px/1.08 var(--serif); color: var(--ink); }
+      #s5 .btn { margin-top: 30px; width: 100%; height: 84px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font: 600 26px/1 var(--sans); }
+      #s5 .btn.p { background: var(--navy); color: #fff; }
+      #s5 .btn.s { margin-top: 14px; border: 2px solid var(--navy); color: var(--navy); background: #fff; }
+      #s5 .brand { position: absolute; left: 0; right: 0; top: 820px; display: flex; align-items: center; justify-content: center; gap: 14px; font: 400 34px/1 var(--serif); color: var(--ink); }
+      #s5 .brand img { width: 48px; height: 48px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="40" data-width="1920" data-height="1080">
+
+      <div id="panel">
+        <p class="tag"><i></i>Justin records this part</p>
+        <div class="who"><img src="assets/justin-sofman.png" alt="Justin Sofman"><div><b>Justin Sofman</b><span>Co-founder, Orion Placement · look at the lens</span></div></div>
+
+        <div id="c1" class="cap clip" data-start="0" data-duration="5" data-track-index="1"><p class="k">0:00–0:05 · Hello</p><p>“Hi, I’m Justin Sofman, co-founder of Orion Placement. If you got an email from us, here's exactly what happens next.”</p></div>
+        <div id="c2" class="cap clip" data-start="5" data-duration="7" data-track-index="1"><p class="k">0:05–0:12 · Who we place</p><p>“We place attorneys and paralegals at small and mid-size law firms: estate planning, litigation, real estate, corporate.”</p></div>
+        <div id="c3a" class="cap clip" data-start="12" data-duration="5" data-track-index="1"><p class="k">0:12–0:22 · How a search runs</p><p>“You give me fifteen minutes on the seat. My partner Jon interviews every candidate himself,”</p></div>
+        <div id="c3b" class="cap clip" data-start="17" data-duration="5" data-track-index="1"><p class="k">0:12–0:22 · How a search runs</p><p>“and in about a week you get three to five profiles, names hidden until both sides want to meet.”</p></div>
+        <div id="c4a" class="cap clip" data-start="22" data-duration="4.5" data-track-index="1"><p class="k">0:22–0:32 · What it costs</p><p>“Nothing upfront. No retainer, no exclusivity.”</p></div>
+        <div id="c4b" class="cap clip" data-start="26.5" data-duration="5.5" data-track-index="1"><p class="k">0:22–0:32 · What it costs</p><p>“You pay 23% of first-year salary only when someone starts, and if they leave within 90 days, we replace them free.”</p></div>
+        <div id="c5" class="cap clip" data-start="32" data-duration="8" data-track-index="1"><p class="k">0:32–0:40 · Next step</p><p>“Book fifteen minutes with me, or just reply to the email. I answer every one myself.”</p></div>
+
+        <div class="bar">
+          <p class="seg"><span class="t"><span class="f" id="f1"></span></span>Hello</p>
+          <p class="seg"><span class="t"><span class="f" id="f2"></span></span>Who we place</p>
+          <p class="seg"><span class="t"><span class="f" id="f3"></span></span>How a search runs</p>
+          <p class="seg"><span class="t"><span class="f" id="f4"></span></span>What it costs</p>
+          <p class="seg"><span class="t"><span class="f" id="f5"></span></span>Next step</p>
+        </div>
+      </div>
+
+      <div id="s1" class="ov clip" data-start="0" data-duration="5" data-track-index="2">
+        <div class="lt card" id="s1lt"><p class="k2">Co-founder · works with law firms</p><b>Justin Sofman</b><span>Orion Placement · legal recruiting since 2022</span></div>
+        <p class="mail" id="s1mail">Orion emails only come from @orionplacement.com</p>
+      </div>
+
+      <div id="s2" class="ov clip" data-start="5" data-duration="7" data-track-index="2">
+        <div class="head" id="s2h"><p class="k2">Seats we fill, across the US</p><b>Small and mid-size firms</b></div>
+        <div class="chips">
+          <p class="chip" id="ch1">Estate planning <em>Attorneys</em></p>
+          <p class="chip" id="ch2">Litigation <em>Attorneys</em></p>
+          <p class="chip" id="ch3">Real estate <em>Attorneys</em></p>
+          <p class="chip" id="ch4">Corporate <em>Attorneys</em></p>
+          <p class="chip" id="ch5">Paralegals <em>Legal support</em></p>
+        </div>
+      </div>
+
+      <div id="s3" class="ov clip" data-start="12" data-duration="10" data-track-index="2">
+        <div class="seat card" id="s3card">
+          <div class="top"><p class="k2 navyk">Your open seat</p><b>Estate planning associate</b><p class="tags"><span>4–7 years</span><span>$125k–$145k</span><span>Trusts and probate</span></p></div>
+          <div class="body">
+            <p class="status"><span>Jon is screening</span><span><b id="rv">0</b> reviewed · <b id="mt">0</b> matched</span></p>
+            <div class="rows">
+              <div class="row" id="r1"><span class="ck ok">✓</span><span><span class="id">EP-0412 · 5 yrs</span><span class="red"></span></span><span class="pay">$125k–$140k</span></div>
+              <div class="row no" id="r2"><span class="ck x">✕</span><span><span class="id">EP-0502 · 9 yrs</span><span class="red"></span></span><span class="pay">Set aside</span></div>
+              <div class="row" id="r3"><span class="ck ok">✓</span><span><span class="id">EP-0377 · 6 yrs</span><span class="red"></span></span><span class="pay">$130k–$145k</span></div>
+              <div class="row" id="r4"><span class="ck ok">✓</span><span><span class="id">EP-0455 · 4 yrs</span><span class="red"></span></span><span class="pay">$120k–$135k</span></div>
+            </div>
+            <p class="done" id="s3done">3 matches · names hidden until you ask</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="s4" class="ov clip" data-start="22" data-duration="10" data-track-index="2">
+        <div class="today card" id="s4today"><p class="k2">Due today</p><b>$0</b></div>
+        <div class="inv card" id="s4inv">
+          <p class="h"><span class="k2">Invoice</span><span class="k2">On the start date</span></p>
+          <dl><dt>First-year base</dt><dd>$135,000</dd><dt>Fee</dt><dd>23%</dd><dt>Due</dt><dd>Net 15</dd><dt>Hire leaves within 90 days</dt><dd>Free replacement</dd></dl>
+          <p class="tot"><span>Total</span><b>$31,050</b></p>
+        </div>
+        <p class="note" id="s4note">✓ No retainer · ✓ No exclusivity</p>
+      </div>
+
+      <div id="s5" class="ov clip" data-start="32" data-duration="8" data-track-index="2">
+        <div class="end card" id="s5card">
+          <img class="ph" src="assets/justin-sofman.png" alt="Justin Sofman">
+          <b>Talk to Justin, not a call center</b>
+          <p class="btn p" id="b1">Book 15 minutes with Justin</p>
+          <p class="btn s" id="b2">Reply to Justin</p>
+        </div>
+        <p class="brand" id="s5brand"><img src="assets/orion-logo.png" alt="">Orion Placement</p>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const E = "power3.out";
+      const up = (sel, at, d = 0.6) => tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: d, ease: E }, at);
+
+      // captions
+      [["#c1 p", 0.2], ["#c2 p", 5.1], ["#c3a p", 12.1], ["#c3b p", 17.1], ["#c4a p", 22.1], ["#c4b p", 26.6], ["#c5 p", 32.1]]
+        .forEach(([s, t]) => tl.fromTo(s, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: E, stagger: 0.08 }, t));
+
+      // progress segments
+      [["#f1", 0, 5], ["#f2", 5, 7], ["#f3", 12, 10], ["#f4", 22, 10], ["#f5", 32, 8]]
+        .forEach(([s, t, d]) => tl.fromTo(s, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "none" }, t));
+
+      // s1
+      up("#s1lt", 0.5, 0.7); up("#s1mail", 1.6);
+      // s2
+      up("#s2h", 5.2); ["#ch1", "#ch2", "#ch3", "#ch4", "#ch5"].forEach((s, i) => up(s, 6.0 + i * 0.75, 0.45));
+      // s3
+      up("#s3card", 12.1, 0.7);
+      const counts = { rv: 0, mt: 0 };
+      const setTxt = () => { document.getElementById("rv").textContent = Math.round(counts.rv); document.getElementById("mt").textContent = Math.round(counts.mt); };
+      [["#r1", 13.4, 1, 1], ["#r2", 14.9, 2, 1], ["#r3", 16.4, 3, 2], ["#r4", 17.9, 4, 3]].forEach(([s, t, rv, mt]) => {
+        tl.fromTo(s, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: E }, t);
+        tl.to(counts, { rv: rv, mt: mt, duration: 0.3, onUpdate: setTxt }, t + 0.5);
+      });
+      tl.to("#r2", { opacity: 0.35, duration: 0.5 }, 15.8);
+      up("#s3done", 19.0, 0.5);
+      // s4
+      up("#s4today", 22.2); up("#s4inv", 24.0, 0.7); up("#s4note", 27.0, 0.5);
+      // s5
+      up("#s5card", 32.2, 0.7); up("#b1", 33.4, 0.5); up("#b2", 34.0, 0.5); up("#s5brand", 35.0, 0.5);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
