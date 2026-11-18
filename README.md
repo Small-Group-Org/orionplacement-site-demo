@@ -6,5 +6,6 @@ Clickable static prototype of the Orion Placement website, plus a demo of the em
 
 - Site: `index.html` (18 pages, shared `assets/`)
 - Flow demo: `demo-flow/index.html` (one self-contained file; `?entry=email` opens the cold-email version)
+- Ad landing page: `hire-attorneys/index.html` (no site nav; `?practice=&level=&city=` matches the ad; highlighted claims still to confirm)
 
 Run locally: open `index.html`, or `python3 -m http.server 8811` in this folder.
