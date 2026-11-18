@@ -26,7 +26,8 @@
     form.setAttribute("novalidate","");
     var req=[].slice.call(form.querySelectorAll("[required]"));
     req.forEach(function(el){
-      el.addEventListener(el.type==="checkbox"||el.tagName==="SELECT"?"change":"blur",function(){
+      // clear errors while typing, not on blur: a blur-time layout shift made the submit click miss
+      el.addEventListener(el.type==="checkbox"||el.tagName==="SELECT"?"change":"input",function(){
         var f=el.closest(".field");if(f&&f.classList.contains("has-error"))mark(el);});
     });
     form.addEventListener("submit",function(e){

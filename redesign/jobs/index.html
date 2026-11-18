@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Attorney jobs in Texas, pay on every listing | Orion</title>
+<meta name="description" content="Open attorney roles at small and mid-size Texas law firms, each with its base pay. Apply confidentially; no firm sees your name until you say yes.">
+<link rel="icon" href="../../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/orion.css">
+<style>
+.jobs-hero{padding-block:clamp(32px,4vw,56px) 24px}
+.jobs-hero h1{max-width:none}
+.jobs-hero .lead{max-width:40em}
+.filters{display:grid;gap:12px 12px;grid-template-columns:1fr 1fr;align-items:end;padding:20px;background:var(--surface);border:1px solid var(--rule);border-radius:8px}
+.filters .field:first-child,.filters .reset{grid-column:1/-1}
+@media (min-width:640px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}.filters .field:first-child{grid-column:auto}}
+@media (min-width:960px){.filters{grid-template-columns:repeat(3,minmax(0,1fr)) auto}.filters .reset{grid-column:auto}}
+.filters .field{margin:0}
+.reset{background:none;border:1px solid var(--ink);border-radius:6px;min-height:48px;padding:0 18px;font:600 15px/1 var(--sans);color:var(--ink);cursor:pointer}
+.reset:hover{background:var(--ink);color:var(--paper)}
+.count{margin:22px 0 14px;font-size:15px;color:var(--muted)}
+.count b{color:var(--ink)}
+.jobs-layout{display:grid;gap:24px;grid-template-columns:1fr}
+@media (min-width:960px){.jobs-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:start}}
+.job-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.job{display:grid;gap:6px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;font:inherit;color:var(--text);cursor:pointer;transition:border-color .15s}
+.job:hover{border-color:var(--ink)}
+.job[aria-pressed=true]{border-color:var(--accent);background:var(--accent-tint)}
+.j-top{display:flex;justify-content:space-between;gap:12px;font:600 13px/1.3 var(--sans);letter-spacing:.04em;color:var(--muted)}
+.j-title{font:600 19px/1.3 var(--serif);color:var(--ink)}
+.j-firm,.j-meta{font-size:15px;line-height:1.45}
+.j-pay{font:600 17px/1.3 var(--sans);color:var(--ink);font-variant-numeric:tabular-nums}
+.j-pay small{font-weight:400;font-size:14px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:24px}
+@media (min-width:960px){.panel{position:sticky;top:20px;padding:32px;max-height:calc(100vh - 40px);overflow:auto}}
+.job-list .panel{margin-top:8px}
+.panel[hidden]{display:none}
+.panel h2{font-size:clamp(26px,2.6vw,32px);margin-bottom:6px}
+.p-firm{color:var(--muted);font-size:15px}
+.p-pay{font:400 34px/1.1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums;margin:18px 0 4px}
+.p-pay-note{font-size:14px;color:var(--muted)}
+.panel .actions{margin:20px 0 24px}
+.panel .facts{grid-template-columns:150px 1fr;gap:10px 16px;padding-block:18px;border-block:1px solid var(--rule)}
+@media (max-width:519px){.panel .facts{grid-template-columns:1fr;gap:2px}.panel .facts dd{margin-bottom:10px}}
+.panel h3{font-size:19px;margin:24px 0 8px}
+.panel p+p{margin-top:12px}
+.bench{margin-top:8px}
+.bench-bar{position:relative;height:10px;background:var(--band);border:1px solid var(--rule);border-radius:2px;margin:14px 0 8px}
+.bench-bar .mkt{position:absolute;top:-1px;bottom:-1px;background:#B9C8BE}
+.bench-bar .seat{position:absolute;top:2px;bottom:2px;background:var(--accent)}
+.bench-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--muted)}
+.bench-key i{display:inline-block;width:14px;height:8px;margin-right:6px;vertical-align:1px}
+.byline{margin-top:24px;padding-top:16px;border-top:1px solid var(--rule);font-size:15px}
+.byline b{color:var(--ink)}
+.empty{padding:24px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+.empty h2{font-size:24px;margin-bottom:8px}
+.close-panel{display:none}
+.field label.check{font-weight:400;font-size:15px;color:var(--text)}
+.linkish{background:none;border:0;padding:0;font:inherit;color:var(--accent);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media (max-width:959px){.close-panel{display:inline-block;margin-top:16px;background:none;border:0;padding:8px 0;font:600 15px/1.3 var(--sans);color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}}
+/* dialog */
+#apply .dialog-head h2{font-size:24px}
+.apply-role{font-size:15px;margin-bottom:20px;padding:12px 14px;background:var(--paper);border:1px solid var(--rule);border-radius:6px}
+.apply-role b{color:var(--ink)}
+.work-warn{display:none;font-size:14px;color:var(--ink);margin-top:6px;padding:8px 12px;border-left:3px solid var(--accent);background:var(--accent-tint)}
+.work-warn.show{display:block}
+#apply .done .actions{margin-top:20px}
+.more{margin-top:40px}
+</style>
+</head>
+<body class="for-attorneys">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="../employers/">For law firms</a>
+      <a href="../find-candidates/">Candidates</a>
+      <a href="../fees/">Fees</a>
+      <a href="../about/">About</a>
+      <a class="nav-switch" href="../candidates/">For attorneys</a>
+      <a class="btn btn-primary btn-sm" href="../submit-job/">Submit a job</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero jobs-hero">
+  <div class="wrap">
+    <p class="label">Open roles · pay on every listing</p>
+    <h1>Attorney jobs, with the pay shown.</h1>
+    <p class="lead">Roles at small and mid-size law firms, each with its base pay. Roles open today are in Texas, and Orion places attorneys in other states too, so <a href="../upload-resume/">send your resume</a> anyway.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0" aria-labelledby="list-title">
+  <div class="wrap">
+    <h2 id="list-title" class="sr-only">Open roles</h2>
+    <form class="filters" role="search" aria-label="Filter roles" id="filters">
+      <div class="field">
+        <label for="f-practice">Practice</label>
+        <select id="f-practice" name="practice"><option value="">All practices</option></select>
+      </div>
+      <div class="field">
+        <label for="f-city">City</label>
+        <select id="f-city" name="city"><option value="">All cities</option></select>
+      </div>
+      <div class="field">
+        <label for="f-level">Experience</label>
+        <select id="f-level" name="level"><option value="">Any level</option></select>
+      </div>
+      <button class="reset" type="reset">Clear filters</button>
+    </form>
+    <p class="count" id="count" role="status" aria-live="polite"></p>
+
+    <div class="jobs-layout">
+      <ul class="job-list" id="job-list" aria-label="Roles"></ul>
+      <div id="panel-home">
+        <article class="panel" id="job-panel" tabindex="-1" aria-labelledby="p-title" hidden></article>
+      </div>
+    </div>
+
+    <div class="empty" id="empty" hidden>
+      <h2>No open role matches these filters today.</h2>
+      <p>Orion places attorneys in other practices, cities and states too. Send your resume and Jon will tell you what is coming up for your profile. <a href="../upload-resume/">Send your resume confidentially</a> or <button type="button" class="linkish" id="empty-reset">clear the filters</button>.</p>
+    </div>
+
+    <p class="more small muted">Pay ranges are first-year base salary confirmed with each firm. Firm names are shared on your first call with Jon, and your name goes to a firm only after you say yes.</p>
+  </div>
+</section>
+
+<dialog id="apply" aria-labelledby="apply-title">
+  <div class="dialog-head">
+    <h2 id="apply-title">Apply confidentially</h2>
+    <button class="close-btn" type="button" aria-label="Close" data-close>×</button>
+  </div>
+  <div class="dialog-body" data-sent-scope>
+    <p class="apply-role" id="apply-role"></p>
+    <form data-demo aria-labelledby="apply-title">
+      <div class="field">
+        <label for="a-name">Full name</label>
+        <input id="a-name" name="name" autocomplete="name" required aria-describedby="a-name-err">
+        <p class="err" id="a-name-err">Enter your name.</p>
+      </div>
+      <div class="field">
+        <label for="a-email">Personal email</label>
+        <input id="a-email" name="email" type="email" autocomplete="email" required aria-describedby="a-email-hint a-email-err a-email-warn">
+        <p class="hint" id="a-email-hint">Never use your current firm's email. Use a personal address.</p>
+        <p class="err" id="a-email-err">Enter a personal email, like name@gmail.com.</p>
+        <p class="work-warn" id="a-email-warn" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <label for="a-phone">Phone <span class="opt">(optional)</span></label>
+        <input id="a-phone" name="phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="a-resume">Resume <span class="opt">(optional)</span></label>
+        <input id="a-resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="a-resume-hint">
+        <p class="hint" id="a-resume-hint">PDF or Word (.doc, .docx). No resume handy? Apply now and send it to Jon later.</p>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="a-consent" name="consent" required aria-describedby="a-consent-err"><span>I agree that Orion may keep my details to match me with roles, as set out in the <a href="../privacy/" target="_blank" rel="noopener">privacy notice</a>.</span></label>
+        <p class="err" id="a-consent-err">Tick the box to continue.</p>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Send my application</button>
+      <!-- claim to confirm -->
+      <p class="next"><b>What happens next:</b> Jon reads your application and replies to your personal email within 2 business days. The firm sees an anonymous profile first. Your name goes to the firm only after you say yes.</p>
+    </form>
+    <div class="done" role="status" aria-live="polite">
+      <h2 style="font-size:26px">Thank you. Jon has your application.</h2>
+      <!-- claim to confirm -->
+      <p>He will reply to your personal email within 2 business days about this role. Nothing goes to the firm until you say yes.</p>
+      <p class="small muted">This is a demo page: nothing was sent.</p>
+      <div class="actions"><button class="btn btn-secondary" type="button" data-close>Back to roles</button></div>
+    </div>
+  </div>
+</dialog>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="about-line">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+    </div>
+    <div>
+      <h4>For law firms</h4>
+      <ul>
+        <li><a href="../find-candidates/">Find candidates</a></li>
+        <li><a href="../submit-job/">Submit a job</a></li>
+        <li><a href="../fees/">Fees</a></li>
+        <li><a href="../salaries/estate-planning-attorney/houston-tx/">Salary guides</a></li>
+        <li><a href="../hiring-kit/estate-planning-attorney/">Hiring kits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For attorneys</h4>
+      <ul>
+        <li><a href="../candidates/">How it works</a></li>
+        <li><a href="../jobs/">Open roles</a></li>
+        <li><a href="../upload-resume/">Send your resume</a></li>
+        <li><a href="../salary-check/">Salary check</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Orion</h4>
+      <ul>
+        <li><a href="../about/">About</a></li>
+        <li><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></li>
+        <li><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>Orion emails only ever come from @orionplacement.com.</p>
+      <p>© 2026 Orion Placement LLC</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/orion.js"></script>
+<script>
+(function(){
+  var JOBS=[
+    ["a1","Trust administration and probate attorney","Estate planning","Estate planning boutique",7,"Austin","Central Austin","Hybrid",115,140,2,"Trust administration, probate, wealth preservation","9 Nov"],
+    ["a2","High-net-worth estate planning associate","Estate planning","Private wealth and tax practice",14,"Austin","Downtown Austin","Hybrid",140,175,2,"Estate planning for high-net-worth families, gift and estate tax","6 Nov"],
+    ["a3","Junior estate planning associate","Estate planning","Estate planning boutique",5,"Austin","Domain / North Austin","On-site",100,125,1,"Drafting wills and trusts, client intake","2 Nov"],
+    ["a4","Commercial litigation associate","Litigation","Business litigation firm",16,"Austin","Downtown Austin","Hybrid",130,160,2,"Contract and business disputes, motion practice, depositions","8 Nov"],
+    ["a5","Probate and fiduciary litigation counsel","Litigation","Fiduciary litigation boutique",9,"Austin","Westlake Hills","Hybrid",145,185,3,"Will contests, trust disputes, fiduciary litigation","1 Nov"],
+    ["a6","Commercial real estate associate","Real estate","Real estate and development firm",12,"Austin","Downtown Austin","Hybrid",125,155,2,"Acquisitions, leasing, development deals","7 Nov"],
+    ["a7","Emerging companies and venture capital associate","Corporate","Technology and corporate firm",18,"Austin","Domain / North Austin","Hybrid",150,190,2,"Startup formation, venture financings, commercial contracts","5 Nov"],
+    ["a8","Family law associate","Family law","Family law practice",8,"Austin","Central Austin","On-site",110,135,1,"Divorce, custody, property division","29 Oct"],
+    ["a9","Labor and employment counsel","Employment","Employment law firm",11,"Austin","Downtown Austin","Hybrid",135,165,3,"Employer advice, agency charges, employment litigation","31 Oct"],
+    ["h1","Estate planning associate","Estate planning","Estate planning firm",8,"Houston","Galleria / Uptown","On-site",120,145,2,"Wills and trusts, trust administration","8 Nov"],
+    ["h2","Senior estate planning and succession attorney","Estate planning","Full-service small firm",15,"Houston","Energy Corridor","Hybrid",145,175,3,"Estate planning, business succession, generation-skipping planning","6 Nov"],
+    ["h3","Junior estate planning associate","Estate planning","Estate planning boutique",5,"Houston","The Woodlands","On-site",98,120,1,"Drafting, probate filings, client intake","3 Nov"],
+    ["h4","Tax and high-net-worth estate planning counsel","Estate planning","Tax and estates firm",22,"Houston","Downtown Houston","Hybrid",170,205,3,"Estate tax, trust administration, international wealth","1 Nov"],
+    ["h5","Civil litigation associate","Litigation","Litigation firm",12,"Houston","Downtown Houston","On-site",115,140,2,"Commercial and civil disputes, discovery, motion practice","7 Nov"],
+    ["h6","Energy and commercial litigation counsel","Litigation","Commercial trial boutique",19,"Houston","Downtown Houston","Hybrid",155,195,3,"Energy disputes, commercial trials, arbitration","4 Nov"],
+    ["h7","Commercial real estate associate","Real estate","Real estate practice",10,"Houston","Memorial","Hybrid",120,145,2,"Commercial closings, leasing, title review","31 Oct"],
+    ["h8","Plaintiff personal injury trial associate","Personal injury","Trial law firm",9,"Houston","Midtown Houston","On-site",110,135,2,"Plaintiff injury cases from intake to trial","30 Oct"],
+    ["h9","Corporate transactions and governance associate","Corporate","Business law boutique",14,"Houston","Galleria / Uptown","Hybrid",135,165,2,"M&A, entity governance, commercial contracts","2 Nov"],
+    ["d1","Estate planning and wealth transfer associate","Estate planning","Estate planning firm",11,"Dallas","Uptown Dallas","Hybrid",125,155,2,"Wealth transfer planning, trusts, gift tax returns","8 Nov"],
+    ["d2","Senior trust and estate tax attorney","Estate planning","Tax and wealth advisory firm",20,"Dallas","Downtown Dallas","Hybrid",160,195,3,"Estate and gift tax, complex trusts","5 Nov"],
+    ["d3","Probate and estate administration attorney","Estate planning","Probate and estates boutique",8,"Dallas","Plano / Frisco","On-site",115,140,2,"Probate, estate administration, guardianships","1 Nov"],
+    ["d4","Commercial litigation trial associate","Litigation","Litigation firm",18,"Dallas","Downtown Dallas","Hybrid",135,165,2,"Business disputes, trial preparation, depositions","7 Nov"],
+    ["d5","Insurance defense litigation associate","Insurance defense","Defense practice",14,"Dallas","North Dallas / Addison","Hybrid",105,130,1,"Defense of insured claims, discovery, mediations","28 Oct"],
+    ["d6","Real estate finance and development associate","Real estate","Real estate practice group",16,"Dallas","Uptown Dallas","Hybrid",130,160,2,"Real estate finance, development, lender work","4 Nov"],
+    ["d7","Middle-market M&A associate","Corporate","Corporate firm",22,"Dallas","Downtown Dallas","Hybrid",150,190,2,"Middle-market mergers and acquisitions, due diligence","6 Nov"],
+    ["d8","High-asset divorce and family law attorney","Family law","Family law boutique",10,"Dallas","Highland Park / University Park","On-site",125,155,3,"High-asset divorce, custody, property division","31 Oct"],
+    ["d9","Employment defense associate","Employment","Employment firm",12,"Dallas","Downtown Dallas","Hybrid",120,145,2,"Employment defense, agency charges, policy advice","3 Nov"],
+    ["s1","Estate planning and probate associate","Estate planning","Estate planning boutique",6,"San Antonio","Stone Oak / North San Antonio","Hybrid",105,130,2,"Wills and trusts, probate administration","8 Nov"],
+    ["s2","Senior probate and estate planning attorney","Estate planning","Full-service regional firm",12,"San Antonio","Downtown San Antonio","Hybrid",135,165,3,"Probate, estate planning, trust administration","4 Nov"],
+    ["s3","Civil trial associate","Litigation","Trial law firm",9,"San Antonio","Downtown San Antonio","On-site",100,125,1,"Civil cases from discovery to trial","6 Nov"],
+    ["s4","Real estate and land use associate","Real estate","Real estate law group",8,"San Antonio","Alamo Heights","Hybrid",110,135,2,"Land use, zoning, commercial transactions","29 Oct"],
+    ["s5","Family law associate","Family law","Family law boutique",7,"San Antonio","Stone Oak","On-site",95,120,1,"Divorce, custody, family court hearings","1 Nov"]
+  ].map(function(r){return {id:r[0],title:r[1],practice:r[2],firm:r[3],size:r[4],city:r[5],area:r[6],work:r[7],lo:r[8],hi:r[9],level:r[10],focus:r[11],posted:r[12]};});
+  var LEVELS={1:"1–3 years",2:"4–7 years",3:"8+ years"};
+  // Sample market bands (Houston, $k), same data as the salary check page.
+  var BANDS={"Estate planning":[[90,115],[115,150],[150,195]],"Litigation":[[95,120],[120,155],[155,200]],"Real estate":[[92,118],[118,152],[150,195]],"Corporate":[[105,135],[135,175],[170,220]],"Family law":[[80,105],[105,135],[130,170]],"Employment":[[95,120],[120,150],[150,190]],"Personal injury":[[85,110],[110,140],[140,190]],"Insurance defense":[[85,105],[105,130],[130,160]]};
+  var CITY={"Houston":1,"Dallas":1.03,"Austin":1.02,"San Antonio":.92};
+  var SLUG={"Estate planning":"estate-planning","Litigation":"litigation","Real estate":"real-estate","Corporate":"corporate","Family law":"family-law","Employment":"employment","Personal injury":"personal-injury","Insurance defense":"insurance-defense"};
+  function band(p,c,l){var b=BANDS[p][l-1],f=CITY[c]||1;return [Math.round(b[0]*f),Math.round(b[1]*f)];}
+  function k(n){return "$"+n+"k";}
+  function lc(t){return /^[A-Z][a-z]/.test(t)?t.charAt(0).toLowerCase()+t.slice(1):t;}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  var list=document.getElementById("job-list"),panel=document.getElementById("job-panel"),home=document.getElementById("panel-home");
+  var fP=document.getElementById("f-practice"),fC=document.getElementById("f-city"),fL=document.getElementById("f-level");
+  var count=document.getElementById("count"),empty=document.getElementById("empty"),form=document.getElementById("filters");
+  var mq=window.matchMedia("(min-width:960px)"),current=null;
+  function uniq(key){return JOBS.map(function(j){return j[key];}).filter(function(v,i,a){return a.indexOf(v)===i;});}
+  uniq("practice").sort().forEach(function(p){fP.add(new Option(p,p));});
+  ["Houston","Dallas","Austin","San Antonio"].forEach(function(c){fC.add(new Option(c+", TX",c));});
+  [1,2,3].forEach(function(l){fL.add(new Option(LEVELS[l],l));});
+  var q=new URLSearchParams(location.search);
+  if(q.get("practice")&&uniq("practice").indexOf(q.get("practice"))>-1)fP.value=q.get("practice");
+  if(q.get("city")&&CITY[q.get("city")])fC.value=q.get("city");
+  if(/^[123]$/.test(q.get("level")||""))fL.value=q.get("level");
+
+  function matches(){return JOBS.filter(function(j){return (!fP.value||j.practice===fP.value)&&(!fC.value||j.city===fC.value)&&(!fL.value||j.level==fL.value);});}
+  function render(){
+    var rows=matches();
+    list.innerHTML=rows.map(function(j){
+      return '<li><button type="button" class="job" aria-pressed="false" aria-controls="job-panel" data-id="'+j.id+'">'+
+        '<span class="j-top"><span>'+esc(j.city)+', TX</span><span>Posted '+j.posted+'</span></span>'+
+        '<span class="j-title">'+esc(j.title)+'</span>'+
+        '<span class="j-firm">'+esc(j.firm)+', '+j.size+' attorneys</span>'+
+        '<span class="j-meta">'+esc(j.area)+' · '+j.work+' · '+LEVELS[j.level]+'</span>'+
+        '<span class="j-pay">'+k(j.lo)+'–'+k(j.hi)+' <small>base a year</small></span></button></li>';
+    }).join("");
+    count.innerHTML="Showing <b>"+rows.length+"</b> of "+JOBS.length+" open roles";
+    empty.hidden=rows.length>0;
+    var keep=current&&rows.some(function(j){return j.id===current;});
+    if(!keep){current=null;home.appendChild(panel);panel.hidden=true;}
+    if(mq.matches&&rows.length&&!keep)select(rows[0].id,false);
+    else if(keep)select(current,false);
+  }
+  function select(id,focus){
+    var j=JOBS.filter(function(x){return x.id===id;})[0];if(!j)return;
+    current=id;
+    [].forEach.call(list.querySelectorAll(".job"),function(b){b.setAttribute("aria-pressed",b.dataset.id===id?"true":"false");});
+    var b=band(j.practice,j.city,j.level),min=Math.min(b[0],j.lo)-15,max=Math.max(b[1],j.hi)+15,span=max-min;
+    function pos(v){return ((v-min)/span*100).toFixed(1)+"%";}
+    var cmp=j.hi>b[1]?"The top of this seat's range is above the market band.":(j.lo<b[0]?"This seat starts below the market band; ask Jon about bonus.":"This seat sits inside the market band.");
+    var sc="../salary-check/?practice="+encodeURIComponent(j.practice)+"&city="+encodeURIComponent(j.city)+"&years="+j.level;
+    panel.innerHTML=
+      '<h2 id="p-title">'+esc(j.title)+'</h2>'+
+      '<p class="p-firm">'+esc(j.firm)+', '+j.size+' attorneys · '+esc(j.area)+', '+esc(j.city)+', TX</p>'+
+      '<p class="p-pay">'+k(j.lo)+'–'+k(j.hi)+'</p><p class="p-pay-note">First-year base salary, confirmed with the firm</p>'+
+      '<div class="actions"><button type="button" class="btn btn-primary" id="open-apply">Apply confidentially</button></div>'+
+      '<dl class="facts"><dt>Practice focus</dt><dd>'+esc(j.focus)+'</dd><dt>Experience</dt><dd>'+LEVELS[j.level]+'</dd><dt>Work arrangement</dt><dd>'+j.work+'</dd><dt>Location</dt><dd>'+esc(j.area)+', '+esc(j.city)+'</dd><dt>Firm</dt><dd>'+esc(j.firm)+', '+j.size+' attorneys</dd><dt>Posted</dt><dd>'+j.posted+' 2026</dd></dl>'+
+      '<h3>About the seat</h3><p>'+(/^[aeiou]/i.test(j.firm)?'An ':'A ')+esc(j.firm.toLowerCase())+' in '+esc(j.area)+' is hiring an attorney with '+LEVELS[j.level]+' of experience. The work centers on '+esc(lc(j.focus))+'.</p>'+
+      '<p>Jon shares the firm name, bonus structure and billable expectations on your first call. Your name goes to the firm only after you say yes.</p>'+
+      '<h3>Market pay for this seat</h3><div class="bench"><p class="small">'+esc(j.practice)+' attorneys in '+esc(j.city)+' with '+LEVELS[j.level]+': <b class="num">'+k(b[0])+'–'+k(b[1])+'</b> base. '+cmp+'</p>'+
+      '<div class="bench-bar" role="img" aria-label="Market band '+k(b[0])+' to '+k(b[1])+', this seat '+k(j.lo)+' to '+k(j.hi)+'"><span class="mkt" style="left:'+pos(b[0])+';width:calc('+pos(b[1])+' - '+pos(b[0])+')"></span><span class="seat" style="left:'+pos(j.lo)+';width:calc('+pos(j.hi)+' - '+pos(j.lo)+')"></span></div>'+
+      '<p class="bench-key"><span><i style="background:#B9C8BE"></i>Market band (sample data)</span><span><i style="background:var(--accent)"></i>This seat</span></p>'+
+      '<p class="small" style="margin-top:10px"><a href="'+sc+'">Compare with your own pay →</a></p></div>'+
+      '<p class="byline"><b>Screened by Jon Missirlian.</b> Jon reads every application himself and replies within 2 business days.</p>'+ // claim to confirm
+      '<button type="button" class="close-panel" id="close-panel">Hide details</button>';
+    if(mq.matches){home.appendChild(panel);}
+    else{var li=list.querySelector('[data-id="'+id+'"]');if(li)li.parentNode.appendChild(panel);}
+    panel.hidden=false;
+    document.getElementById("open-apply").addEventListener("click",function(){openApply(j,this);});
+    document.getElementById("close-panel").addEventListener("click",function(){var btn=list.querySelector('[data-id="'+id+'"]');current=null;panel.hidden=true;home.appendChild(panel);if(btn){btn.setAttribute("aria-pressed","false");btn.focus();}});
+    if(focus){panel.focus({preventScroll:mq.matches});if(!mq.matches)panel.scrollIntoView({block:"start"});}
+  }
+  list.addEventListener("click",function(e){
+    var b=e.target.closest(".job");if(!b)return;
+    if(!mq.matches&&current===b.dataset.id){current=null;panel.hidden=true;home.appendChild(panel);b.setAttribute("aria-pressed","false");return;}
+    select(b.dataset.id,true);
+  });
+  [fP,fC,fL].forEach(function(s){s.addEventListener("change",render);});
+  form.addEventListener("reset",function(){setTimeout(render,0);});
+  form.addEventListener("submit",function(e){e.preventDefault();});
+  document.getElementById("empty-reset").addEventListener("click",function(){form.reset();});
+  mq.addEventListener("change",function(){if(current)select(current,false);else render();});
+  render();
+  if(q.get("job")&&JOBS.some(function(j){return j.id===q.get("job");}))select(q.get("job"),false);
+
+  // apply dialog
+  var dlg=document.getElementById("apply"),scope=dlg.querySelector("[data-sent-scope]"),af=dlg.querySelector("form"),opener=null;
+  function openApply(j,btn){
+    opener=btn;af.reset();scope.classList.remove("sent");
+    [].forEach.call(af.querySelectorAll(".has-error"),function(f){f.classList.remove("has-error");});
+    [].forEach.call(af.querySelectorAll("[aria-invalid]"),function(f){f.removeAttribute("aria-invalid");});
+    warn.classList.remove("show");warn.textContent="";
+    document.getElementById("apply-role").innerHTML="<b>"+esc(j.title)+"</b><br>"+k(j.lo)+"–"+k(j.hi)+" base · "+esc(j.area)+", "+esc(j.city)+" · "+j.work;
+    dlg.showModal();document.getElementById("a-name").focus();
+  }
+  [].forEach.call(dlg.querySelectorAll("[data-close]"),function(b){b.addEventListener("click",function(){dlg.close();});});
+  dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close();});
+  dlg.addEventListener("close",function(){if(opener&&document.contains(opener))opener.focus();});
+  // gentle work-email warning (does not block)
+  var email=document.getElementById("a-email"),warn=document.getElementById("a-email-warn");
+  var PERSONAL=/@(gmail|googlemail|yahoo|ymail|outlook|hotmail|live|msn|icloud|me|mac|aol|proton|protonmail|pm|gmx|zoho|fastmail|hey|comcast|att|sbcglobal|verizon)\./i;
+  email.addEventListener("blur",function(){
+    var v=email.value.trim(),show=/@.+\..+/.test(v)&&!PERSONAL.test(v);
+    warn.textContent=show?"Is this your firm's email? Use a personal address so nothing about your search reaches your work inbox.":"";
+    warn.classList.toggle("show",show);
+  });
+})();
+</script>
+</body>
+</html>

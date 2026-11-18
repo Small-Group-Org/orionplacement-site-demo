@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Send your resume confidentially | Orion</title>
+<meta name="description" content="Send your resume to Orion Placement. Free for attorneys, read by Jon Missirlian, and no firm sees your name until you say yes.">
+<link rel="icon" href="../../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/orion.css">
+<style>
+.up-hero{padding-bottom:var(--section)}
+.up-hero h1{max-width:12em}
+.up-hero .terms{margin-top:28px}
+.up-hero .terms li{grid-template-columns:110px 1fr}
+.up-hero .terms b{font-size:22px}
+.work-warn{display:none;font-size:14px;color:var(--ink);margin-top:6px;padding:8px 12px;border-left:3px solid var(--accent);background:var(--accent-tint)}
+.work-warn.show{display:block}
+.side-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.side-list li{padding-left:22px;position:relative}
+.side-list li::before{content:"";position:absolute;left:0;top:.8em;width:12px;height:1px;background:var(--accent)}
+.card h3{font-size:20px}
+.done .actions{margin-top:20px}
+.field label.check{font-weight:400;font-size:15px;color:var(--text)}
+</style>
+</head>
+<body class="for-attorneys">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="../employers/">For law firms</a>
+      <a href="../find-candidates/">Candidates</a>
+      <a href="../fees/">Fees</a>
+      <a href="../about/">About</a>
+      <a class="nav-switch" href="../candidates/">For attorneys</a>
+      <a class="btn btn-primary btn-sm" href="../submit-job/">Submit a job</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero up-hero">
+  <div class="wrap split">
+    <div>
+      <p class="label">Send your resume · free and confidential</p>
+      <h1>Send your resume. Jon reads it himself.</h1>
+      <p class="lead">Jon Missirlian reads every resume and calls you about roles that fit, each with its pay. No firm sees your name or resume until you say yes to that firm.</p>
+      <ul class="terms" aria-label="What you can count on">
+        <li><b class="num">$0</b><span>Free for candidates, always.</span></li>
+        <li><b>Your yes</b><span>Before any firm sees your name or resume.</span></li>
+        <!-- claim to confirm -->
+        <li><b class="num">2 days</b><span>To hear back from Jon, in business days.</span></li>
+      </ul>
+      <p style="margin-top:24px">Outside Texas? Send it anyway. Roles open today are in Texas, and Orion places attorneys in other states too.</p>
+    </div>
+
+    <div class="form-card" id="resume-form" data-sent-scope>
+      <form data-demo aria-labelledby="form-title">
+        <h2 id="form-title">Your details</h2>
+        <p class="intro">Takes about a minute. Only Jon sees this.</p>
+        <div class="row row-2">
+          <div class="field">
+            <label for="u-name">Full name</label>
+            <input id="u-name" name="name" autocomplete="name" required aria-describedby="u-name-err">
+            <p class="err" id="u-name-err">Enter your name.</p>
+          </div>
+          <div class="field">
+            <label for="u-phone">Phone <span class="opt">(optional)</span></label>
+            <input id="u-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="u-email">Personal email</label>
+          <input id="u-email" name="email" type="email" autocomplete="email" required aria-describedby="u-email-hint u-email-err u-email-warn">
+          <p class="hint" id="u-email-hint">Never use your current firm's email. Use a personal address.</p>
+          <p class="err" id="u-email-err">Enter a personal email, like name@gmail.com.</p>
+          <p class="work-warn" id="u-email-warn" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="u-resume">Resume</label>
+          <input id="u-resume" name="resume" type="file" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="u-resume-hint u-resume-err">
+          <p class="hint" id="u-resume-hint">PDF or Word (.doc, .docx).</p>
+          <p class="err" id="u-resume-err">Choose your resume file. You can also email it to jon@orionplacement.com.</p>
+        </div>
+        <div class="field">
+          <label for="u-notes">Anything Jon should know? <span class="opt">(optional)</span></label>
+          <textarea id="u-notes" name="notes" placeholder="Target pay, practice areas, cities, best times to call"></textarea>
+        </div>
+        <div class="field">
+          <label class="check"><input type="checkbox" id="u-consent" name="consent" required aria-describedby="u-consent-err"><span>I agree that Orion may keep my resume to match me with roles, as set out in the <a href="../privacy/">privacy notice</a>.</span></label>
+          <p class="err" id="u-consent-err">Tick the box to continue.</p>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Send my resume confidentially</button>
+        <!-- claim to confirm -->
+        <p class="next"><b>What happens next:</b> Jon reads your resume and replies to your personal email within 2 business days to set up a short call. Nothing goes to any firm until you say yes.</p>
+      </form>
+      <div class="done" role="status" aria-live="polite">
+        <p class="label">Received</p>
+        <h2>Thank you. Jon has your resume.</h2>
+        <!-- claim to confirm -->
+        <p>He will reply to your personal email within 2 business days to set up a short call about roles that fit, with the pay for each.</p>
+        <p>Nothing goes to any firm until you say yes to that firm.</p>
+        <p class="small muted">This is a demo page: nothing was sent and no file was uploaded.</p>
+        <div class="actions"><a class="link-arrow" href="../jobs/">Browse open roles while you wait →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band" aria-labelledby="next-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label">What happens next</p>
+        <h2 id="next-title">From your resume to an interview you chose.</h2>
+      </div>
+      <a class="link-arrow" href="../candidates/">How it works for attorneys →</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <p class="k">Today</p>
+        <p class="fig">1</p>
+        <h3>Jon reads your resume</h3>
+        <p>He notes your practice mix, bar admissions and target pay, and files your resume under an anonymous code.</p>
+      </div>
+      <div class="step">
+        <p class="k">Within 2 business days</p>
+        <!-- claim to confirm -->
+        <p class="fig">2</p>
+        <h3>A short call with Jon</h3>
+        <p>At a time that suits you. He walks you through roles that fit, each with its base pay range.</p>
+      </div>
+      <div class="step">
+        <p class="k">When you say yes</p>
+        <p class="fig">3</p>
+        <h3>An introduction to that firm</h3>
+        <p>Only the firms you pick see your name and resume. You never pay a fee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="priv-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label">What happens to your resume</p>
+        <h2 id="priv-title">A firm sees a profile, not your name.</h2>
+        <p>Until you say yes, a firm sees an anonymous profile with a reference code like EP-TX-0412.</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Hidden until you say yes</h3>
+        <ul class="side-list">
+          <li>Your name and contact details</li>
+          <li>Your current firm and past employers</li>
+          <li>Your law school and graduation year</li>
+          <li>Your bar number</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What a firm sees first</h3>
+        <ul class="side-list">
+          <li>Your anonymous reference code</li>
+          <li>Practice mix and the kind of matters you handle</li>
+          <li>Years in practice and bar state</li>
+          <li>Your target base pay range</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:28px;max-width:62ch">Orion never contacts your current firm. Want your resume deleted? Email <a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a> and it is deleted promptly. Read the <a href="../privacy/">privacy notice</a>.</p>
+  </div>
+</section>
+
+<section class="section band" aria-labelledby="proof-title">
+  <div class="wrap split">
+    <div>
+      <p class="label">From attorneys Jon has placed</p>
+      <h2 id="proof-title" style="margin-bottom:28px">Read by a person, not a parser.</h2>
+      <blockquote class="quote">
+        <p>“They set great expectations and delivered for me within less than a week. Their process is simple and effective; I felt like I had someone on the inside working for me.”</p>
+        <footer><b>N Brown</b> · Candidate · Google review</footer>
+      </blockquote>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 on Google from 60 reviews by firms and candidates</span></p>
+    </div>
+    <div>
+      <div class="person">
+        <img src="../../assets/images/founders/jon-missirlian.jpg" alt="Jon Missirlian" width="96" height="96" loading="lazy">
+        <div>
+          <h3>Jon Missirlian</h3>
+          <p class="role">Co-founder · reads every resume</p>
+          <p>20 years in talent acquisition. Prefer email? Send your resume straight to Jon from a personal address.</p>
+          <a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a>
+        </div>
+      </div>
+      <p style="margin-top:20px"><a class="link-arrow" href="../salary-check/">Not ready yet? Check your pay first →</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="about-line">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+    </div>
+    <div>
+      <h4>For law firms</h4>
+      <ul>
+        <li><a href="../find-candidates/">Find candidates</a></li>
+        <li><a href="../submit-job/">Submit a job</a></li>
+        <li><a href="../fees/">Fees</a></li>
+        <li><a href="../salaries/estate-planning-attorney/houston-tx/">Salary guides</a></li>
+        <li><a href="../hiring-kit/estate-planning-attorney/">Hiring kits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For attorneys</h4>
+      <ul>
+        <li><a href="../candidates/">How it works</a></li>
+        <li><a href="../jobs/">Open roles</a></li>
+        <li><a href="../upload-resume/">Send your resume</a></li>
+        <li><a href="../salary-check/">Salary check</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Orion</h4>
+      <ul>
+        <li><a href="../about/">About</a></li>
+        <li><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></li>
+        <li><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>Orion emails only ever come from @orionplacement.com.</p>
+      <p>© 2026 Orion Placement LLC</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/orion.js"></script>
+<script>
+(function(){
+  var email=document.getElementById("u-email"),warn=document.getElementById("u-email-warn");
+  var PERSONAL=/@(gmail|googlemail|yahoo|ymail|outlook|hotmail|live|msn|icloud|me|mac|aol|proton|protonmail|pm|gmx|zoho|fastmail|hey|comcast|att|sbcglobal|verizon)\./i;
+  email.addEventListener("blur",function(){
+    var v=email.value.trim(),show=/@.+\..+/.test(v)&&!PERSONAL.test(v);
+    warn.textContent=show?"Is this your firm's email? Use a personal address so nothing about your search reaches your work inbox.":"";
+    warn.classList.toggle("show",show);
+  });
+})();
+</script>
+</body>
+</html>

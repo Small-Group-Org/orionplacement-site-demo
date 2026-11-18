@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Find screened attorney candidates | Orion</title>
+<meta name="description" content="Describe your open seat and see anonymized, screened attorney profiles with practice mix, bar standing, pay band and notice. 23% only if you hire.">
+<link rel="icon" href="../../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/orion.css">
+<style>
+.seek{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:24px;margin-top:32px;max-width:860px}
+@media (min-width:960px){.seek{padding:28px}}
+.seek-row{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:720px){.seek-row{grid-template-columns:1fr auto;align-items:end}}
+.seek .field{margin-bottom:0}
+.examples{margin-top:14px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+.examples button{background:none;border:0;padding:8px 0;font:500 14px/1.3 var(--sans);color:var(--accent);text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
+.understood{margin-top:14px;font-size:15px;color:var(--text)}
+.understood:empty{display:none}
+.filters{display:grid;gap:0 14px;grid-template-columns:1fr;margin-bottom:8px}
+@media (min-width:640px){.filters{grid-template-columns:repeat(3,1fr)}}
+.results-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin:12px 0 24px}
+.results-head h2{font-size:clamp(24px,2.6vw,30px)}
+.reset{background:none;border:0;padding:10px 0;font:600 15px/1.2 var(--sans);color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.cand .where{font-size:14px;color:var(--muted);margin-top:-6px}
+.cand dd{font-variant-numeric:tabular-nums}
+.cand .mixline{font-size:14px;color:var(--muted)}
+.cand .link-arrow{margin-top:4px}
+.cand[hidden]{display:none}
+.empty{border:1px solid var(--rule);border-radius:8px;background:var(--surface);padding:28px}
+.empty h3{margin-bottom:8px}
+.empty p+p{margin-top:12px}
+.sample-note{margin-top:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="../employers/">For law firms</a>
+      <a href="../find-candidates/" aria-current="page">Candidates</a>
+      <a href="../fees/">Fees</a>
+      <a href="../about/">About</a>
+      <a class="nav-switch" href="../candidates/">For attorneys</a>
+      <a class="btn btn-primary btn-sm" href="../submit-job/">Submit a job</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <p class="label">Find candidates</p>
+    <h1>Find screened attorneys for your open seat.</h1>
+    <p class="lead">Describe the seat in a sentence. You see anonymized profiles screened by Jon, with practice mix, bar standing, pay band and notice. Names and current firms stay hidden until you ask to interview.</p>
+
+    <form class="seek" id="seek" role="search" aria-label="Describe your seat">
+      <div class="seek-row">
+        <div class="field">
+          <label for="seat">Describe your seat</label>
+          <input id="seat" name="seat" type="text" autocomplete="off" placeholder="Estate planning, Houston, 4–6 years">
+        </div>
+        <button class="btn btn-secondary" type="submit">Show matches</button>
+      </div>
+      <div class="examples"><span>Try:</span>
+        <button type="button" data-example="Estate planning attorney in Houston, 3–5 years">Estate planning attorney in Houston, 3–5 years</button>
+        <button type="button" data-example="Commercial litigation, Dallas, 7 years">Commercial litigation, Dallas, 7 years</button>
+        <button type="button" data-example="Real estate associate in Austin">Real estate associate in Austin</button>
+      </div>
+      <p class="understood" id="understood" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="section band" style="padding-top:clamp(40px,6vw,64px)" aria-labelledby="results-title">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter candidates">
+      <div class="field">
+        <label for="f-practice">Practice</label>
+        <select id="f-practice">
+          <option value="">Any practice</option>
+          <option value="estate">Estate planning and probate</option>
+          <option value="litigation">Litigation</option>
+          <option value="realestate">Real estate</option>
+          <option value="family">Family law</option>
+          <option value="employment">Labor and employment</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-city">City</label>
+        <select id="f-city">
+          <option value="">Any city</option>
+          <option value="houston">Houston</option>
+          <option value="dallas">Dallas–Fort Worth</option>
+          <option value="austin">Austin</option>
+          <option value="san-antonio">San Antonio</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-exp">Experience</label>
+        <select id="f-exp">
+          <option value="">Any experience</option>
+          <option value="1-3">1–3 years</option>
+          <option value="4-7">4–7 years</option>
+          <option value="8+">8+ years</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="results-head">
+      <h2 id="results-title"><span id="count" class="num">12</span> <span id="count-word">candidates</span> open to a move</h2>
+      <button class="reset" type="button" id="reset">Clear filters</button>
+    </div>
+
+    <div class="grid grid-3" id="results">
+      <article class="card cand" data-practice="estate" data-city="houston" data-years="5">
+        <p class="id"><span>EP-TX-0412</span><span>4 weeks' notice</span></p>
+        <h3>Estate planning associate</h3>
+        <p class="where">Houston · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>5 years</dd><dt>Target base</dt><dd>$125k–$140k</dd></dl>
+        <p class="mixline">Wills and trusts 55% · Trust administration 25% · Probate 20%</p>
+        <p class="note">“Five years at firms your size. Runs administrations without a partner in the room.”</p>
+        <a class="link-arrow" href="../candidate/ep-tx-0412/" aria-label="View the full profile of EP-TX-0412">View full profile →</a>
+      </article>
+      <article class="card cand" data-practice="estate" data-city="houston" data-years="3">
+        <p class="id"><span>EP-TX-0388</span><span>2 weeks' notice</span></p>
+        <h3>Estate planning and probate associate</h3>
+        <p class="where">Houston · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>3 years</dd><dt>Target base</dt><dd>$98k–$110k</dd></dl>
+        <p class="mixline">Wills and trusts 40% · Probate 40% · Guardianship 20%</p>
+        <p class="note">“Handles probate court alone and takes Spanish-speaking client meetings.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about EP-TX-0388">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="estate" data-city="houston" data-years="9">
+        <p class="id"><span>EP-TX-0451</span><span>6 weeks' notice</span></p>
+        <h3>Senior estate planning attorney</h3>
+        <p class="where">The Woodlands, Houston area · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>9 years</dd><dt>Target base</dt><dd>$165k–$185k</dd></dl>
+        <p class="mixline">Estate tax 45% · Wills and trusts 35% · Business succession 20%</p>
+        <p class="note">“Prepares estate tax returns in-house and brings a small book of clients.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about EP-TX-0451">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="estate" data-city="houston" data-years="2">
+        <p class="id"><span>EP-TX-0467</span><span>Available now</span></p>
+        <h3>Junior estate planning associate</h3>
+        <p class="where">Sugar Land, Houston area · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>2 years</dd><dt>Target base</dt><dd>$85k–$95k</dd></dl>
+        <p class="mixline">Wills and trusts 60% · Probate 40%</p>
+        <p class="note">“Two years of drafting volume at a five-attorney firm.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about EP-TX-0467">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="estate" data-city="houston" data-years="4">
+        <p class="id"><span>EP-TX-0476</span><span>3 weeks' notice</span></p>
+        <h3>Estate planning associate</h3>
+        <p class="where">Katy, Houston area · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>4 years</dd><dt>Target base</dt><dd>$118k–$130k</dd></dl>
+        <p class="mixline">Wills and trusts 65% · Probate 25% · Guardianship 10%</p>
+        <p class="note">“Four years of client-facing drafting at a ten-attorney firm.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about EP-TX-0476">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="estate" data-city="austin houston" data-years="6">
+        <p class="id"><span>EP-TX-0503</span><span>4 weeks' notice</span></p>
+        <h3>Trust administration and probate attorney</h3>
+        <p class="where">Austin, moving to Houston · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>6 years</dd><dt>Target base</dt><dd>$130k–$145k</dd></dl>
+        <p class="mixline">Trust administration 50% · Probate 30% · Wills and trusts 20%</p>
+        <p class="note">“Six years in administrations and relocating to Houston.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about EP-TX-0503">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="litigation" data-city="dallas" data-years="4">
+        <p class="id"><span>LIT-TX-0390</span><span>2 weeks' notice</span></p>
+        <h3>Civil litigation associate</h3>
+        <p class="where">Dallas · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>4 years</dd><dt>Target base</dt><dd>$115k–$130k</dd></dl>
+        <p class="mixline">Depositions 40% · Motion practice 35% · Trial support 25%</p>
+        <p class="note">“Has taken depositions on her own since year two.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about LIT-TX-0390">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="litigation" data-city="houston" data-years="7">
+        <p class="id"><span>LIT-TX-0422</span><span>4 weeks' notice</span></p>
+        <h3>Commercial litigation attorney</h3>
+        <p class="where">Houston · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>7 years</dd><dt>Target base</dt><dd>$150k–$170k</dd></dl>
+        <p class="mixline">Contract disputes 50% · Business torts 30% · Appeals 20%</p>
+        <p class="note">“First-chaired two bench trials. Ready to run cases end to end.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about LIT-TX-0422">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="litigation" data-city="san-antonio" data-years="2">
+        <p class="id"><span>LIT-TX-0435</span><span>2 weeks' notice</span></p>
+        <h3>Insurance defense associate</h3>
+        <p class="where">San Antonio · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>2 years</dd><dt>Target base</dt><dd>$85k–$98k</dd></dl>
+        <p class="mixline">Written discovery 50% · Depositions 30% · Mediation 20%</p>
+        <p class="note">“Carries a full caseload and writes clean, fast motions.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about LIT-TX-0435">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="realestate" data-city="austin" data-years="5">
+        <p class="id"><span>RE-TX-0274</span><span>4 weeks' notice</span></p>
+        <h3>Commercial real estate associate</h3>
+        <p class="where">Austin · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>5 years</dd><dt>Target base</dt><dd>$120k–$135k</dd></dl>
+        <p class="mixline">Leasing 45% · Acquisitions 35% · Lending 20%</p>
+        <p class="note">“Runs commercial leases from first draft to signing.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about RE-TX-0274">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="family" data-city="san-antonio" data-years="3">
+        <p class="id"><span>FAM-TX-0305</span><span>3 weeks' notice</span></p>
+        <h3>Family law associate</h3>
+        <p class="where">San Antonio · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>3 years</dd><dt>Target base</dt><dd>$95k–$110k</dd></dl>
+        <p class="mixline">Divorce 60% · Custody 30% · Mediation 10%</p>
+        <p class="note">“Calm with clients in hard moments and strong at hearings.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about FAM-TX-0305">Ask Justin about this profile →</a>
+      </article>
+      <article class="card cand" data-practice="employment" data-city="dallas" data-years="8">
+        <p class="id"><span>EMP-TX-0318</span><span>4 weeks' notice</span></p>
+        <h3>Labor and employment attorney</h3>
+        <p class="where">Fort Worth, Dallas area · Texas bar, active</p>
+        <dl><dt>Experience</dt><dd>8 years</dd><dt>Target base</dt><dd>$150k–$165k</dd></dl>
+        <p class="mixline">Employer defense 55% · Advice and counsel 30% · Agency charges 15%</p>
+        <p class="note">“Advises business owners directly and keeps matters out of court.”</p>
+        <a class="link-arrow" href="../submit-job/" aria-label="Ask Justin about EMP-TX-0318">Ask Justin about this profile →</a>
+      </article>
+    </div>
+
+    <div class="empty" id="empty" hidden>
+      <h3>No sample profile matches that seat yet.</h3>
+      <p>Jon searches beyond this list, including attorneys who are not on job boards. Send the seat and Justin replies by email, usually within the hour on business days.</p>
+      <p><a class="link-arrow" id="empty-link" href="../submit-job/">Send this seat to Justin →</a></p>
+    </div>
+
+    <p class="small muted sample-note">Sample profiles. Live candidates change weekly. Every profile is screened by Jon Missirlian, and each attorney agreed to be shown anonymously.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label">From profile to interview</p>
+        <h2 id="how-title">Ask for a profile. Pay only if you hire.</h2>
+      </div>
+      <a class="link-arrow" href="../fees/">Full fee terms and calculator →</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <p class="k">Step 1 · Request</p>
+        <p class="fig">&lt; 1 hour</p>
+        <h3>Pick the profiles you like</h3>
+        <p>Ask for one or several. Justin replies by email, usually within the hour on business days. Nothing to sign and nothing to pay to see profiles.</p>
+      </div>
+      <div class="step">
+        <p class="k">Step 2 · Interview</p>
+        <p class="fig">3–5</p>
+        <h3>Meet the finalists</h3>
+        <p>We share names and current firms once a candidate agrees to interview with you, then set up calls at times that suit you.</p>
+      </div>
+      <div class="step">
+        <p class="k">Step 3 · Hire</p>
+        <p class="fig">23%</p>
+        <h3>Pay on the start date</h3>
+        <p>23% of first-year base, invoiced on the start date and due Net 15. If the hire leaves within 90 days, we run a replacement search at no charge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band final" aria-labelledby="final-title">
+  <div class="wrap">
+    <h2 id="final-title">Don't see your seat? Send it to Justin.</h2>
+    <p>First screened profiles in about a week. $0 upfront, non-exclusive, 90-day replacement.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="../submit-job/">Submit a job</a>
+      <a class="link-arrow" href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Or book 15 minutes with Justin →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="about-line">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+    </div>
+    <div>
+      <h4>For law firms</h4>
+      <ul>
+        <li><a href="../find-candidates/">Find candidates</a></li>
+        <li><a href="../submit-job/">Submit a job</a></li>
+        <li><a href="../fees/">Fees</a></li>
+        <li><a href="../salaries/estate-planning-attorney/houston-tx/">Salary guides</a></li>
+        <li><a href="../hiring-kit/estate-planning-attorney/">Hiring kits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For attorneys</h4>
+      <ul>
+        <li><a href="../candidates/">How it works</a></li>
+        <li><a href="../jobs/">Open roles</a></li>
+        <li><a href="../upload-resume/">Send your resume</a></li>
+        <li><a href="../salary-check/">Salary check</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Orion</h4>
+      <ul>
+        <li><a href="../about/">About</a></li>
+        <li><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></li>
+        <li><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>Orion emails only ever come from @orionplacement.com.</p>
+      <p>© 2026 Orion Placement LLC</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/orion.js"></script>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll(".cand"));
+  var fp=document.getElementById("f-practice"),fc=document.getElementById("f-city"),fe=document.getElementById("f-exp");
+  var count=document.getElementById("count"),word=document.getElementById("count-word"),empty=document.getElementById("empty"),emptyLink=document.getElementById("empty-link");
+  var levelFor={"1-3":"junior","4-7":"mid","8+":"senior"};
+  function band(y){return y<=3?"1-3":(y<=7?"4-7":"8+");}
+  function apply(){
+    var p=fp.value,c=fc.value,e=fe.value,n=0;
+    cards.forEach(function(card){
+      var ok=(!p||card.dataset.practice===p)&&(!c||card.dataset.city.split(" ").indexOf(c)!==-1)&&(!e||band(+card.dataset.years)===e);
+      card.hidden=!ok;if(ok)n++;
+    });
+    count.textContent=n;word.textContent=n===1?"candidate":"candidates";
+    empty.hidden=n!==0;
+    var q=[];if(p)q.push("practice="+encodeURIComponent(fp.options[fp.selectedIndex].text));
+    if(e)q.push("level="+levelFor[e]);if(c)q.push("city="+c);
+    emptyLink.href="../submit-job/"+(q.length?"?"+q.join("&"):"");
+  }
+  [fp,fc,fe].forEach(function(s){s.addEventListener("change",function(){document.getElementById("understood").textContent="";apply();});});
+  document.getElementById("reset").addEventListener("click",function(){fp.value="";fc.value="";fe.value="";document.getElementById("seat").value="";document.getElementById("understood").textContent="";apply();});
+
+  // read a plain-English seat description into the three filters
+  function parse(t){
+    t=t.toLowerCase();var r={};
+    if(/real estate|leasing|property/.test(t))r.p="realestate";
+    else if(/estate|trust|probate|wills?\b|guardianship/.test(t))r.p="estate";
+    else if(/litig|trial|insurance defense|defense/.test(t))r.p="litigation";
+    else if(/family|divorce|custody/.test(t))r.p="family";
+    else if(/employment|labor/.test(t))r.p="employment";
+    if(/houston|katy|sugar land|woodlands/.test(t))r.c="houston";
+    else if(/dallas|fort worth|dfw/.test(t))r.c="dallas";
+    else if(/austin/.test(t))r.c="austin";
+    else if(/san antonio/.test(t))r.c="san-antonio";
+    var m=t.match(/(\d{1,2})\s*\+?\s*(?:(?:-|–|to)\s*(\d{1,2}))?\s*(?:years|yrs|yr|year)/);
+    if(m){var lo=+m[1],hi=m[2]?+m[2]:lo,mid=Math.round((lo+hi)/2);r.e=band(mid);}
+    else if(/junior|entry/.test(t))r.e="1-3";else if(/senior|partner/.test(t))r.e="8+";
+    return r;
+  }
+  function run(text){
+    var r=parse(text),got=[];
+    fp.value=r.p||"";fc.value=r.c||"";fe.value=r.e||"";
+    if(r.p)got.push(fp.options[fp.selectedIndex].text);
+    if(r.c)got.push(fc.options[fc.selectedIndex].text);
+    if(r.e)got.push(fe.options[fe.selectedIndex].text);
+    apply();
+    document.getElementById("understood").textContent=got.length?"We read: "+got.join(" · ")+". Adjust the filters below to widen or narrow it.":"Add a practice, a Texas city or the years you need, or use the filters below.";
+  }
+  document.getElementById("seek").addEventListener("submit",function(e){e.preventDefault();run(document.getElementById("seat").value);document.getElementById("results-title").scrollIntoView({block:"start"});});
+  [].forEach.call(document.querySelectorAll("[data-example]"),function(b){b.addEventListener("click",function(){var v=b.getAttribute("data-example");document.getElementById("seat").value=v;run(v);document.getElementById("results-title").scrollIntoView({block:"start"});});});
+  apply();
+})();
+</script>
+</body>
+</html>

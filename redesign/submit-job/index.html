@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Submit a job to Orion, pay only if you hire</title>
+<meta name="description" content="Send your open seat to Justin. Screened attorney profiles in about a week. 23% only if you hire, $0 upfront, 90-day replacement.">
+<link rel="icon" href="../../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/orion.css">
+<style>
+.job-hero{padding-block:clamp(32px,5vw,64px) var(--section)}
+.job-hero h1{margin-bottom:18px;max-width:12em}
+.job-grid{display:grid;gap:32px;grid-template-columns:1fr;grid-template-areas:"intro" "form" "facts"}
+.job-intro{grid-area:intro}.job-facts{grid-area:facts}.job-grid .form-card{grid-area:form}
+@media (min-width:960px){.job-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"intro form" "facts form";grid-template-rows:auto 1fr;gap:0 64px;align-items:start}.job-intro{margin-bottom:32px}}
+.job-hero .rating{margin-top:20px}
+.alt{margin-top:14px;font-size:15px;text-align:center}
+.priv{margin-top:24px;font-size:15px;max-width:34em}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="../employers/">For law firms</a>
+      <a href="../find-candidates/">Candidates</a>
+      <a href="../fees/">Fees</a>
+      <a href="../about/">About</a>
+      <a class="nav-switch" href="../candidates/">For attorneys</a>
+      <a class="btn btn-primary btn-sm" href="../submit-job/" aria-current="page">Submit a job</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="job-hero">
+  <div class="wrap job-grid">
+    <div class="job-intro">
+      <p class="label">Submit a job</p>
+      <h1>Tell us the seat. See who fits.</h1>
+      <p class="lead">Send the brief once. Justin replies within the hour, Jon screens candidates for practice mix, bar standing and pay, and you see anonymized profiles before you commit to anything.</p>
+    </div>
+    <div class="job-facts">
+      <ul class="terms" aria-label="Terms">
+        <li><b>23%</b><span>Of first-year base, only if you hire. Due Net 15 after the start date</span></li>
+        <li><b>$0</b><span>Upfront. No retainer and no exclusivity</span></li>
+        <li><b>90 days</b><span>Replacement search at no charge if the hire leaves</span></li>
+        <li><b>~1 week</b><span>To your first screened profiles, 3–5 finalists</span></li>
+      </ul>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 on Google from 60 reviews by firms and candidates</span></p>
+      <p class="priv muted">Your seat stays confidential. We don't publish it, and candidates learn your firm's name only when you agree to interview them.</p>
+    </div>
+
+    <div class="form-card" id="brief" data-sent-scope>
+      <form data-demo aria-labelledby="form-title">
+        <h2 id="form-title">The job brief</h2>
+        <p class="intro">Takes about a minute. Kept confidential.</p>
+        <div class="field">
+          <label for="practice">Practice area</label>
+          <select id="practice" name="practice">
+            <option>Estate planning and probate</option>
+            <option>Commercial litigation</option>
+            <option>Civil litigation</option>
+            <option>Insurance defense</option>
+            <option>Real estate</option>
+            <option>Corporate and M&amp;A</option>
+            <option>Labor and employment</option>
+            <option>Family law</option>
+            <option>Personal injury</option>
+            <option>Tax</option>
+            <option>Paralegal or legal assistant</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="row row-2">
+          <div class="field">
+            <label for="level">Experience</label>
+            <select id="level" name="level">
+              <option value="junior">1–3 years</option>
+              <option value="mid" selected>4–7 years</option>
+              <option value="senior">8+ years</option>
+              <option value="counsel">Counsel or partner track</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="city">Location</label>
+            <select id="city" name="city">
+              <option value="houston">Houston</option>
+              <option value="dallas">Dallas–Fort Worth</option>
+              <option value="austin">Austin</option>
+              <option value="san-antonio">San Antonio</option>
+              <option value="texas">Anywhere in Texas</option>
+              <option value="other">Another state</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@yourfirm.com" aria-describedby="email-err" required>
+          <p class="err" id="email-err">Enter your work email so we can send the profiles.</p>
+        </div>
+        <div class="row row-2">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" aria-describedby="name-err" required>
+            <p class="err" id="name-err">Enter your name.</p>
+          </div>
+          <div class="field">
+            <label for="firm">Firm</label>
+            <input id="firm" name="firm" autocomplete="organization" aria-describedby="firm-err" required>
+            <p class="err" id="firm-err">Enter your firm's name.</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="opt">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="field">
+          <label for="notes">Short notes <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Must-haves, pay range, on-site or hybrid, or a link to your posting"></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Send me matching candidates</button>
+        <p class="next"><b>What happens next:</b> Justin replies by email, usually within the hour on business days. Your first anonymized profiles follow within about a week. Names and firms stay hidden until you ask to interview.</p>
+      </form>
+      <div class="done" role="status" aria-live="polite">
+        <h2>Thanks. Justin has your brief.</h2>
+        <p>He'll reply by email, usually within the hour on business days, with questions about the seat if he has any. Your first screened profiles follow within about a week.</p>
+        <p class="small muted">Demo page: nothing was sent.</p>
+      </div>
+      <p class="alt">Prefer to talk? <a href="https://calendly.com/orionplacement/call-with-justin" target="_blank" rel="noopener">Book 15 minutes with Justin</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section band" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label">After you send it</p>
+        <h2 id="how-title">From brief to first interview.</h2>
+      </div>
+      <a class="link-arrow" href="../find-candidates/">Browse sample candidates →</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <p class="k">Day 0 · Reply</p>
+        <p class="fig">&lt; 1 hour</p>
+        <h3>Justin confirms the seat</h3>
+        <p>He replies by email with any questions on practice mix, billables, pay and culture, and sends the one-page, non-exclusive agreement.</p>
+      </div>
+      <div class="step">
+        <p class="k">Within a week · Profiles</p>
+        <p class="fig">3–5</p>
+        <h3>Jon sends screened finalists</h3>
+        <p>Anonymized profiles with practice mix, bar standing, pay band, notice and Jon's notes. You pick who to interview.</p>
+      </div>
+      <div class="step">
+        <p class="k">Start date · Fee</p>
+        <p class="fig">23%</p>
+        <h3>Hire, then pay</h3>
+        <p>The invoice is sent on the start date and due Net 15. If the hire leaves within 90 days, we run a replacement search at no charge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-title">
+  <div class="wrap split">
+    <div>
+      <p class="label">Questions</p>
+      <h2 id="faq-title">Before you send the brief.</h2>
+      <p style="margin-top:14px">No posting written yet? Start from a <a href="../hiring-kit/estate-planning-attorney/">hiring kit</a>, or check pay first in the <a href="../salaries/estate-planning-attorney/houston-tx/">salary guide</a>.</p>
+    </div>
+    <div class="faq">
+      <details><summary>Is my job published anywhere?</summary><p>No. We use your brief to search and screen. We don't post it on job boards unless you ask us to.</p></details>
+      <details><summary>Can we keep our posting live and use other recruiters?</summary><p>Yes. The agreement is non-exclusive, so your posts, referrals and other recruiters stay active.</p></details>
+      <details><summary>What if our pay is below the market?</summary><p>Justin will tell you on the first reply and show you the pay band for your city and level, so you can decide before the search starts.</p></details>
+      <details><summary>What are the fees and terms?</summary><p>23% of the hire's first-year base salary, only if you hire someone we introduced. Nothing upfront. Invoiced on the start date, due Net 15, with a 90-day replacement search at no charge. Terms can be customized for multi-seat searches. <a href="../fees/">See the full terms</a>.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="about-line">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+    </div>
+    <div>
+      <h4>For law firms</h4>
+      <ul>
+        <li><a href="../find-candidates/">Find candidates</a></li>
+        <li><a href="../submit-job/">Submit a job</a></li>
+        <li><a href="../fees/">Fees</a></li>
+        <li><a href="../salaries/estate-planning-attorney/houston-tx/">Salary guides</a></li>
+        <li><a href="../hiring-kit/estate-planning-attorney/">Hiring kits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For attorneys</h4>
+      <ul>
+        <li><a href="../candidates/">How it works</a></li>
+        <li><a href="../jobs/">Open roles</a></li>
+        <li><a href="../upload-resume/">Send your resume</a></li>
+        <li><a href="../salary-check/">Salary check</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Orion</h4>
+      <ul>
+        <li><a href="../about/">About</a></li>
+        <li><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></li>
+        <li><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>Orion emails only ever come from @orionplacement.com.</p>
+      <p>© 2026 Orion Placement LLC</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/orion.js"></script>
+<script>
+(function(){
+  // prefill from links such as ?practice=Estate%20planning&level=mid&city=houston
+  var q=new URLSearchParams(location.search);
+  function pick(id,val){
+    if(!val)return;var s=document.getElementById(id);val=val.toLowerCase();
+    for(var i=0;i<s.options.length;i++){var o=s.options[i];
+      if((o.value||"").toLowerCase()===val||o.text.toLowerCase().indexOf(val)!==-1||val.indexOf(o.text.toLowerCase().split(" ")[0])===0){s.selectedIndex=i;return;}}
+  }
+  pick("practice",q.get("practice"));pick("level",q.get("level"));pick("city",q.get("city"));
+})();
+</script>
+</body>
+</html>

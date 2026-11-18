@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Attorney salary check by practice and city | Orion</title>
+<meta name="description" content="Check your base pay against the market band for attorneys at small and mid-size law firms, by practice, city and years in practice. Runs in your browser.">
+<link rel="icon" href="../../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/orion.css">
+<style>
+.sc-hero .split{align-items:start}
+.sc-hero h1{max-width:12em}
+.result{margin-top:0}
+.r-label{font:600 13px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.r-band{font:400 clamp(40px,5vw,56px)/1.05 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums}
+.r-for{margin-top:8px;color:var(--text)}
+.r-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0;padding:18px 0;border-block:1px solid var(--rule)}
+.r-stats b{display:block;font:400 28px/1.1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums}
+.r-stats span{display:block;font-size:14px;color:var(--muted);margin-top:4px}
+.levels{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.lv{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;font-size:15px}
+.lv .track{position:relative;height:12px;background:var(--band);border:1px solid var(--rule);border-radius:2px}
+.lv .fill{position:absolute;top:-1px;bottom:-1px;background:#B9C8BE;border-radius:2px}
+.lv.on .fill{background:var(--accent)}
+.lv.on .lv-name{font-weight:600;color:var(--ink)}
+.lv .rng{grid-column:2;font-size:14px;color:var(--muted);margin-top:-8px;font-variant-numeric:tabular-nums}
+.lv .you{position:absolute;top:-6px;bottom:-6px;width:2px;background:var(--ink)}
+.verdict{margin-top:24px;padding:16px 18px;border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:6px;background:var(--surface)}
+.verdict b{color:var(--ink)}
+.source{margin-top:16px}
+.money{position:relative}
+.money span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.money input{padding-left:28px}
+.r-next{margin-top:20px}
+</style>
+</head>
+<body class="for-attorneys">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Orion Placement home"><img src="../../assets/images/orion-logo.png" alt="" width="28" height="28">Orion Placement</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="../employers/">For law firms</a>
+      <a href="../find-candidates/">Candidates</a>
+      <a href="../fees/">Fees</a>
+      <a href="../about/">About</a>
+      <a class="nav-switch" href="../candidates/">For attorneys</a>
+      <a class="btn btn-primary btn-sm" href="../submit-job/">Submit a job</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero sc-hero">
+  <div class="wrap split">
+    <div>
+      <p class="label">Salary check · for attorneys</p>
+      <h1>Is your pay in line with the market?</h1>
+      <p class="lead">Pick your practice, city and years in practice to see the base pay band for attorneys at small and mid-size law firms. Nothing you enter leaves your browser.</p>
+      <form class="form-card" id="sc-form" aria-labelledby="sc-title" style="margin-top:28px">
+        <h2 id="sc-title" style="font-size:24px;margin-bottom:18px">Your details</h2>
+        <div class="field">
+          <label for="sc-practice">Practice</label>
+          <select id="sc-practice" name="practice"></select>
+        </div>
+        <div class="row row-2">
+          <div class="field">
+            <label for="sc-city">City</label>
+            <select id="sc-city" name="city"></select>
+          </div>
+          <div class="field">
+            <label for="sc-years">Years in practice</label>
+            <select id="sc-years" name="years"></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="sc-base">Your current base <span class="opt">(optional)</span></label>
+          <div class="money"><span aria-hidden="true">$</span><input id="sc-base" name="base" inputmode="numeric" autocomplete="off" placeholder="118,000" aria-describedby="sc-base-hint sc-base-err"></div>
+          <p class="hint" id="sc-base-hint">Base salary only, before bonus. Stays in your browser.</p>
+          <p class="err" id="sc-base-err">Enter a yearly base, like 118,000.</p>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Show my market band</button>
+      </form>
+    </div>
+
+    <div class="result" id="result" aria-live="polite" tabindex="-1">
+      <p class="r-label">Market band</p>
+      <p class="r-band" id="r-band">$115k–$150k</p>
+      <p class="r-for" id="r-for">Base pay for estate planning attorneys in Houston with 4–7 years in practice.</p>
+      <div class="r-stats">
+        <div><b id="r-mid">$132k</b><span>Middle of the band</span></div>
+        <div><b id="r-top">$150k</b><span>Top of the band</span></div>
+      </div>
+      <ul class="levels" id="levels" aria-label="Bands by years in practice"></ul>
+      <p class="verdict" id="verdict" hidden></p>
+      <p class="source small muted">Sample bands for illustration: middle half of base salaries (25th to 75th percentile) at small and mid-size firms, November 2026. Bonus at small firms is usually 5% to 15% of base, often tied to collections or origination.</p>
+      <p class="r-next"><a class="link-arrow" id="r-jobs" href="../jobs/?practice=Estate%20planning&amp;city=Houston&amp;level=2">See open roles that match →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section band" aria-labelledby="moves-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label">Reading the band</p>
+        <h2 id="moves-title">What moves your number inside the band.</h2>
+        <p>Two attorneys with the same years can sit $30k apart. These are the usual reasons.</p>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><h3>Practice mix</h3><p>Work that a firm bills at higher rates, like tax-heavy planning or commercial trials, moves you toward the top.</p></div>
+      <div class="card"><h3>Running matters alone</h3><p>Firms pay more for attorneys who run files without a partner in the room and supervise staff.</p></div>
+      <div class="card"><h3>Book of business</h3><p>Even a small book or steady referrals often shows up as origination bonus on top of base.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="jon-title">
+  <div class="wrap split">
+    <div>
+      <p class="label">A number for your exact profile</p>
+      <h2 id="jon-title">Ask Jon what firms are paying for you.</h2>
+      <p style="margin-top:14px">A band is a starting point. Jon reads your resume and tells you what firms are offering for your practice, city and experience, with the roles behind it. Free for you, always, and no firm sees your name until you say yes.</p>
+      <div class="actions" style="margin-top:24px">
+        <a class="btn btn-secondary" href="../upload-resume/">Send your resume confidentially</a>
+        <a class="link-arrow" href="../candidates/">How it works →</a>
+      </div>
+    </div>
+    <div>
+      <p class="label">Working outside these cities?</p>
+      <p>Jon can benchmark pay for any US city on request. Email <a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a> from a personal address with your practice and city.</p>
+      <p style="margin-top:16px"><a class="link-arrow" href="../salaries/estate-planning-attorney/houston-tx/">Full salary guide: estate planning, Houston →</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <p class="about-line">Orion Placement</p>
+      <p>Legal recruiters for small and mid-size law firms. Texas first, searches in any US state.</p>
+    </div>
+    <div>
+      <h4>For law firms</h4>
+      <ul>
+        <li><a href="../find-candidates/">Find candidates</a></li>
+        <li><a href="../submit-job/">Submit a job</a></li>
+        <li><a href="../fees/">Fees</a></li>
+        <li><a href="../salaries/estate-planning-attorney/houston-tx/">Salary guides</a></li>
+        <li><a href="../hiring-kit/estate-planning-attorney/">Hiring kits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For attorneys</h4>
+      <ul>
+        <li><a href="../candidates/">How it works</a></li>
+        <li><a href="../jobs/">Open roles</a></li>
+        <li><a href="../upload-resume/">Send your resume</a></li>
+        <li><a href="../salary-check/">Salary check</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Orion</h4>
+      <ul>
+        <li><a href="../about/">About</a></li>
+        <li><a href="mailto:justin@orionplacement.com">justin@orionplacement.com</a></li>
+        <li><a href="mailto:jon@orionplacement.com">jon@orionplacement.com</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>Orion emails only ever come from @orionplacement.com.</p>
+      <p>© 2026 Orion Placement LLC</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/orion.js"></script>
+<script>
+(function(){
+  // Sample market bands in $k (Houston base), 25th to 75th percentile, by level. Same data as the jobs page.
+  var BANDS={"Estate planning":[[90,115],[115,150],[150,195]],"Litigation":[[95,120],[120,155],[155,200]],"Real estate":[[92,118],[118,152],[150,195]],"Corporate":[[105,135],[135,175],[170,220]],"Family law":[[80,105],[105,135],[130,170]],"Employment":[[95,120],[120,150],[150,190]],"Personal injury":[[85,110],[110,140],[140,190]],"Insurance defense":[[85,105],[105,130],[130,160]]};
+  var CITY={"Houston":1,"Dallas":1.03,"Austin":1.02,"San Antonio":.92};
+  var LEVELS=["1–3 years","4–7 years","8+ years"];
+  var f=document.getElementById("sc-form"),P=document.getElementById("sc-practice"),C=document.getElementById("sc-city"),Y=document.getElementById("sc-years"),B=document.getElementById("sc-base");
+  Object.keys(BANDS).forEach(function(p){P.add(new Option(p,p));});
+  Object.keys(CITY).forEach(function(c){C.add(new Option(c+", TX",c));});
+  LEVELS.forEach(function(l,i){Y.add(new Option(l,i+1));});
+  P.value="Estate planning";C.value="Houston";Y.value="2";
+  var q=new URLSearchParams(location.search);
+  if(BANDS[q.get("practice")])P.value=q.get("practice");
+  if(CITY[q.get("city")])C.value=q.get("city");
+  if(/^[123]$/.test(q.get("years")||""))Y.value=q.get("years");
+  function band(p,c,l){var b=BANDS[p][l-1],m=CITY[c];return [Math.round(b[0]*m),Math.round(b[1]*m)];}
+  function k(n){return "$"+n+"k";}
+  function parseBase(){var v=B.value.replace(/[$,\s]/g,"");if(!v)return null;if(/^\d+(\.\d+)?k$/i.test(v))return Math.round(parseFloat(v));if(!/^\d+$/.test(v))return NaN;var n=+v;return n>=1000?Math.round(n/1000):n;}
+  function show(focus){
+    var p=P.value,c=C.value,l=+Y.value,b=band(p,c,l),mid=Math.round((b[0]+b[1])/2);
+    var base=parseBase(),fld=B.closest(".field");
+    var bad=base!==null&&(isNaN(base)||base<30||base>1000);
+    fld.classList.toggle("has-error",bad);B.setAttribute("aria-invalid",bad?"true":"false");
+    if(bad){if(focus)B.focus();return;}
+    document.getElementById("r-band").textContent=k(b[0])+"–"+k(b[1]);
+    document.getElementById("r-for").textContent="Base pay for "+p.toLowerCase()+" attorneys in "+c+" with "+LEVELS[l-1]+" in practice.";
+    document.getElementById("r-mid").textContent=k(mid);
+    document.getElementById("r-top").textContent=k(b[1]);
+    var all=[1,2,3].map(function(x){return band(p,c,x);}),min=all[0][0]-20,max=all[2][1]+20,span=max-min;
+    if(base!==null){min=Math.min(min,base-10);max=Math.max(max,base+10);span=max-min;}
+    function pos(v){return ((v-min)/span*100).toFixed(1)+"%";}
+    document.getElementById("levels").innerHTML=all.map(function(r,i){
+      var you=(base!==null&&i===l-1)?'<span class="you" style="left:'+pos(base)+'" title="Your number"></span>':"";
+      return '<li class="lv'+(i===l-1?" on":"")+'"><span class="lv-name">'+LEVELS[i]+'</span><span class="track" role="img" aria-label="'+LEVELS[i]+': '+k(r[0])+' to '+k(r[1])+'"><span class="fill" style="left:'+pos(r[0])+';width:calc('+pos(r[1])+' - '+pos(r[0])+')"></span>'+you+'</span><span class="rng">'+k(r[0])+'–'+k(r[1])+'</span></li>';
+    }).join("");
+    var v=document.getElementById("verdict");
+    if(base===null){v.hidden=true;}
+    else{
+      v.hidden=false;
+      if(base<b[0])v.innerHTML="<b>Your base of "+k(base)+" is below the band</b> by "+k(b[0]-base)+". Attorneys with your profile often move up to "+k(b[0])+"–"+k(b[1])+" with a lateral move.";
+      else if(base>b[1])v.innerHTML="<b>Your base of "+k(base)+" is above the band.</b> You are paid at the top of the market for this level. Bonus and billable targets are worth comparing too.";
+      else v.innerHTML="<b>Your base of "+k(base)+" is inside the band.</b> "+(b[1]>base?"The top of the band pays "+k(b[1]-base)+" more.":"You are at the top of the band.");
+    }
+    document.getElementById("r-jobs").href="../jobs/?practice="+encodeURIComponent(p)+"&city="+encodeURIComponent(c)+"&level="+l;
+    if(focus)document.getElementById("result").focus({preventScroll:window.innerWidth>=960});
+    if(focus&&window.innerWidth<960)document.getElementById("result").scrollIntoView({block:"start"});
+  }
+  f.addEventListener("submit",function(e){e.preventDefault();show(true);});
+  [P,C,Y].forEach(function(s){s.addEventListener("change",function(){show(false);});});
+  show(false);
+})();
+</script>
+</body>
+</html>
